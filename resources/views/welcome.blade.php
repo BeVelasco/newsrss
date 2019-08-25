@@ -9,16 +9,21 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+        
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/news.js') }}"></script>
         
     </head>
     <body>
+    <div>
         <div class="card-header">
             <h1>Noticias</h1>
         </div>
 
         <div class="content">
             <div class="row">
-                <div class="col-md-4 d-flex flex-column h-50"> 
+                <div class="col-md-4"> 
                     <h2>Reforma Negocios</h2>
                     @php
                         //$feed = Feed::loadRss('https://threatpost.com/feed');
@@ -39,7 +44,7 @@
                     
                 </div>
 
-                <div class="col-md-4 d-flex flex-column h-50"> 
+                <div class="col-md-4"> 
                     <h2>El Universal</h2>
                     @php
                         //$feed = Feed::loadRss('https://threatpost.com/feed');
@@ -70,7 +75,7 @@
                     
                 </div>
 
-                <div class="col-md-4 d-flex flex-column h-50"> 
+                <div class="col-md-4"> 
                     <h2>El Informador</h2>
                     @php
                         //$feed = Feed::loadRss('https://threatpost.com/feed');
@@ -93,6 +98,6 @@
                 
             </div>
         </div>
-
+    </div>
     </body>
 </html>
