@@ -25,9 +25,9 @@
                     Robot de busqueda de información de noticias en servicios RSS de los periodicos: <i>DIARIO DE QUERÉTARO, EL SOL DE SAN JUAN DEL RIO y AM DE QUERÉTARO </i>
                     </p></div>
                 <div class="col-md-4">
-                    <input size="30" type="txt" name="txt" id="txt" value="SAN MIGUEL DE ALLENDE" readonly="">
+                    <!--<input size="30" type="txt" name="txt" id="txt" value="SAN MIGUEL DE ALLENDE" readonly="">
 
-                    <button type="button" class="btn btn-primary" id="buscar" name="buscar">Buscar</button>
+                    <button type="button" class="btn btn-primary" id="buscar" name="buscar">Buscar</button>-->
                 </div>
             </div>
         </div>
