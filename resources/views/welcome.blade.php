@@ -48,7 +48,7 @@
                     
 
                     foreach($feed->item as $item){
-                        if(preg_match('//', $item-> description)) {
+                        if(preg_match('/san|miguel|allende/', $item-> description)) {
                     @endphp
                         <div class="card">
                             <div class="card-header">
@@ -79,7 +79,7 @@
                     
 
                     foreach($feed->item as $item){
-                        if(preg_match('//', $item-> description)) {
+                        if(preg_match('/san|miguel|allende/', $item-> description)) {
                     @endphp
                         <div class="card">
                             <div class="card-header">
@@ -104,7 +104,7 @@
                         //dd($feed);
                     
                         foreach($feed->item as $item){
-                        if(preg_match('//', $item-> description)) {
+                        if(preg_match('/san|miguel|allende/', $item-> description)) {
                     @endphp
                     <div class="card">
                         <div class="card-header">
