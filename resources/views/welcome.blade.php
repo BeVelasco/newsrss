@@ -22,10 +22,10 @@
             <div class="row">
                 <div class="col-md-2"><h1>Noticias</h1></div>
                 <div class="col-md-6"><p align="justify">
-                    Robot de busqueda de información de noticias en los siguientes periodicos
+                    Robot de busqueda de información de noticias en servicios RSS de los periodicos: <i>DIARIO DE QUERÉTARO, EL SOL DE SAN JUAN DEL RIO y AM DE QUERÉTARO </i>
                     </p></div>
-                <div class="col-md-4"><i>Palabra busqueda:</i><br>
-                    <input type="txt" name="txt" id="txt" value="" readonly="">
+                <div class="col-md-4">
+                    <input size="30" type="txt" name="txt" id="txt" value="SAN MIGUEL DE ALLENDE" readonly="">
 
                     <button type="button" class="btn btn-primary" id="buscar" name="buscar">Buscar</button>
                 </div>
