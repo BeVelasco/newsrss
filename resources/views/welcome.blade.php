@@ -16,83 +16,116 @@
         
     </head>
     <body>
+        <input type="txt" name="cad" id="cad" value="" hidden="">
     <div>
         <div class="card-header">
-            <h1>Noticias</h1>
+            <div class="row">
+                <div class="col-md-2"><h1>Noticias</h1></div>
+                <div class="col-md-6"><p align="justify">
+                    Robot de busqueda de información de noticias en los siguientes periodicos
+                    </p></div>
+                <div class="col-md-4"><i>Palabra busqueda:</i><br>
+                    <input type="txt" name="txt" id="txt" value="" readonly="">
+
+                    <button type="button" class="btn btn-primary" id="buscar" name="buscar">Buscar</button>
+                </div>
+            </div>
         </div>
 
         <div class="content">
             <div class="row">
                 <div class="col-md-4"> 
-                    <h2>Reforma Negocios</h2>
+                    <h2>DIARIO DE QUERÉTARO</h2>
                     @php
                         //$feed = Feed::loadRss('https://threatpost.com/feed');
-                        $feed = Feed::loadRss('https://www.reforma.com/rss/negocios.xml');
+                        /*
+                            https://www.elnorte.com/rss/negocios.xml
+                            https://www.elnorte.com/rss/estados.xml
+                            https://www.elnorte.com/rss/seguridad.xml
+                        */
+                        $feed = Feed::loadRss('https://www.diariodequeretaro.com.mx/rss.xml');
                         //dd();
-                    @endphp
+                    
 
-                    @foreach($feed->item as $item)
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="{{ $item->link }}">{{ $item->title }} </a>
-                        </div>
-                        <div class="card-body">
-                            {{ $item-> description }}
-                        </div>
-                    </div><br>
-                    @endforeach
+                    foreach($feed->item as $item){
+                        if(preg_match('//', $item-> description)) {
+                    @endphp
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="{{ $item->link }}">{{ $item->title }} </a>
+                            </div>
+                            <div class="card-body">
+                                {{ $item-> description }}
+                            </div>
+                        </div><br>
+                    @php
+                        }
+                    }
+                    @endphp
                     
                 </div>
 
                 <div class="col-md-4"> 
-                    <h2>El Universal</h2>
+                    <h2>EL SOL DE SAN JUAN DEL RIO</h2>
                     @php
                         //$feed = Feed::loadRss('https://threatpost.com/feed');
-                        $feed = Feed::loadRss('http://www.eluniversal.com.mx/rss/universalmxm.xml');
-                        //dd($feed);
-                    @endphp
+                        /*
+                            https://www.elnorte.com/rss/negocios.xml
+                            https://www.elnorte.com/rss/estados.xml
+                            https://www.elnorte.com/rss/seguridad.xml
+                        */
+                        $feed = Feed::loadRss('https://www.elsoldesanjuandelrio.com.mx/rss.xml');
+                        //dd();
+                    
 
-                    @foreach($feed->item as $item)
+                    foreach($feed->item as $item){
+                        if(preg_match('//', $item-> description)) {
+                    @endphp
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="{{ $item->link }}">{{ $item->title }} </a>
+                            </div>
+                            <div class="card-body">
+                                {{ $item-> description }}
+                            </div>
+                        </div><br>
+                    @php
+                        }
+                    }
+                    @endphp
+                    
+                </div>
+
+                <div class="col-md-4"> 
+                    <h2>AM DE QUERÉTARO</h2>
+                    @php
+                        //$feed = Feed::loadRss('https://threatpost.com/feed');
+                        $feed = Feed::loadRss('https://amqueretaro.com/feed');
+                        //dd($feed);
+                    
+                        foreach($feed->item as $item){
+                        if(preg_match('//', $item-> description)) {
+                    @endphp
                     <div class="card">
                         <div class="card-header">
                             <a href="{{ $item->link }}">{{ $item->title }} </a>
                         </div>
                         <div class="card-body">
-                            @php
-
-                                $cad = explode('>', $item->description);
+                             @php
+                                $cad = explode('</a>', $item->description);
                                 //dd($cad);
                                 if(count($cad)==1){
-                                    echo $cad[0].'>'; echo '<br>'; echo $cad[0];
+                                    echo $cad[0];
                                 } else {
-                                    echo $cad[0].'>'; echo '<br>'; echo $cad[1];
+                                    echo $cad[1];
                                 }
                             @endphp
-
                         </div>
                     </div><br>
-                    @endforeach
-                    
-                </div>
-
-                <div class="col-md-4"> 
-                    <h2>El Informador</h2>
-                    @php
-                        //$feed = Feed::loadRss('https://threatpost.com/feed');
-                        $feed = Feed::loadRss('https://www.informador.mx/rss/economia.xml');
-                        //dd($feed);
+                   @php
+                        }
+                    }
                     @endphp
-
-                    @foreach($feed->item as $item)
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="{{ $item->link }}">{{ $item->title }} </a>
-                        </div>
-                        <div class="card-body">
-                            {{ $item-> description }}
-                        </div>
-                    </div><br>
-                    @endforeach
                     
                 </div>
                 
