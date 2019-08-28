@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 if (!ini_get('date.timezone')) {
-	date_default_timezone_set('America/Mexico');
+	date_default_timezone_set('America/Mexico_City');
 }
 
 
