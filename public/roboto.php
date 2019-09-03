@@ -46,7 +46,7 @@ function htmlconsulta($conn, $url, $fuente){
 			preg_match_all('#\b(?:https?://)?(?:(?i:[a-z]+\.)+)[^\s,]+\b#', $value, $match1);
 			foreach ($match1[0] as $value1) {
 				$data = url_get_contents($value1);
-				$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
+				//$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
 				if(preg_match('/\bsan miguel de allende\b/i', $data)){
 					almacena($fuente, base64_encode($data), $value1, $conn);
 					echo "Para guardar --->".$value1."\xA";
