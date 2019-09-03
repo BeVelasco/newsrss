@@ -46,7 +46,8 @@
                         </tr>
                         </thead>
                         @php
-                            $sql = 'SELECT * FROM web';
+                            $sql = "SELECT * FROM web WHERE web.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -3 DAY)
+ORDER BY web.`created_at` DESC";
                             $rs = DB::SELECT($sql);
                             foreach($rs as $row){
                         @endphp

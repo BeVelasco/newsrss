@@ -15,7 +15,7 @@ foreach ($fuentes as $value) {
 	if($value['tipo'] == 1){
 		htmlconsulta($conn, $value['url'], $value['idesc']);
 	}else{
-		rssconsulta($conn, $value['url'], $value['idesc']);
+		//rssconsulta($conn, $value['url'], $value['idesc']);
 	}
 }
 mysqli_close($conn);
@@ -34,14 +34,36 @@ function htmlconsulta($conn, $url, $fuente){
 	$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
 	
 	echo "******************************\n";
+	preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $data, $match);
+	
+	$regex = '/\b.jpg|.png|.css|.pdf|.gif|.js|tag|youtube|facebook|twitter|instagram|scorecardresearch|xhtml|rss|drupal|buscar\b/i';
+	//var_dump($match[0]);
+	
+	foreach ($match[0] as $value) {
+		$count = preg_match_all($regex, $value);
+		if($count == 0){
+			//echo('URL ----> '.$value); echo "\xA";
+			preg_match_all('#\b(?:https?://)?(?:(?i:[a-z]+\.)+)[^\s,]+\b#', $value, $match1);
+			foreach ($match1[0] as $value1) {
+				$data = url_get_contents($value1);
+				$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
+				if(preg_match('/\bsan miguel de allende\b/i', $data)){
+					almacena($fuente, base64_encode($data), $value1, $conn);
+					echo "Para guardar --->".$value1."\xA";
+				}
+			}
+			//var_dump($match1[0]);
+			
+		}
+	}
 	//echo 'Title: ', $rss->title;echo "\n";
 	//echo 'Description: ', $rss->description; echo "\n";
-	echo 'Link: ', $url; echo "\n";
+	//echo 'Link: ', $url; echo "\n";
 	echo "******************************\n";
 	
-	if(preg_match('/\bsan miguel de allende\b/i', $data)){
-		almacena($fuente, base64_encode($data), $url, $conn);
-	}
+	/*if(preg_match('/\bsan miguel de allende\b/i', $data)){
+		//almacena($fuente, base64_encode($data), $url, $conn);
+	}*/
 }
 
 function rssconsulta($conn, $url){
@@ -89,7 +111,7 @@ function connect(){
 } 
 
 function almacena($titulo, $content, $url, $conn){
-	$sql = "SELECT * FROM web as w WHERE w.titulo = '".$titulo."' AND w.hash = '".hash('md5',$content)."' AND w.url = '".$url."'";
+	$sql = "SELECT * FROM web as w WHERE w.titulo = '".$titulo."' AND w.url = '".$url."'";
 
 	$result = $conn->query($sql);
 
@@ -102,6 +124,8 @@ function almacena($titulo, $content, $url, $conn){
 		} else {
 		    echo 'Error Insertar: '.$conn->error;
 		}
+	} else {
+		echo 'Ya registrado';
 	}
 }
 
