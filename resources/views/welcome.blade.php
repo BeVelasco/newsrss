@@ -34,8 +34,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-8" style="max-height: 35vw; overflow-y: scroll;">
-                    <table class="table">
+                <div class="col-md-8 table-responsive" style="max-height: 38vw; overflow-y: scroll; font-size:1vw;">
+                    <table class="table table-sm">
                         <thead>
                         <tr> <!-- Fila -->
                             <th>Periódico</th>
