@@ -96,7 +96,7 @@ function connect(){
 	$servername = "74.208.166.96";
 	$port = "5543";
 	$username = "asys";
-	$password = "c0nsult1nt3gr4";
+	$password = "1nt3gr4*2019";
 	$database = "roboto";
 
 	// Create connection
