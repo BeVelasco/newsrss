@@ -22,7 +22,7 @@ mysqli_close($conn);
 
 /*------------------------------------------------------------------*/
 function getPeriodicos($conn){
-	$sql = 'SELECT * FROM fuentes';
+	$sql = 'SELECT * FROM fuentes WHERE estatus = 1';
 	$result = $conn->query($sql);
 
 	return $result;
@@ -37,7 +37,7 @@ function htmlconsulta($conn, $url, $fuente){
 	preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $data, $match);
 	
 	$regex = '/\b.jpg|.png|.css|.pdf|.gif|.js|tag|youtube|facebook|twitter|instagram|scorecardresearch|xhtml|rss|drupal|buscar\b/i';
-	//var_dump($match[0]);
+	var_dump($match[0]);
 	
 	foreach ($match[0] as $value) {
 		$count = preg_match_all($regex, $value);
@@ -48,8 +48,8 @@ function htmlconsulta($conn, $url, $fuente){
 				$data = url_get_contents($value1);
 				//$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
 				if(preg_match('/\bsan miguel de allende\b/i', $data)){
-					almacena($fuente, base64_encode($data), $value1, $conn, 'Web');
 					echo "Para guardar --->".$value1."\n";
+					almacena($fuente, base64_encode($data), $value1, $conn, 'Web');
 				}
 			}
 			//var_dump($match1[0]);
@@ -77,12 +77,12 @@ function rssconsulta($conn, $url, $fuente){
 	/*echo "******************************\n";*/
 
 	foreach ($rss->item as $item) {
-		if(preg_match('/\bsan miguel de allende\b/i', $item-> description)) {
-			/*echo 'Title: ', $item->title; echo "\n";
+		if(preg_match('/\bsan miguel de allende\b/i', $item->description)) {
+			echo 'Title: ', $item->title; echo "\n";
 			echo 'Link: ', $item->link; echo "\n";
 			echo 'Timestamp: ', $item->timestamp;echo "\n";
 			echo 'Description ', $item->description; echo "\n";
-			echo 'HTML encoded content: ', $item->{'content:encoded'}; echo "\n";*/
+			echo 'HTML encoded content: ', $item->{'content:encoded'}; echo "\n";
 			almacena($fuente, base64_encode($item->{'content:encoded'}), $item->link, $conn, 'RSS');
 		}
 	}
@@ -121,7 +121,7 @@ function almacena($titulo, $content, $url, $conn, $tipo){
 		    echo 'Error Insertar: '.$conn->error;
 		}
 	} else {
-		echo 'Ya registrado';
+		echo 'Ya registrado\n';
 	}
 }
 
