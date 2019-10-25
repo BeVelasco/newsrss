@@ -15,7 +15,7 @@ foreach ($fuentes as $value) {
 	if($value['tipo'] == 1){
 		htmlconsulta($conn, $value['url'], $value['idesc']);
 	}else{
-		//rssconsulta($conn, $value['url'], $value['idesc']);
+		rssconsulta($conn, $value['url'], $value['idesc']);
 	}
 }
 mysqli_close($conn);
@@ -33,7 +33,7 @@ function htmlconsulta($conn, $url, $fuente){
 	$data = url_get_contents($url);
 	$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
 	
-	echo "******************************\n";
+	echo $fuente." ******************************\n";
 	preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $data, $match);
 	
 	$regex = '/\b.jpg|.png|.css|.pdf|.gif|.js|tag|youtube|facebook|twitter|instagram|scorecardresearch|xhtml|rss|drupal|buscar\b/i';
@@ -48,8 +48,8 @@ function htmlconsulta($conn, $url, $fuente){
 				$data = url_get_contents($value1);
 				//$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
 				if(preg_match('/\bsan miguel de allende\b/i', $data)){
-					almacena($fuente, base64_encode($data), $value1, $conn);
-					echo "Para guardar --->".$value1."\xA";
+					almacena($fuente, base64_encode($data), $value1, $conn, 'Web');
+					echo "Para guardar --->".$value1."\n";
 				}
 			}
 			//var_dump($match1[0]);
@@ -59,25 +59,22 @@ function htmlconsulta($conn, $url, $fuente){
 	//echo 'Title: ', $rss->title;echo "\n";
 	//echo 'Description: ', $rss->description; echo "\n";
 	//echo 'Link: ', $url; echo "\n";
-	echo "******************************\n";
+	/*echo "******************************\n";*/
 	
 	/*if(preg_match('/\bsan miguel de allende\b/i', $data)){
 		//almacena($fuente, base64_encode($data), $url, $conn);
 	}*/
 }
 
-function rssconsulta($conn, $url){
+function rssconsulta($conn, $url, $fuente){
 	//$url = 'https://www.elsoldesanjuandelrio.com.mx/rss.xml';
 	$rss = Feed::loadRss($url);
 
-	echo "******************************\n";
-
-
-	echo "******************************\n";
+	echo $fuente." ******************************\n";
 	echo 'Title: ', $rss->title;echo "\n";
 	//echo 'Description: ', $rss->description; echo "\n";
 	echo 'Link: ', $rss->link; echo "\n";
-	echo "******************************\n";
+	/*echo "******************************\n";*/
 
 	foreach ($rss->item as $item) {
 		if(preg_match('/\bsan miguel de allende\b/i', $item-> description)) {
@@ -86,8 +83,7 @@ function rssconsulta($conn, $url){
 			echo 'Timestamp: ', $item->timestamp;echo "\n";
 			echo 'Description ', $item->description; echo "\n";
 			echo 'HTML encoded content: ', $item->{'content:encoded'}; echo "\n";*/
-
-			almacena($item->title, base64_encode($item->{'content:encoded'}), $item->link, $conn);
+			almacena($fuente, base64_encode($item->{'content:encoded'}), $item->link, $conn, 'RSS');
 		}
 	}
 }
@@ -110,14 +106,14 @@ function connect(){
 	return $conn;
 } 
 
-function almacena($titulo, $content, $url, $conn){
+function almacena($titulo, $content, $url, $conn, $tipo){
 	$sql = "SELECT * FROM web as w WHERE w.titulo = '".$titulo."' AND w.url = '".$url."'";
 
 	$result = $conn->query($sql);
 
 	if(mysqli_num_rows($result) == 0){
-		$sql = "INSERT INTO web (titulo,content,url,hash)
-				VALUES ('".$titulo."','".$content."','".$url."','".hash('md5',$content)."')";	
+		$sql = "INSERT INTO web (titulo,content,url,hash, tipo)
+				VALUES ('".$titulo."','".$content."','".$url."','".hash('md5',$content)."','".$tipo."')";	
 
 		if ($conn->query($sql) === TRUE) {
 		    echo "Datos almacenados\n";
