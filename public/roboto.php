@@ -32,12 +32,12 @@ function htmlconsulta($conn, $url, $fuente){
 	//$url = 'https://www.am.com.mx/guanajuato/san-miguel-de-allende-t331';
 	$data = url_get_contents($url);
 	$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
-	
+	//echo $data;
 	echo $fuente." ******************************\n";
 	preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $data, $match);
 	
 	$regex = '/\b.jpg|.png|.css|.pdf|.gif|.js|tag|youtube|facebook|twitter|instagram|scorecardresearch|xhtml|rss|drupal|buscar\b/i';
-	var_dump($match[0]);
+	//var_dump($match[0]);
 	
 	foreach ($match[0] as $value) {
 		$count = preg_match_all($regex, $value);
@@ -47,7 +47,7 @@ function htmlconsulta($conn, $url, $fuente){
 			foreach ($match1[0] as $value1) {
 				$data = url_get_contents($value1);
 				//$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
-				if(preg_match('/\bsan miguel de allende\b/i', $data)){
+				if(preg_match('/\b(san\smiguel\sde\sallende|SMA|sma)\b/i', $data)){
 					echo "Para guardar --->".$value1."\n";
 					almacena($fuente, base64_encode($data), $value1, $conn, 'Web');
 				}
@@ -77,7 +77,7 @@ function rssconsulta($conn, $url, $fuente){
 	/*echo "******************************\n";*/
 
 	foreach ($rss->item as $item) {
-		if(preg_match('/\bsan miguel de allende\b/i', $item->description)) {
+		if(preg_match('/\b(san\smiguel\sde\sallende|SMA|sma)\b/i', $item->description)) {
 			echo 'Title: ', $item->title; echo "\n";
 			echo 'Link: ', $item->link; echo "\n";
 			echo 'Timestamp: ', $item->timestamp;echo "\n";

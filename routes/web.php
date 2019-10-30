@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () { return view('welcome');});
+Auth::routes(['reset' => false]);
 
+Route::get('/', function () { return view('welcome');});
 Route::get('/news','NewsController@news')->name('news');
+
+Route::group(['middleware' => ['auth']], function() {
+	Route::get('/home', 'HomeController@index')->name('home');
+
+	Route::post('indicadoresGeneral', 'HomeController@indicadoresGeneral');
+	Route::post('indicadoresPorPalabra', 'HomeController@indicadoresPorPalabra');
+});
+
+Route::get('tipo/{type}', 'SweetController@notification');
+
