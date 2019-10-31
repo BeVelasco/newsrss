@@ -10,12 +10,12 @@
 
 @section('contenido')
 <div class="container">
-  <div class="slim-pageheader">
+<!--   <div class="slim-pageheader">
     <ol class="breadcrumb slim-breadcrumb">
       <li class="breadcrumb-item active" aria-current="page">Inicio</li>
     </ol>
     <h6 class="slim-pagetitle">Inicio</h6>
-  </div><!-- slim-pageheader -->
+  </div> --><!-- slim-pageheader -->
 
   <div class="row row-xs">
     <div class="col-md-6 col-lg-3 order-lg-1">
@@ -82,12 +82,69 @@
 
     <div class="col-md- col-lg-9 order-lg-1">
       <div class="card card-body pd-20 mg-t-10 wt-100">
-        <h6 class="slim-card-title mg-b-20">Gráficos</h6>
-        <div class="row">
-          <input type="text" id="palabra" name="palabra">
+        <h6 class="slim-card-title mg-b-20">Gráfico de noticias encontradas</h6>
+        <div class="row mg-l-5">
+          <input type="text" 
+                 id="palabra" 
+                 name="palabra" 
+                 placeholder="Ingresar palabra a buscar" 
+                 onkeypress="return Enter(event)"
+          >
           <button onclick="busca();">Buscar</button>
         </div>
         <div id="chartArea1" class="dash-chartist"></div>
+      </div><!-- card -->
+
+      <div class="card card-body pd-20 mg-t-10 wt-100">
+        <h6 class="slim-card-title mg-b-20">Gráfico de noticias Mensuales</h6>
+        <div class="row mg-l-5">
+          
+          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
+            <label>Fecha Incio</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                </div>
+              </div>
+              <input type="text" 
+                     id="fi" 
+                     name="fi" 
+                     class="form-control fc-datepicker" 
+                     placeholder="DD/MM/YYYY"
+                     value="{{ $fechas[0]->fi }}" 
+              >
+            </div>
+          </div><!-- wd-200 -->
+
+          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
+            <label>Fecha Fin</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                </div>
+              </div>
+              <input type="text" 
+                     id="ff" 
+                     name="ff" 
+                     class="form-control fc-datepicker" 
+                     placeholder="DD/MM/YYYY"
+                     value="{{ $fechas[0]->ff }}" 
+              >
+            </div>
+          </div><!-- wd-200 -->
+          
+          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
+            <div class="input-group">
+              <div class="input-group-prepend">
+              <button onclick="fechas();">Buscar</button>
+              </div>
+            </div>
+          </div><!-- wd-200 -->          
+        </div>
+
+        <div id="chartArea2" class="dash-chartist"></div>
       </div><!-- card -->
     </div>
   </div>
@@ -107,5 +164,9 @@
   <script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
   <script src="{{ asset('js/ResizeSensor.js') }}"></script>
 
-  <script src="{{ asset('js/dashboard.js') }}"></script>
+  <script src="{{ asset('plugins/jquery.cookie/js/jquery.cookie.js') }}"></script>
+  <script src="{{ asset('plugins/moment/js/moment.js') }}"></script>
+  <script src="{{ asset('plugins/jquery-ui/js/jquery-ui.js') }}"></script>
+
+  <script src="{{ asset('js/principal.js') }}"></script>
 @endsection

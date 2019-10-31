@@ -20,7 +20,9 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	Route::post('indicadoresGeneral', 'HomeController@indicadoresGeneral');
+	Route::post('indicadoresGeneralFechas', 'HomeController@indicadoresGeneralFechas');
 	Route::post('indicadoresPorPalabra', 'HomeController@indicadoresPorPalabra');
+	
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');

@@ -48,7 +48,7 @@ function htmlconsulta($conn, $url, $fuente){
 				$data = url_get_contents($value1);
 				//$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
 				if(preg_match('/\b(san\smiguel\sde\sallende|SMA|sma)\b/i', $data)){
-					echo "Para guardar --->".$value1."\n";
+					/*echo "Para guardar --->".$value1."\n";*/
 					almacena($fuente, base64_encode($data), $value1, $conn, 'Web');
 				}
 			}
@@ -71,19 +71,21 @@ function rssconsulta($conn, $url, $fuente){
 	$rss = Feed::loadRss($url);
 
 	echo $fuente." ******************************\n";
+	/*echo "\n";echo "\n";echo "\n";echo "\n";echo "\n";
 	echo 'Title: ', $rss->title;echo "\n";
-	//echo 'Description: ', $rss->description; echo "\n";
-	echo 'Link: ', $rss->link; echo "\n";
+	echo 'Description: ', $rss->description; echo "\n";
+	echo 'Link: ', $rss->link; echo "\n";*/
 	/*echo "******************************\n";*/
 
 	foreach ($rss->item as $item) {
 		if(preg_match('/\b(san\smiguel\sde\sallende|SMA|sma)\b/i', $item->description)) {
-			echo 'Title: ', $item->title; echo "\n";
+			/*echo 'Title: ', $item->title; echo "\n";
 			echo 'Link: ', $item->link; echo "\n";
-			echo 'Timestamp: ', $item->timestamp;echo "\n";
-			echo 'Description ', $item->description; echo "\n";
-			echo 'HTML encoded content: ', $item->{'content:encoded'}; echo "\n";
-			almacena($fuente, base64_encode($item->{'content:encoded'}), $item->link, $conn, 'RSS');
+			echo 'Timestamp: ', $item->timestamp;echo "\n";*/
+			/*echo 'Description ', $item->description; echo "\n";*/
+			/*echo 'HTML encoded content: ', $item->{'content:encoded'}; echo "\n";*/
+			$data = $item->description;
+			almacena($fuente, base64_encode($data), $item->link, $conn, 'RSS');
 		}
 	}
 }
@@ -114,14 +116,13 @@ function almacena($titulo, $content, $url, $conn, $tipo){
 	if(mysqli_num_rows($result) == 0){
 		$sql = "INSERT INTO web (titulo,content,url,hash, tipo)
 				VALUES ('".$titulo."','".$content."','".$url."','".hash('md5',$content)."','".$tipo."')";	
-
 		if ($conn->query($sql) === TRUE) {
 		    echo "Datos almacenados\n";
 		} else {
 		    echo 'Error Insertar: '.$conn->error;
 		}
 	} else {
-		echo 'Ya registrado\n';
+		echo "Ya registrado\n";
 	}
 }
 

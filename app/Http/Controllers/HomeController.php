@@ -38,8 +38,12 @@ class HomeController extends Controller
                 ;
         $ConteoTotal = DB::SELECT($sql);
 
-        return view('panel.index',['ConteoMes' => $ConteoMes,
-                                    'ConteoTotal' => $ConteoTotal ]);
+        $sql = "select date_format(date(min(w.`created_at`)),'%d/%m/%Y') as fi, date_format(date(now()),'%d/%m/%Y') as ff from web as w;";
+        $fechas = DB::SELECT($sql);
+
+        return view('panel.principal',['ConteoMes' => $ConteoMes,
+                                    'ConteoTotal' => $ConteoTotal,
+                                    'fechas' => $fechas ]);
     }
 
     public function indicadoresGeneral(){
@@ -50,11 +54,31 @@ class HomeController extends Controller
         return json_encode($rs);
     }
 
+    public function indicadoresGeneralFechas(Request $request){
+        $fi = $request->fi;
+        $ff = $request->ff;
+        $palabra = "";
+
+        $res = CallRaw('rpt_meses(CONCAT("&fi=",?,
+                                    "&ff=",?,"&palabra="?
+                            ))'
+            ,[$fi,$ff,$palabra]);
+        
+        return $res;
+    }
+
     public function indicadoresPorPalabra(Request $request){
         $palabra = $request->palabra;
-        $rs = DB::SELECT("SELECT w.`titulo`, COUNT(id) AS noticias 
+        if(!is_null($palabra)){
+            $rs = DB::SELECT("SELECT w.`titulo`, COUNT(w.id) AS noticias
+                            FROM web AS w
+                            WHERE FROM_BASE64(w.`content`) REGEXP '".$palabra."'
+                            GROUP BY w.`titulo`;");
+        }else{
+            $rs = DB::SELECT("SELECT w.`titulo`, COUNT(id) AS noticias 
                     FROM web AS w
                     GROUP BY w.`titulo`;");
+        }
 
         return json_encode($rs);
     }    

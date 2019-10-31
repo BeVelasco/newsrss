@@ -63,7 +63,7 @@ ORDER BY web.`created_at` DESC";
                     </table>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4" style="max-height: 38vw; overflow-y: scroll; font-size:1vw;">
                     <div class="card">
                         <div class="card-header">
                             <h2>Lista de periódicos monitoreados</h2>
