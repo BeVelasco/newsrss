@@ -46,6 +46,11 @@ class HomeController extends Controller
                                     'fechas' => $fechas ]);
     }
 
+    public function monitor()
+    {
+        return view('panel.monitor');
+    }
+
     public function indicadoresGeneral(){
         $rs = DB::SELECT("SELECT w.`titulo`, COUNT(id) AS noticias 
                     FROM web AS w
