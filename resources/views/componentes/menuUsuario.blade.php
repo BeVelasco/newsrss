@@ -7,14 +7,6 @@
 <div class="dropdown-menu dropdown-menu-right">
     <nav class="nav">
         <a 
-            href="#"
-            class   = "nav-link"
-        >
-            <i class="icon ion-person"></i> Perfil
-        </a>
-        
-        
-        <a 
             href    = "{{ route('logout') }}"
             onclick = "event.preventDefault(); document.getElementById('logout-form').submit();"
             class   = "nav-link"
