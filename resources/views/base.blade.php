@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="chrome">
     <head>
+        <title>{{ config('app.name', 'Robot') }}</title>
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
         <script src="{{ asset('plugins/jquery/js/jquery.js') }}"></script>
+
         @include('componentes.head')
         @yield('css')
     </head>
     <body>
-        <div class="slim-header ht-65">
+        <div class="slim-header">
             <div class="container">
                 <div class="slim-header-left">
                     @include('componentes.logoIzquierda')
                 </div>
                 
                 <div class="slim-header-right">
-                </div>
-
-                <div class="dropdown dropdown-c">
-                    @include('componentes.menuUsuario')
+                    <div class="dropdown dropdown-c">
+                        @include('componentes.menuUsuario')
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         {{-- Contenido --}}
         <div class="slim-mainpanel">
             <div class="container">
