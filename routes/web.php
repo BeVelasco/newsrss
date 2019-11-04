@@ -13,11 +13,14 @@
 
 Auth::routes(['reset' => false]);
 
-Route::get('/', function () { return view('home');});
+//Route::get('/', function () { return view('/login');});
+Route::get('/', function () { return redirect('login'); });
+
 
 Route::group(['middleware' => ['auth']], function() {
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('monitor', 'HomeController@monitor')->name('monitor');
+	Route::get('configuracion', 'HomeController@configuracion')->name('configuracion');
 
 	Route::post('indicadoresGeneral', 'HomeController@indicadoresGeneral');
 	Route::post('indicadoresGeneralFechas', 'HomeController@indicadoresGeneralFechas');
