@@ -20,10 +20,10 @@
             </div><!-- slim-pageheader -->
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6 col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <div class="row mg-l-15 mg-r-15">
+                        <div class="row">
                             <div class="col-11">
                                 <h6 class="slim-card-title tx-primary">Fuentes</h6>
                             </div>
@@ -32,8 +32,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body" style="max-height: 25vw; overflow-y: scroll;">
-                        <table class="table table-striped mg-b-0 tx-12">
+                    <div class="card-body">
+                        <div class="table-responsive table-striped">
+                        <table class="table tx-12" >
                             <thead>
                                 <tr>
                                     <th>Descripcion</th>
@@ -60,13 +61,81 @@
                                 @endforeach
                             </tbody>
                          </table>
+                        </div>
                          <span> {{ $fuentes->links() }} </span>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
-                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-11">
+                                <h6 class="slim-card-title tx-primary">Palabras de busqueda general</h6>
+                            </div>
+                            <div class="col-1" >
+                                <a href=""><i class = "icon ion-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div class="table">
+                                <table class="table">
+                                    <thead>
+                                        <td>Palabra</td>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($palabras as $vpalabras)
+                                        @php
+                                            $cadena = str_replace('\s',' ',$vpalabras->palabra);
+                                        @endphp
+                                        <tr>
+                                            <td>{{ $cadena }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--card-->
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-11">
+                                <h6 class="slim-card-title tx-primary">Palabras de busqueda Especiales</h6>
+                            </div>
+                            <div class="col-1" >
+                                <a href=""><i class = "icon ion-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div class="table">
+                                <table class="table">
+                                    <thead>
+                                        <td>Palabra</td>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($palabras as $vpalabras)
+                                        @php
+                                            $cadena = str_replace('\s',' ',$vpalabras->palabra);
+                                        @endphp
+                                        <tr>
+                                            <td>{{ $cadena }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--card-->
+
             </div>
         </div>
 

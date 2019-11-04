@@ -181,8 +181,9 @@ class HomeController extends Controller
     }   
 
     public function configuracion(Request $request){
+        $palabras = DB::table('palabra_buscar')->paginate(5);
         $fuentes = DB::table('fuentes')->paginate(5);
-
-        return view('panel.configuracion',['fuentes' => $fuentes]);
+        return view('panel.configuracion',['fuentes' => $fuentes,
+                                            'palabras' => $palabras ]);
     } 
 }
