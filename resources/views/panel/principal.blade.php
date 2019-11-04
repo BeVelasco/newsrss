@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/Ionicons/css/ionicons.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/chartist/css/chartist.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.css">
 
   <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
 @endsection
@@ -19,6 +20,89 @@
 
   <div class="row row-xs">
     <div class="col-md-6 col-lg-3 order-lg-1">
+      
+    <div class="card card-body pd-20 mg-t-10" style="height: 20vw;">
+        <h6 class="slim-card-title mg-b-20">Estadísticas</h6>
+
+        <div class="table-responsive">
+          <table class="table table-striped mg-b-0 tx-13">
+            <tbody>
+              <tr>
+                <td class="pd-l-20">
+                  Noticias de Fuentes RSS
+                </td>
+                <td class="tx-center">
+                  {{ $num_rss[0]->num }}
+                </td>
+              </tr>
+              
+              <tr>
+                <td class="pd-l-20">
+                  Noticias de Fuentes RSS Locales
+                </td>
+                <td class="tx-center">
+                  {{ $rss_locales[0]->num }}
+                </td>
+              </tr>
+              <tr>
+                <td class="pd-l-20">
+                  Noticias de Fuentes RSS Nacionales
+                </td>
+                <td class="tx-center">
+                  {{ $rss_nacionales[0]->num }}
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pd-l-20">
+                  Noticias de Fuentes HTML
+                </td>
+                <td class="tx-center">
+                  {{ $num_html[0]->num }}
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pd-l-20">
+                  Noticias de Fuentes HTML Locales
+                </td>
+                <td class="tx-center">
+                  {{ $html_locales[0]->num }}
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pd-l-20">
+                  Noticias de Fuentes HTML NAcionales
+                </td>
+                <td class="tx-center">
+                  {{ $html_nacionales[0]->num }}
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pd-l-20">
+                  Noticias de Fuentes Twitter
+                </td>
+                <td class="tx-center">
+                  {{ $twitter[0]->num }}
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pd-l-20">
+                  Noticias de Fuentes Facebook
+                </td>
+                <td class="tx-center">
+                  {{ $facebook[0]->num }}
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div><!-- card -->
+
       <div class="card card-body pd-20 mg-t-10" style="height: 20vw;">
         <h6 class="slim-card-title mg-b-20">Inidcador de noticias TOTALES</h6>
 
@@ -82,23 +166,10 @@
 
     <div class="col-md- col-lg-9 order-lg-1">
       <div class="card card-body pd-20 mg-t-10 wt-100">
-        <h6 class="slim-card-title mg-b-20">Gráfico de noticias encontradas</h6>
-        <div class="row mg-l-5">
-          <input type="text" 
-                 id="palabra" 
-                 name="palabra" 
-                 placeholder="Ingresar palabra a buscar" 
-                 onkeypress="return Enter(event)"
-          >
-          <button onclick="busca();">Buscar</button>
-        </div>
-        <div id="chartArea1" class="dash-chartist"></div>
-      </div><!-- card -->
-
-      <div class="card card-body pd-20 mg-t-10 wt-100">
-        <h6 class="slim-card-title mg-b-20">Gráfico de noticias Mensuales</h6>
-        <div class="row mg-l-5">
+        <h6 class="slim-card-title mg-b-20">Noticias registradas - <a href="{{ route('monitor') }}">Datos Extendidos </a></h6> 
           
+        
+        <div class="row mg-l-5">  
           <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
             <label>Fecha Incio</label>
             <div class="input-group">
@@ -135,17 +206,71 @@
             </div>
           </div><!-- wd-200 -->
           
+        </div>
+
+        <div class="row mg-l-5 mg-l-15">
+          <input type="text" 
+                 id="palabra" 
+                 name="palabra" 
+                 placeholder="Ingresar palabra a buscar" 
+                 onkeypress="return Enter(event)"
+          >
+          <button onclick="busca();" class="mg-l-15">Buscar</button>
+        </div>
+        <div id="chartArea1" class="dash-chartist"></div>
+      </div><!-- card -->
+
+      <!-- <div class="card card-body pd-20 mg-t-10 wt-100">
+        <h6 class="slim-card-title mg-b-20">Gráfico de noticias Mensuales</h6>
+        <div class="row mg-l-5">
+          
+          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
+            <label>Fecha Incio</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                </div>
+              </div>
+              <input type="text" 
+                     id="fi" 
+                     name="fi" 
+                     class="form-control fc-datepicker" 
+                     placeholder="DD/MM/YYYY"
+                     value="{{ $fechas[0]->fi }}" 
+              >
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
+            <label>Fecha Fin</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                </div>
+              </div>
+              <input type="text" 
+                     id="ff" 
+                     name="ff" 
+                     class="form-control fc-datepicker" 
+                     placeholder="DD/MM/YYYY"
+                     value="{{ $fechas[0]->ff }}" 
+              >
+            </div>
+          </div>
+          
           <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
             <div class="input-group">
               <div class="input-group-prepend">
               <button onclick="fechas();">Buscar</button>
               </div>
             </div>
-          </div><!-- wd-200 -->          
+          </div>
         </div>
 
         <div id="chartArea2" class="dash-chartist"></div>
-      </div><!-- card -->
+      </div>card -->
     </div>
   </div>
 
@@ -167,6 +292,8 @@
   <script src="{{ asset('plugins/jquery.cookie/js/jquery.cookie.js') }}"></script>
   <script src="{{ asset('plugins/moment/js/moment.js') }}"></script>
   <script src="{{ asset('plugins/jquery-ui/js/jquery-ui.js') }}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
 
   <script src="{{ asset('js/principal.js') }}"></script>
+  @include('sweet::alert')
 @endsection

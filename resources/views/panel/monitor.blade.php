@@ -10,27 +10,25 @@
 
 @section('contenido')
     <input type="txt" name="cad" id="cad" value="" hidden="">
-        <div class="card-header">
-            <div class="row">
-                <div class="col-md-2"><h1>Noticias</h1></div>
-                <div class="col-md-6"><p align="justify">
-                    Robot de busqueda de información de noticias en servicios RSS y HTML de periódicos digitales
-                    </p>
-                </div>
-            </div>
-        </div>
+        <div class="slim-mainpanel">
+            
+            <div class="slim-pageheader">
+              <ol class="breadcrumb slim-breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
+              </ol>
+              <h6 class="slim-pagetitle">Monitor</h6>
+            </div><!-- slim-pageheader -->
 
-        <div class="slim-mainpanel mg-t-15">
             <div class="container">
             
                 <div class="row"> <!-- ----------------------------------------------------------- -->
-                    <div class="col-md-6 col-sm-6" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                    <div class="col-md-6 col-sm-6">
                         <div class="card">
                             <div class="card-header">
-                                Locales
+                                <h6 class="slim-card-title tx-primary">Medios Locales</h6>
                             </div>
-                            <div class="card-body table-responsive">
-                                <table class="table">
+                            <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                                <table class="table table-striped">
                                     @php
                                         $sql = 'SELECT UPPER(f.idesc) as idesc FROM fuentes as f WHERE f.origen = "L"';
                                         $rs = DB::SELECT($sql);
@@ -48,13 +46,10 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-6" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                    <div class="col-md-6 col-sm-6">
                         <div class="card ">
-                            <div class="card-header">
-                                Noticias
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-sm table-responsive">
+                            <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                                <table class="table table-striped table-sm">
                                     <thead>
                                     <tr> <!-- Fila -->
                                         <th>Periódico</th>
@@ -64,6 +59,7 @@
                                     </tr>
                                     </thead>
                                     @php
+                                        $cont = 0;
                                         $sql = "SELECT * 
                                                 FROM web AS w
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
@@ -73,6 +69,7 @@
                                                 ORDER BY w.`created_at` DESC;";
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
+                                        $cont = $cont + 1;
                                     @endphp
                                         <tr>
                                             <td>{{ $row->titulo }}</td>
@@ -85,18 +82,22 @@
                                     @endphp
                                 </table>
                             </div>
-                        </div>
+                        </div> 
+
                     </div>
+                    <div class="tx-primary mg-l-15 pd-y-15 bg-transparent ">
+                        <h6>TOTAL NOTICIAS DE MEDIOS LOCALES:  {{ $cont }}</h6>
+                    </div><!-- card-footer -->
                 </div> <!-- ROW -->
                 <hr>
                 <div class="row mg-t-15"> <!-- ----------------------------------------------------------- -->
-                    <div class="col-md-6 col-sm-6" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                    <div class="col-md-6 col-sm-6">
                         <div class="card">
                             <div class="card-header">
-                                Nacionales
+                                <h6 class="slim-card-title tx-primary">Medios Nacionales</h6>
                             </div>
-                            <div class="card-body table-responsive">
-                                <table class="table">
+                            <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                                <table class="table table-striped table-sm">
                                     @php
                                         $sql = 'SELECT UPPER(f.idesc) as idesc FROM fuentes as f WHERE f.origen = "N"';
                                         $rs = DB::SELECT($sql);
@@ -114,13 +115,10 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-6" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                    <div class="col-md-6 col-sm-6">
                         <div class="card">
-                            <div class="card-header">
-                                Noticias
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-sm">
+                            <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                                <table class="table table-striped table-sm">
                                     <thead>
                                     <tr> <!-- Fila -->
                                         <th>Periódico</th>
@@ -130,6 +128,7 @@
                                     </tr>
                                     </thead>
                                     @php
+                                        $cont = 0;
                                         $sql = "SELECT * 
                                                 FROM web AS w
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
@@ -139,6 +138,7 @@
                                                 ORDER BY w.`created_at` DESC;";
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
+                                        $cont = $cont + 1;
                                     @endphp
                                         <tr>
                                             <td>{{ $row->titulo }}</td>
@@ -153,17 +153,20 @@
                             </div>
                         </div>
                     </div>
+                <div class="tx-primary mg-l-15 pd-y-15 bg-transparent ">
+                        <h6>TOTAL NOTICIAS DE MEDIOS NACIONALES:  {{ $cont }}</h6>
+                    </div><!-- card-footer -->
                 </div> <!-- ROW -->
                 <hr>
 
                 <div class="row mg-t-15"> <!-- ----------------------------------------------------------- -->
-                    <div class="col-md-6 col-sm-6" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                    <div class="col-md-6 col-sm-6">
                         <div class="card">
                             <div class="card-header">
-                                Twitter
+                                <h6 class="slim-card-title tx-primary">Twitter</h6>
                             </div>
-                            <div class="card-body table-responsive">
-                                <table class="table">
+                            <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                                <table class="table table-striped table-sm">
                                     @php
                                         $sql = 'SELECT UPPER(f.idesc) as idesc FROM fuentes as f WHERE f.origen = "T"';
                                         $rs = DB::SELECT($sql);
@@ -181,13 +184,10 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-6" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                    <div class="col-md-6 col-sm-6">
                         <div class="card">
-                            <div class="card-header">
-                                Noticias
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-sm">
+                            <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                                <table class="table table-striped table-sm">
                                     <thead>
                                     <tr> <!-- Fila -->
                                         <th>Periódico</th>
@@ -197,6 +197,7 @@
                                     </tr>
                                     </thead>
                                     @php
+                                        $cont = 0;
                                         $sql = "SELECT * 
                                                 FROM web AS w
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
@@ -206,6 +207,7 @@
                                                 ORDER BY w.`created_at` DESC;";
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
+                                        $cont = $cont + 1;
                                     @endphp
                                         <tr>
                                             <td>{{ $row->titulo }}</td>
@@ -220,16 +222,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tx-primary mg-l-15 pd-y-15 bg-transparent ">
+                        <h6>TOTAL NOTICIAS DE TWITTER:  {{ $cont }}</h6>
+                    </div><!-- card-footer -->
                 </div> <!-- ROW -->
                 <hr>
                 <div class="row mg-t-15"> <!-- ----------------------------------------------------------- -->
-                    <div class="col-md-6 col-sm-6" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                    <div class="col-md-6 col-sm-6">
                         <div class="card">
                             <div class="card-header">
-                                Facebook
+                                <h6 class="slim-card-title tx-primary">Facebook</h6>
                             </div>
-                            <div class="card-body table-responsive">
-                                <table class="table">
+                            <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
+                                <table class="table table-striped table-sm">
                                     @php
                                         $sql = 'SELECT UPPER(f.idesc) as idesc FROM fuentes as f WHERE f.origen = "F"';
                                         $rs = DB::SELECT($sql);
@@ -249,9 +254,6 @@
 
                     <div class="col-md-6 col-sm-6" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
                         <div class="card">
-                            <div class="card-header">
-                                Noticias
-                            </div>
                             <div class="card-body table-responsive">
                                 <table class="table table-sm">
                                     <thead>
@@ -263,6 +265,7 @@
                                     </tr>
                                     </thead>
                                     @php
+                                        $cont = 0;
                                         $sql = "SELECT * 
                                                 FROM web AS w
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
@@ -272,6 +275,7 @@
                                                 ORDER BY w.`created_at` DESC;";
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
+                                        $cont = $cont + 1;
                                     @endphp
                                         <tr>
                                             <td>{{ $row->titulo }}</td>
@@ -286,6 +290,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tx-primary mg-l-15 pd-y-15 bg-transparent ">
+                        <h6>TOTAL NOTICIAS DE FACEBOOK:  {{ $cont }}</h6>
+                    </div><!-- card-footer -->
                 </div> <!-- ROW -->
             </div> <!-- Container -->
         </div> <!-- slim-mainpanel -->

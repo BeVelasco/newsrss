@@ -16,41 +16,53 @@ $(document).ready(function () {
 
 function creaGrafico(){
   'use strict'
+  var fi = $("#fi").val();
+  var ff = $("#ff").val();
 
-  $.ajax({
-    url: 'indicadoresGeneral',
-    type: 'POST',
-    data: {},
-    dataType: 'JSON',
-    success: function (data) {
-      var medios = [];
-      var cantidad = [];
+  var part1 =fi.split('/');
+  var part2 =ff.split('/');
 
-      for (var i = 0; i <= data.length - 1; i++) {
-        medios.push(data[i].titulo);
-        cantidad.push(data[i].noticias);
-      }
-
-      var area1 = new Chartist.Line('#chartArea1', {
-        labels: medios,
-        series: [ cantidad ]
-      }, {
-        height: '30vw',
-        fullWidth: true,
-        chartPadding: 30,
-        plugins: [
-          Chartist.plugins.ctPointLabels({
-          textAnchor: 'middle'
-          })
-        ]
-      });
-
-        },
-    error: function (error) {
-      swal('error','Error al general el grafico');
-    }
-  });
+  var md1 = new Date(part1[2], part1[1] - 1 , part1[0]);
+  var md2 = new Date(part2[2], part2[1] - 1 , part2[0]);
   
+  if(md1 <= md2){
+
+    $.ajax({
+      url: 'indicadoresGeneral',
+      type: 'POST',
+      data: {},
+      dataType: 'JSON',
+      success: function (data) {
+        var medios = [];
+        var cantidad = [];
+
+        for (var i = 0; i <= data.length - 1; i++) {
+          medios.push(data[i].titulo);
+          cantidad.push(data[i].noticias);
+        }
+
+        var area1 = new Chartist.Line('#chartArea1', {
+          labels: medios,
+          series: [ cantidad ]
+        }, {
+          height: '30vw',
+          fullWidth: true,
+          chartPadding: 30,
+          plugins: [
+            Chartist.plugins.ctPointLabels({
+            textAnchor: 'middle'
+            })
+          ]
+        });
+
+          },
+      error: function (error) {
+        swal('error','Error al general el grafico');
+      }
+    });
+  } else {
+    swal('error','Error al general el grafico');
+  }
 }
 
 function creaGraficoFechas(){
@@ -111,40 +123,61 @@ function creaGraficoFechas(){
 
 function Palabra(palabra){
   'use strict'
+  
+  var fi = $("#fi").val();
+  var ff = $("#ff").val();
 
-  $.ajax({
-    url: 'indicadoresPorPalabra',
-    type: 'POST',
-    data: {'palabra': palabra},
-    dataType: 'JSON',
-    success: function (data) {
-      var medios = [];
-      var cantidad = [];
+  var part1 =fi.split('/');
+  var part2 =ff.split('/');
 
-      for (var i = 0; i <= data.length - 1; i++) {
-        medios.push(data[i].titulo);
-        cantidad.push(data[i].noticias);
+  var md1 = new Date(part1[2], part1[1] - 1 , part1[0]);
+  var md2 = new Date(part2[2], part2[1] - 1 , part2[0]);
+  
+  if(md1 <= md2){
+
+    $.ajax({
+      url: 'indicadoresPorPalabra',
+      type: 'POST',
+      data: {'palabra': palabra,
+              'fi': fi,
+              'ff': ff 
+            },
+      dataType: 'JSON',
+      success: function (data) {
+        var medios = [];
+        var cantidad = [];
+
+        for (var i = 0; i <= data.length - 1; i++) {
+          medios.push(data[i].titulo);
+          cantidad.push(data[i].noticias);
+        }
+
+        var area1 = new Chartist.Line('#chartArea1', {
+          labels: medios,
+          series: [ cantidad ]
+        }, {
+          height: '30vw',
+          fullWidth: true,
+          chartPadding: 30,
+          plugins: [
+            Chartist.plugins.ctPointLabels({
+            textAnchor: 'middle'
+            })
+          ]
+        });
+
+          },
+      error: function (error) {
+        /*swal('error','Error al general el grafico');*/
       }
-
-      var area1 = new Chartist.Line('#chartArea1', {
-        labels: medios,
-        series: [ cantidad ]
-      }, {
-        height: '30vw',
-        fullWidth: true,
-        chartPadding: 30,
-        plugins: [
-          Chartist.plugins.ctPointLabels({
-          textAnchor: 'middle'
-          })
-        ]
-      });
-
-        },
-    error: function (error) {
-      /*swal('error','Error al general el grafico');*/
-    }
-  });
+    });
+  } else {
+    swal({
+      title: "Error de fechas",
+      text: "La fecha incial debe de ser menor a la fecha final.",
+      type: "error"
+    });
+  }
   
 }
 
