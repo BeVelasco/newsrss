@@ -18,14 +18,16 @@ Route::get('/', function () { return redirect('login'); });
 
 
 Route::group(['middleware' => ['auth']], function() {
-	Route::get('/home', 'HomeController@index')->name('home');
-	Route::get('monitor', 'HomeController@monitor')->name('monitor');
+    //Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@monitor')->name('home');
+    //Route::get('monitor', 'HomeController@monitor')->name('monitor');
+    Route::get('monitor', 'HomeController@index')->name('monitor');
 	Route::get('configuracion', 'HomeController@configuracion')->name('configuracion');
 
 	Route::post('indicadoresGeneral', 'HomeController@indicadoresGeneral');
 	Route::post('indicadoresGeneralFechas', 'HomeController@indicadoresGeneralFechas');
 	Route::post('indicadoresPorPalabra', 'HomeController@indicadoresPorPalabra');
-	
+
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');

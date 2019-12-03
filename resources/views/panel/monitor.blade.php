@@ -11,16 +11,16 @@
 @section('contenido')
     <input type="txt" name="cad" id="cad" value="" hidden="">
         <div class="slim-mainpanel">
-            
+
             <div class="slim-pageheader">
               <ol class="breadcrumb slim-breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
               </ol>
-              <h6 class="slim-pagetitle">Monitor</h6>
+              <h6 class="slim-pagetitle">Monitor - SAN MIGUEL DE ALLENDE</h6>
             </div><!-- slim-pageheader -->
 
             <div class="container">
-            
+
                 <div class="row"> <!-- ----------------------------------------------------------- -->
                     <div class="col-md-6 col-sm-6">
                         <div class="card">
@@ -42,7 +42,7 @@
                                     @endphp
                                 </table>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -60,10 +60,10 @@
                                     </thead>
                                     @php
                                         $cont = 0;
-                                        $sql = "SELECT * 
+                                        $sql = "SELECT *
                                                 FROM web AS w
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
-                                                AND w.`titulo` IN (SELECT f.idesc 
+                                                AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'L')
                                                 ORDER BY w.`created_at` DESC;";
@@ -75,14 +75,14 @@
                                             <td>{{ $row->titulo }}</td>
                                             <td>{{ $row->created_at }}</td>
                                             <td align="justify"><a href="{{ $row->url }}" target="_blank">{{ $row->url }}</a></td>
-                                            
+
                                         </tr>
                                     @php
                                     }
                                     @endphp
                                 </table>
                             </div>
-                        </div> 
+                        </div>
 
                     </div>
                     <div class="tx-primary mg-l-15 pd-y-15 bg-transparent ">
@@ -111,7 +111,7 @@
                                     @endphp
                                 </table>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -129,10 +129,10 @@
                                     </thead>
                                     @php
                                         $cont = 0;
-                                        $sql = "SELECT * 
+                                        $sql = "SELECT *
                                                 FROM web AS w
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
-                                                AND w.`titulo` IN (SELECT f.idesc 
+                                                AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'N')
                                                 ORDER BY w.`created_at` DESC;";
@@ -144,7 +144,7 @@
                                             <td>{{ $row->titulo }}</td>
                                             <td>{{ $row->created_at }}</td>
                                             <td align="justify"><a href="{{ $row->url }}" target="_blank">{{ $row->url }}</a></td>
-                                            
+
                                         </tr>
                                     @php
                                     }
@@ -180,7 +180,7 @@
                                     @endphp
                                 </table>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -198,10 +198,10 @@
                                     </thead>
                                     @php
                                         $cont = 0;
-                                        $sql = "SELECT * 
+                                        $sql = "SELECT *
                                                 FROM web AS w
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
-                                                AND w.`titulo` IN (SELECT f.idesc 
+                                                AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'T')
                                                 ORDER BY w.`created_at` DESC;";
@@ -213,7 +213,7 @@
                                             <td>{{ $row->titulo }}</td>
                                             <td>{{ $row->created_at }}</td>
                                             <td align="justify"><a href="{{ $row->url }}" target="_blank">{{ $row->url }}</a></td>
-                                            
+
                                         </tr>
                                     @php
                                     }
@@ -248,7 +248,7 @@
                                     @endphp
                                 </table>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -266,10 +266,10 @@
                                     </thead>
                                     @php
                                         $cont = 0;
-                                        $sql = "SELECT * 
+                                        $sql = "SELECT *
                                                 FROM web AS w
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
-                                                AND w.`titulo` IN (SELECT f.idesc 
+                                                AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'F')
                                                 ORDER BY w.`created_at` DESC;";
@@ -281,7 +281,7 @@
                                             <td>{{ $row->titulo }}</td>
                                             <td>{{ $row->created_at }}</td>
                                             <td align="justify"><a href="{{ $row->url }}" target="_blank">{{ $row->url }}</a></td>
-                                            
+
                                         </tr>
                                     @php
                                     }
