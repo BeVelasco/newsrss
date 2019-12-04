@@ -273,13 +273,14 @@ class HomeController extends Controller
     }
 
     public function indicadoresMedios(){
-        $rs = DB::SELECT("SELECT CASE WHEN f.origen = 'F' THEN 'FACEBOOK'
-                                WHEN f.origen = 'L' THEN 'NACIONALES'
-                                ELSE 'LOCALES'
-                                END
+        $rs = DB::SELECT("SELECT CASE WHEN f.origen = 'F' THEN 'REDES'
+                            WHEN f.origen = 'L' THEN 'LOCALES'
+                            ELSE 'NACIONALES'
+                            END
                             AS titulo ,COUNT(*) AS noticias
                             FROM fuentes AS f
                             WHERE f.origen <> 'T'
+                            AND f.tipo = 1
                             GROUP BY f.`origen`
                             ORDER BY f.origen DESC;");
 
