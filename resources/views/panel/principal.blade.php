@@ -20,9 +20,9 @@
 
   <div class="row row-xs">
     <div class="col-md-6 col-lg-3 order-lg-1">
-      
-    <div class="card card-body pd-20 mg-t-10" style="height: 20vw;">
-        <h6 class="slim-card-title mg-b-20">Estadísticas</h6>
+
+    <div class="card card-body pd-20 mg-t-10">
+        <h6 class="slim-card-title mg-b-20">Conteo de noticias</h6>
 
         <div class="table-responsive">
           <table class="table table-striped mg-b-0 tx-13">
@@ -35,7 +35,7 @@
                   {{ $num_rss[0]->num }}
                 </td>
               </tr>
-              
+
               <tr>
                 <td class="pd-l-20">
                   Noticias de Fuentes RSS Locales
@@ -103,8 +103,8 @@
         </div>
       </div><!-- card -->
 
-      <div class="card card-body pd-20 mg-t-10" style="height: 20vw;">
-        <h6 class="slim-card-title mg-b-20">Inidcador de noticias TOTALES</h6>
+      <div class="card card-body pd-20 mg-t-10">
+        <h6 class="slim-card-title mg-b-20">Indicador de noticias TOTALES</h6>
 
         <div class="table-responsive">
           <table class="table mg-b-0 tx-13">
@@ -115,7 +115,7 @@
               </tr>
             </thead>
             <tbody>
-              @php $count = 0; @endphp 
+              @php $count = 0; @endphp
               @foreach($ConteoTotal as $vconteot)
               <tr>
                 <td class="pd-l-20">
@@ -132,10 +132,10 @@
             </tbody>
           </table>
         </div>
-      </div><!-- card -->  
+      </div><!-- card -->
 
       <div class="card card-body pd-20 mg-t-10" style="height: 20vw;">
-        <h6 class="slim-card-title mg-b-20">Inidcador de noticias del MES</h6>
+        <h6 class="slim-card-title mg-b-20">Inidcador de noticias al MES</h6>
 
         <div class="table-responsive">
           <table class="table mg-b-0 tx-13">
@@ -160,16 +160,16 @@
             </tbody>
           </table>
         </div>
-      </div><!-- card -->  
+      </div><!-- card -->
 
     </div>
 
     <div class="col-md- col-lg-9 order-lg-1">
       <div class="card card-body pd-20 mg-t-10 wt-100">
-        <h6 class="slim-card-title mg-b-20">Noticias registradas - <a href="{{ route('monitor') }}">Datos Extendidos </a></h6> 
-          
-        
-        <div class="row mg-l-5">  
+        <h6 class="slim-card-title mg-b-20">Noticias registradas</h6>
+
+
+        <div class="row mg-l-5">
           <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
             <label>Fecha Incio</label>
             <div class="input-group">
@@ -178,12 +178,12 @@
                   <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                 </div>
               </div>
-              <input type="text" 
-                     id="fi" 
-                     name="fi" 
-                     class="form-control fc-datepicker" 
+              <input type="text"
+                     id="fi"
+                     name="fi"
+                     class="form-control fc-datepicker"
                      placeholder="DD/MM/YYYY"
-                     value="{{ $fechas[0]->fi }}" 
+                     value="{{ $fechas[0]->fi }}"
               >
             </div>
           </div><!-- wd-200 -->
@@ -196,23 +196,23 @@
                   <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                 </div>
               </div>
-              <input type="text" 
-                     id="ff" 
-                     name="ff" 
-                     class="form-control fc-datepicker" 
+              <input type="text"
+                     id="ff"
+                     name="ff"
+                     class="form-control fc-datepicker"
                      placeholder="DD/MM/YYYY"
-                     value="{{ $fechas[0]->ff }}" 
+                     value="{{ $fechas[0]->ff }}"
               >
             </div>
           </div><!-- wd-200 -->
-          
+
         </div>
 
         <div class="row mg-l-5 mg-l-15">
-          <input type="text" 
-                 id="palabra" 
-                 name="palabra" 
-                 placeholder="Ingresar palabra a buscar" 
+          <input type="text"
+                 id="palabra"
+                 name="palabra"
+                 placeholder="Ingresar palabra a buscar"
                  onkeypress="return Enter(event)"
           >
           <button onclick="busca();" class="mg-l-15">Buscar</button>
@@ -223,7 +223,7 @@
       <!-- <div class="card card-body pd-20 mg-t-10 wt-100">
         <h6 class="slim-card-title mg-b-20">Gráfico de noticias Mensuales</h6>
         <div class="row mg-l-5">
-          
+
           <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
             <label>Fecha Incio</label>
             <div class="input-group">
@@ -232,12 +232,12 @@
                   <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                 </div>
               </div>
-              <input type="text" 
-                     id="fi" 
-                     name="fi" 
-                     class="form-control fc-datepicker" 
+              <input type="text"
+                     id="fi"
+                     name="fi"
+                     class="form-control fc-datepicker"
                      placeholder="DD/MM/YYYY"
-                     value="{{ $fechas[0]->fi }}" 
+                     value="{{ $fechas[0]->fi }}"
               >
             </div>
           </div>
@@ -250,16 +250,16 @@
                   <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                 </div>
               </div>
-              <input type="text" 
-                     id="ff" 
-                     name="ff" 
-                     class="form-control fc-datepicker" 
+              <input type="text"
+                     id="ff"
+                     name="ff"
+                     class="form-control fc-datepicker"
                      placeholder="DD/MM/YYYY"
-                     value="{{ $fechas[0]->ff }}" 
+                     value="{{ $fechas[0]->ff }}"
               >
             </div>
           </div>
-          
+
           <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
             <div class="input-group">
               <div class="input-group-prepend">
