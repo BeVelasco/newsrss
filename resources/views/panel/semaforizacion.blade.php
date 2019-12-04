@@ -14,7 +14,7 @@
 
   <div class="row row-xs">
         <div class="card-header">
-                <h6 class="slim-pagetitle">Semaforización</h6>
+                <h6 class="slim-pagetitle">Semaforización - Busqueda de palabras clave</h6>
               </div>
             <div class="section-wrapper mg-t-20">
 
