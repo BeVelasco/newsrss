@@ -24,7 +24,7 @@
                     <a href="{{ route('estadisticas') }}">
                         <button type="button" class="btn-primary">Estadisticas</button></a>
                     <a href="{{ route('semaforizacion') }}">
-                        <button type="button" class="btn-primary">semaforización</button></a>
+                        <button type="button" class="btn-primary">Semaforización</button></a>
                 </div>
 
                 <div class="slim-header-right">
