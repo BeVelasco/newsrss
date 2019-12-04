@@ -147,10 +147,6 @@
                                 reflejan el mismo número de porcentajes ya que  están estrechamente  relacionados y  se observa la
                                 postura de las acciones de gobierno que  realiza la actual administración<br><br>
 
-                                En la página oficial del ayuntamiento de san Miguel de Allende   hace referencia de la
-                                conmemoración del  “Día internacional de la lucha contra el cáncer de mama” iluminando
-                                edificios del  17 octubre 2019<br><br>
-
                                 La postura oficial  por parte del ayuntamiento es pro activa, dando  a conocer las
                                 obras públicas que se han realizado así como los eventos  culturales y artísticos del
                                 municipales<br><br>
