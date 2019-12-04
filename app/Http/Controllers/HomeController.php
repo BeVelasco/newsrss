@@ -23,6 +23,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function semaforizacion(){
+        return view('panel.semaforizacion');
+    }
+
     public function index()
     {
         $sql = "select concat('(',f.id,') ',w.`titulo`) as titulo, count(w.id) as noticias from web as w
