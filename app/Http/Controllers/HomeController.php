@@ -202,7 +202,7 @@ class HomeController extends Controller
                 ;
         $ConteoTotal = DB::SELECT($sql);
 
-        $sql = "SELECT w.`titulo`, COUNT(w.id) AS noticias
+        $sql = "SELECT concat('(',f.id,') ',w.`titulo`) as titulo, COUNT(w.id) AS noticias
                 FROM web AS w
                 LEFT JOIN `fuentes` AS f ON f.idesc = w.titulo
                 WHERE f.`origen` = 'L'
@@ -210,7 +210,7 @@ class HomeController extends Controller
                 ;
         $ConteoTotalLocales = DB::SELECT($sql);
 
-        $sql = "SELECT w.`titulo`, COUNT(w.id) AS noticias
+        $sql = "SELECT concat('(',f.id,') ',w.`titulo`) as titulo, COUNT(w.id) AS noticias
                 FROM web AS w
                 LEFT JOIN `fuentes` AS f ON f.idesc = w.titulo
                 WHERE f.`origen` = 'N'
