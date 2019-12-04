@@ -196,7 +196,7 @@
       </div><!-- card -->
 
         <div class="card card-body pd-20 mg-t-10 wt-100">
-            <h6 class="slim-card-title mg-b-20">Noticias Medios Locales</h6>
+            <h6 class="slim-card-title mg-b-20">Noticias Medios Nacionales</h6>
 
 
             {{-- <div class="row mg-l-5">
