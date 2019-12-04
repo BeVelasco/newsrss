@@ -4,7 +4,11 @@ $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('cont
 $(document).ready(function () {
   'use strict'
 
-   creaGraficoGeneral();
+  creaGraficoMedios();
+  creaGraficoLocales();
+  creaGraficoNacionales();
+
+//   creaGraficoGeneral();
 //   creaGraficoFechas();
 
   // Datepicker
@@ -14,7 +18,7 @@ $(document).ready(function () {
   });
 });
 
-function creaGraficoGeneral(){
+function creaGraficoMedios(){
     'use strict'
     // var fi = $("#fi").val();
     // var ff = $("#ff").val();
@@ -28,7 +32,7 @@ function creaGraficoGeneral(){
     // if(md1 <= md2){
 
       $.ajax({
-        url: 'indicadoresGeneral',
+        url: 'indicadoresMedios',
         type: 'POST',
         data: {},
         dataType: 'JSON',
@@ -41,7 +45,7 @@ function creaGraficoGeneral(){
             cantidad.push(data[i].noticias);
           }
 
-          var area1 = new Chartist.Line('#chartArea1', {
+          var area1 = new Chartist.Line('#chartAreaMedios', {
             labels: medios,
             series: [ cantidad ]
           }, {
@@ -63,6 +67,108 @@ function creaGraficoGeneral(){
     // } else {
     //   swal('error','Error al general el grafico');
     // }
+}
+
+function creaGraficoLocales(){
+    'use strict'
+    // var fi = $("#fi").val();
+    // var ff = $("#ff").val();
+
+    // var part1 =fi.split('/');
+    // var part2 =ff.split('/');
+
+    // var md1 = new Date(part1[2], part1[1] - 1 , part1[0]);
+    // var md2 = new Date(part2[2], part2[1] - 1 , part2[0]);
+
+    // if(md1 <= md2){
+
+      $.ajax({
+        url: 'indicadoresLocales',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+          var medios = [];
+          var cantidad = [];
+
+          for (var i = 0; i <= data.length - 1; i++) {
+            medios.push(data[i].titulo);
+            cantidad.push(data[i].noticias);
+          }
+
+          var area1 = new Chartist.Line('#chartAreaLocales', {
+            labels: medios,
+            series: [ cantidad ]
+          }, {
+            height: '20vw',
+            fullWidth: true,
+            chartPadding: 30,
+            plugins: [
+              Chartist.plugins.ctPointLabels({
+              textAnchor: 'middle'
+              })
+            ]
+          });
+
+            },
+        error: function (error) {
+          swal('error','Error al general el grafico');
+        }
+      });
+    // } else {
+    //   swal('error','Error al general el grafico');
+    // }
+}
+
+function creaGraficoNacionales(){
+  'use strict'
+  var fi = $("#fi").val();
+  var ff = $("#ff").val();
+
+//   var part1 =fi.split('/');
+//   var part2 =ff.split('/');
+
+//   var md1 = new Date(part1[2], part1[1] - 1 , part1[0]);
+//   var md2 = new Date(part2[2], part2[1] - 1 , part2[0]);
+
+//   if(md1 <= md2){
+
+    $.ajax({
+      url: 'indicadoresNacionales',
+      type: 'POST',
+      data: {},
+      dataType: 'JSON',
+      success: function (data) {
+        var medios = [];
+        var cantidad = [];
+
+        for (var i = 0; i <= data.length - 1; i++) {
+          medios.push(data[i].titulo);
+          cantidad.push(data[i].noticias);
+        }
+
+        var area1 = new Chartist.Line('#chartAreaNacionales', {
+          labels: medios,
+          series: [ cantidad ]
+        }, {
+          height: '30vw',
+          fullWidth: true,
+          chartPadding: 30,
+          plugins: [
+            Chartist.plugins.ctPointLabels({
+            textAnchor: 'middle'
+            })
+          ]
+        });
+
+          },
+      error: function (error) {
+        swal('error','Error al general el grafico');
+      }
+    });
+//   } else {
+//     swal('error','Error al general el grafico');
+//   }
 }
 
 function creaGraficoFechas(){

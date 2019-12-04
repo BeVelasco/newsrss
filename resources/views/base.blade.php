@@ -16,7 +16,17 @@
                 <div class="slim-header-left">
                     @include('componentes.logoIzquierda')
                 </div>
-                
+
+                <div class="slim-header-center">
+                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES - SAN MIGUEL DE ALLENDE</h4>
+                    <a href="{{ route('home') }}">
+                        <button type="button" class="btn-primary">Panel general</button></a>
+                    <a href="{{ route('estadisticas') }}">
+                        <button type="button" class="btn-primary">Estadisticas</button></a>
+                    <a href="{{ route('semaforizacion') }}">
+                        <button type="button" class="btn-primary">semaforización</button></a>
+                </div>
+
                 <div class="slim-header-right">
                     <div class="dropdown dropdown-c">
                         @include('componentes.menuUsuario')

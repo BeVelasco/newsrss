@@ -19,13 +19,19 @@ Route::get('/', function () { return redirect('login'); });
 
 Route::group(['middleware' => ['auth']], function() {
 	Route::get('/home', 'HomeController@index')->name('home');
-	Route::get('monitor', 'HomeController@monitor')->name('monitor');
+    Route::get('monitor', 'HomeController@monitor')->name('monitor');
+    Route::get('estadisticas', 'HomeController@estadisticas')->name('estadisticas');
+    Route::get('semaforizacion', 'HomeController@semaforizacion')->name('semaforizacion');
 	Route::get('configuracion', 'HomeController@configuracion')->name('configuracion');
 
-	Route::post('indicadoresGeneral', 'HomeController@indicadoresGeneral');
+    Route::post('indicadoresMedios', 'HomeController@indicadoresMedios');
+    Route::post('indicadoresLocales', 'HomeController@indicadoresLocales');
+    Route::post('indicadoresNacionales', 'HomeController@indicadoresNacionales');
+
+    Route::post('indicadoresGeneral', 'HomeController@indicadoresGeneral');
 	Route::post('indicadoresGeneralFechas', 'HomeController@indicadoresGeneralFechas');
 	Route::post('indicadoresPorPalabra', 'HomeController@indicadoresPorPalabra');
-	
+
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');
