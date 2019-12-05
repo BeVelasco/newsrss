@@ -25,6 +25,8 @@
                         <button type="button" class="btn-primary">Estadisticas</button></a>
                     <a href="{{ route('semaforizacion') }}">
                         <button type="button" class="btn-primary">Semaforización</button></a>
+                    <a href="{{ route('monitor') }}">
+                        <button type="button" class="btn-primary">Monitor</button></a>
                 </div>
 
                 <div class="slim-header-right">
