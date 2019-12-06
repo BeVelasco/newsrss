@@ -16,7 +16,7 @@
               <ol class="breadcrumb slim-breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
               </ol>
-              <h6 class="slim-pagetitle">Monitor - SAN MIGUEL DE ALLENDE</h6>
+              <h6 class="slim-pagetitle">Monitoreo - SAN MIGUEL DE ALLENDE</h6>
             </div><!-- slim-pageheader -->
 
             <div class="container">
@@ -25,12 +25,12 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="card">
                             <div class="card-header">
-                                <h6 class="slim-card-title tx-primary">Medios Locales</h6>
+                                <h6 class="slim-card-title tx-primary">Medios Internacionales</h6>
                             </div>
                             <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
                                 <table class="table table-striped">
                                     @php
-                                        $sql = 'SELECT UPPER(f.idesc) as idesc FROM fuentes as f WHERE f.origen = "L"';
+                                        $sql = 'SELECT UPPER(f.idesc) as idesc FROM fuentes as f WHERE f.origen = "I"';
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
                                     @endphp
@@ -65,7 +65,7 @@
                                                 WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
                                                 AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
-                                                WHERE f.`origen` = 'L')
+                                                WHERE f.`origen` = 'I')
                                                 ORDER BY w.`created_at` DESC;";
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){

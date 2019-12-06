@@ -32,8 +32,8 @@
                             <th class="wd-20p pd-y-5 tx-center">Tema</th>
                             <th class="pd-y-5 tx-center" >Acciones de Gobierno</th>
                             <th class="pd-y-5 tx-center" >Incurrencias</th>
-                            <th colspan="2" class="pd-y-5 tx-center" >Impacto</th>
-                            <th colspan="2" class="pd-y-5 tx-center" >Cobertura</th>
+                            <th colspan="3" class="pd-y-5 tx-center" >Impacto</th>
+                            <th colspan="3" class="pd-y-5 tx-center" >Cobertura</th>
                             <th class="pd-y-5 tx-center" >Reacción en redes sociales</th>
                             <th class="pd-y-5 tx-center" >Medición en días</th>
                           </tr>
@@ -41,8 +41,10 @@
                             <th colspan="3" class="wd-20p pd-y-5 tx-center"></th>
                             <th class="pd-y-5 tx-center" >Local</th>
                             <th class="pd-y-5 tx-center" >Nacional</th>
+                            <th class="pd-y-10 tx-center" >Internacional</th>
                             <th class="pd-y-5 tx-center" >Local</th>
                             <th class="pd-y-5 tx-center" >Nacional</th>
+                            <th class="pd-y-10 tx-center" >Internacional</th>
                             <th class="pd-y-5 tx-center" ></th>
                             <th class="pd-y-5 tx-center" ></th>
                           </tr>
@@ -56,8 +58,10 @@
                             <td class="tx-center">231</td>
                             <td class="tx-center">217</td>
                             <td class="tx-center">14</td>
+                            <td class="tx-center">0</td>
                             <td class="tx-center">9</td>
                             <td class="tx-center">3</td>
+                            <td class="tx-center">0</td>
 
 
                             <td class="tx-center">alegría, enojo, molestia</td>
@@ -71,8 +75,10 @@
                             <td class="tx-center">231</td>
                             <td class="tx-center">223</td>
                             <td class="tx-center">8</td>
+                            <td class="tx-center">0</td>
                             <td class="tx-center">9</td>
                             <td class="tx-center">2</td>
+                            <td class="tx-center">0</td>
 
                             <td class="tx-center">aceptación, rechazo</td>
                             <td class="tx-center">70</td>
@@ -86,8 +92,10 @@
                             <td class="tx-center">172</td>
                             <td class="tx-center">142</td>
                             <td class="tx-center">30</td>
+                            <td class="tx-center">0</td>
                             <td class="tx-center">9</td>
                             <td class="tx-center">6</td>
+                            <td class="tx-center">0</td>
 
                             <td class="tx-center">indignación, temor, enojo</td>
                             <td class="tx-center">60</td>
@@ -101,8 +109,10 @@
                             <td class="tx-center">103</td>
                             <td class="tx-center">84</td>
                             <td class="tx-center">19</td>
+                            <td class="tx-center">0</td>
                             <td class="tx-center">9</td>
                             <td class="tx-center">7</td>
+                            <td class="tx-center">0</td>
 
                             <td class="tx-center">miedo, temor, enojo</td>
                             <td class="tx-center">60</td>
@@ -115,8 +125,10 @@
                             <td class="tx-center">76</td>
                             <td class="tx-center">65</td>
                             <td class="tx-center">11</td>
+                            <td class="tx-center">2</td>
                             <td class="tx-center">6</td>
                             <td class="tx-center">4</td>
+                            <td class="tx-center">2</td>
 
                             <td class="tx-center">temor, tristeza, miedo</td>
                             <td class="tx-center">30</td>
@@ -129,8 +141,10 @@
                             <td class="tx-center">127</td>
                             <td class="tx-center">114</td>
                             <td class="tx-center">13</td>
+                            <td class="tx-center">0</td>
                             <td class="tx-center">9</td>
                             <td class="tx-center">7</td>
+                            <td class="tx-center">0</td>
 
                             <td class="tx-center">-</td>
                             <td class="tx-center">60</td>
@@ -182,7 +196,7 @@
   <script src="{{ asset('plugins/jquery-ui/js/jquery-ui.js') }}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
 
-  <script src="{{ asset('plugins/Chart.js') }}"></script>
+  <script src="{{ asset('plugins/Chartf.js') }}"></script>
   <script src="{{ asset('plugins/chart.chartjs.js') }}"></script>
     <!--<script src="public/plugins/chartjs-plugin-piechart-outlabels.js"></script>-->
     <script src="{{ asset('plugins/chartjs-plugin-labels.js') }}"></script>

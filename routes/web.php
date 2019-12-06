@@ -21,6 +21,7 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('/home', 'HomeController@index')->name('home');
     Route::get('monitor', 'HomeController@monitor')->name('monitor');
     Route::get('estadisticas', 'HomeController@estadisticas')->name('estadisticas');
+    Route::get('alertas', 'HomeController@alertas')->name('alertas');
     Route::get('semaforizacion', 'HomeController@semaforizacion')->name('semaforizacion');
 	Route::get('configuracion', 'HomeController@configuracion')->name('configuracion');
 
