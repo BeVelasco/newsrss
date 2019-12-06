@@ -21,7 +21,7 @@
   <div class="row row-xs">
     <div class="col-md-6 col-lg-3 order-lg-1">
 
-    <div class="card card-body pd-20 mg-t-10">
+    {{-- <div class="card card-body pd-20 mg-t-10">
         <h6 class="slim-card-title mg-b-20">Conteo de noticias</h6>
 
         <div class="table-responsive">
@@ -101,10 +101,41 @@
             </tbody>
           </table>
         </div>
+      </div><!-- card --> --}}
+
+      <div class="card card-body pd-20 mg-t-10">
+        <h6 class="slim-card-title mg-b-20">Indicador de noticias Internacionales</h6>
+
+        <div class="table-responsive">
+          <table class="table mg-b-0 tx-13">
+            <thead>
+              <tr class="tx-10">
+                <th class="wd-10p pd-y-5">Fuente</th>
+                <th class="pd-y-5 tx-center"># Noticias</th>
+              </tr>
+            </thead>
+            <tbody>
+              @php $count = 0; @endphp
+              @foreach($ConteoTotalInternacional as $vconteot)
+              <tr>
+                <td class="pd-l-20">
+                  {{ $vconteot->titulo }}
+                </td>
+                <td class="tx-center">{{ $vconteot->noticias }}</td>
+              </tr>
+              @php $count = $count + $vconteot->noticias; @endphp
+              @endforeach
+              <tr>
+                <td class="tx-center tx-15 tx-left"><b>TOTAL</b></td>
+                <td class="tx-center"> {{ $count }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div><!-- card -->
 
       <div class="card card-body pd-20 mg-t-10">
-        <h6 class="slim-card-title mg-b-20">Indicador de noticias TOTALES</h6>
+        <h6 class="slim-card-title mg-b-20">Indicador de noticias Nacionales</h6>
 
         <div class="table-responsive">
           <table class="table mg-b-0 tx-13">

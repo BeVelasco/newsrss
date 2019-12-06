@@ -82,9 +82,20 @@ class HomeController extends Controller
         $sql = "select concat('(',f.id,') ',w.`titulo`) as titulo, count(w.id) as noticias
                 from web as w
                 left join fuentes AS f ON f.`idesc` = w.titulo
-                group by w.`titulo`;"
+                where f.origen = 'N'
+                group by w.`titulo`
+                order by f.id;"
                 ;
         $ConteoTotal = DB::SELECT($sql);
+
+        $sql = "select concat('(',f.id,') ',w.`titulo`) as titulo, count(w.id) as noticias
+                from web as w
+                left join fuentes AS f ON f.`idesc` = w.titulo
+                where f.origen = 'I'
+                group by w.`titulo`
+                order by f.id;"
+                ;
+        $ConteoTotalInternacional = DB::SELECT($sql);
 
         $sql = "SELECT w.`titulo`, COUNT(w.id) AS noticias
                 FROM web AS w
@@ -148,6 +159,7 @@ class HomeController extends Controller
                                     'twitter'               => $twitter,
                                     'facebook'              => $facebook,
                                     'facebook_grupos'       => $facebook_grupos,
+                                    'ConteoTotalInternacional' => $ConteoTotalInternacional,
                                     ]);
     }
 
