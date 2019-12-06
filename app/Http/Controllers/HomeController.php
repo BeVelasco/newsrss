@@ -28,6 +28,10 @@ class HomeController extends Controller
         return view('panel.semaforizacion');
     }
 
+    public function alertas(){
+        return view('panel.alertas');
+    }
+
     public function index()
     {
         $sql = "select concat('(',f.id,') ',w.`titulo`) as titulo, count(w.id) as noticias from web as w
