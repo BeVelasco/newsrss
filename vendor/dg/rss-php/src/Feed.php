@@ -5,7 +5,7 @@
  *
  * @copyright  Copyright (c) 2008 David Grudl
  * @license    New BSD License
- * @version    1.3
+ * @version    1.4
  */
 class Feed
 {
@@ -147,7 +147,7 @@ class Feed
 			return (string) $xml;
 		}
 
-		$arr = array();
+		$arr = [];
 		foreach ($xml->children() as $tag => $child) {
 			if (count($xml->$tag) === 1) {
 				$arr[$tag] = $this->toArray($child);
@@ -220,11 +220,19 @@ class Feed
 				? $result
 				: false;
 
-		} elseif ($user === null && $pass === null) {
-			return file_get_contents($url);
-
 		} else {
-			throw new FeedException('PHP extension CURL is not loaded.');
+			$context = null;
+			if ($user !== null && $pass !== null) {
+				$options = [
+					'http' => [
+						'method' => 'GET',
+						'header' => 'Authorization: Basic ' . base64_encode($user . ':' . $pass) . "\r\n",
+					],
+				];
+				$context = stream_context_create($options);
+			}
+
+			return file_get_contents($url, false, $context);
 		}
 	}
 
