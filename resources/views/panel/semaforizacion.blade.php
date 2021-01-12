@@ -157,7 +157,16 @@
                     <div class="card">
                         <div class="card-body">
                             <h3>Nota:</h3>
-                                Los datos encotrados son del diputado Alejandro Armenta en las noticias mas utilizadas.
+                            Los datos encontrados  del Presidente municipal  Luis Alberto Villarreal García y la obra pública
+                            reflejan el mismo número de porcentajes ya que  están estrechamente  relacionados y  se observa la
+                            postura de las acciones de gobierno que  realiza la actual administración<br><br>
+
+                            La postura oficial  por parte del ayuntamiento es pro activa, dando  a conocer las
+                            obras públicas que se han realizado así como los eventos  culturales y artísticos del
+                            municipales<br><br>
+
+                            El ayuntamiento de San Miguel de Allende no fija una postura oficial  por medio de
+                             boletines de prensa en eventos o situaciones relacionadas con los temas de inseguridad.<br>
                         </div>
                     </div>
 

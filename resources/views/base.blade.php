@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="chrome">
     <head>
-        <title>{{ config('app.name', 'Robot') }}</title>
+        <title>Robot SMA</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="slim-header-center">
-                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES - Alejandro Armenta</h4>
+                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES -  SAN MIGUEL DE ALLENDE</h4>
                     <a href="{{ route('monitor') }}">
                         <button type="button" class="btn-primary">Monitor</button></a>
                     <a href="{{ route('home') }}">

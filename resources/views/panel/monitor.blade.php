@@ -62,7 +62,7 @@
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
-                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
+                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 YEAR)
                                                 AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'I')
@@ -131,7 +131,7 @@
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
-                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
+                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 YEAR)
                                                 AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'N')
@@ -200,7 +200,7 @@
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
-                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
+                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -3 YEAR)
                                                 AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'T')
@@ -268,7 +268,7 @@
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
-                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -30  DAY)
+                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 YEAR)
                                                 AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'F')
