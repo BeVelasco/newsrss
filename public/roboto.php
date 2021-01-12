@@ -47,7 +47,7 @@ function htmlconsulta($conn, $url, $fuente){
 			foreach ($match1[0] as $value1) {
 				$data = url_get_contents($value1);
 				//$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
-				if(preg_match('/\b(san\smiguel\sde\sallende|SMA|sma)\b/i', $data)){
+				if(preg_match('/\b(armenta\alejandro|ARMENTA|armenta)\b/i', $data)){
 					/*echo "Para guardar --->".$value1."\n";*/
 					almacena($fuente, base64_encode($data), $value1, $conn, 'Web');
 				}
@@ -71,17 +71,17 @@ function rssconsulta($conn, $url, $fuente){
 	$rss = Feed::loadRss($url);
 
 	echo $fuente." ******************************\n";
-	/*echo "\n";echo "\n";echo "\n";echo "\n";echo "\n";
+	echo "\n";echo "\n";echo "\n";echo "\n";echo "\n";
 	echo 'Title: ', $rss->title;echo "\n";
 	echo 'Description: ', $rss->description; echo "\n";
-	echo 'Link: ', $rss->link; echo "\n";*/
-	/*echo "******************************\n";*/
+	echo 'Link: ', $rss->link; echo "\n";
+	echo "******************************\n";
 
 	foreach ($rss->item as $item) {
-		if(preg_match('/\b(san\smiguel\sde\sallende|SMA|sma)\b/i', $item->description)) {
-			/*echo 'Title: ', $item->title; echo "\n";
+		if(preg_match('/\b(armenta\alejandro|ARMENTA|armenta)\b/i', $item->description)) {
+			echo 'Title: ', $item->title; echo "\n";
 			echo 'Link: ', $item->link; echo "\n";
-			echo 'Timestamp: ', $item->timestamp;echo "\n";*/
+			echo 'Timestamp: ', $item->timestamp;echo "\n";
 			/*echo 'Description ', $item->description; echo "\n";*/
 			/*echo 'HTML encoded content: ', $item->{'content:encoded'}; echo "\n";*/
 			$data = $item->description;
