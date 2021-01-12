@@ -5,7 +5,7 @@
  *
  * @copyright  Copyright (c) 2008 David Grudl
  * @license    New BSD License
- * @version    1.4
+ * @version    1.5
  */
 class Feed
 {
@@ -14,6 +14,9 @@ class Feed
 
 	/** @var string */
 	public static $cacheDir;
+
+	/** @var string */
+	public static $userAgent = 'FeedFetcher-Google';
 
 	/** @var SimpleXMLElement */
 	protected $xml;
@@ -188,7 +191,7 @@ class Feed
 			throw new FeedException('Cannot load feed.');
 		}
 
-		return new SimpleXMLElement($data, LIBXML_NOWARNING | LIBXML_NOERROR);
+		return new SimpleXMLElement($data, LIBXML_NOWARNING | LIBXML_NOERROR | LIBXML_NOCDATA);
 	}
 
 
@@ -208,6 +211,7 @@ class Feed
 			if ($user !== null || $pass !== null) {
 				curl_setopt($curl, CURLOPT_USERPWD, "$user:$pass");
 			}
+			curl_setopt($curl, CURLOPT_USERAGENT, self::$userAgent); // some feeds require a user agent
 			curl_setopt($curl, CURLOPT_HEADER, false);
 			curl_setopt($curl, CURLOPT_TIMEOUT, 20);
 			curl_setopt($curl, CURLOPT_ENCODING, '');
