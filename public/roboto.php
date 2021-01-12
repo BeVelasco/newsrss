@@ -35,10 +35,10 @@ function htmlconsulta($conn, $url, $fuente){
 	//echo $data;
 	echo $fuente." ******************************\n";
 	preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $data, $match);
-	
+
 	$regex = '/\b.jpg|.png|.css|.pdf|.gif|.js|tag|youtube|facebook|twitter|instagram|scorecardresearch|xhtml|rss|drupal|buscar\b/i';
 	//var_dump($match[0]);
-	
+
 	foreach ($match[0] as $value) {
 		$count = preg_match_all($regex, $value);
 		if($count == 0){
@@ -53,14 +53,14 @@ function htmlconsulta($conn, $url, $fuente){
 				}
 			}
 			//var_dump($match1[0]);
-			
+
 		}
 	}
 	//echo 'Title: ', $rss->title;echo "\n";
 	//echo 'Description: ', $rss->description; echo "\n";
 	//echo 'Link: ', $url; echo "\n";
 	/*echo "******************************\n";*/
-	
+
 	/*if(preg_match('/\bsan miguel de allende\b/i', $data)){
 		//almacena($fuente, base64_encode($data), $url, $conn);
 	}*/
@@ -95,7 +95,7 @@ function connect(){
 	$port = "5543";
 	$username = "asys";
 	$password = "1nt3gr4*2019";
-	$database = "roboto";
+	$database = "robotoArmenta";
 
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $database, $port);
@@ -106,7 +106,7 @@ function connect(){
 	}
 	echo "Connected successfully\n";
 	return $conn;
-} 
+}
 
 function almacena($titulo, $content, $url, $conn, $tipo){
 	$sql = "SELECT * FROM web as w WHERE w.titulo = '".$titulo."' AND w.url = '".$url."'";
@@ -115,7 +115,7 @@ function almacena($titulo, $content, $url, $conn, $tipo){
 
 	if(mysqli_num_rows($result) == 0){
 		$sql = "INSERT INTO web (titulo,content,url,hash, tipo)
-				VALUES ('".$titulo."','".$content."','".$url."','".hash('md5',$content)."','".$tipo."')";	
+				VALUES ('".$titulo."','".$content."','".$url."','".hash('md5',$content)."','".$tipo."')";
 		if ($conn->query($sql) === TRUE) {
 		    echo "Datos almacenados\n";
 		} else {
@@ -155,7 +155,7 @@ function url_get_contents($url, $useragent='cURL', $headers=false, $follow_redir
 
     // follow redirects - note this is disabled by default in most PHP installs from 4.4.4 up
     if ($follow_redirects==true) {
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); 
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
     }
 
     // if debugging, return an array with CURL's debug info and the URL contents
