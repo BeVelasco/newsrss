@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="chrome">
     <head>
-        <title>{{ config('app.name', 'Robot') }}</title>
+        <title>Robot Alejandro Armenta</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
@@ -25,10 +25,10 @@
                         <button type="button" class="btn-primary">Panel general</button></a>
                     <a href="{{ route('estadisticas') }}">
                         <button type="button" class="btn-primary">Estadisticas</button></a>
-                    <a href="{{ route('semaforizacion') }}">
+                    {{-- <a href="{{ route('semaforizacion') }}">
                         <button type="button" class="btn-primary">Semaforización</button></a>
                     <a href="{{ route('alertas') }}">
-                        <button type="button" class="btn-primary">Alertas</button></a>
+                        <button type="button" class="btn-primary">Alertas</button></a> --}}
                 </div>
 
                 <div class="slim-header-right">
