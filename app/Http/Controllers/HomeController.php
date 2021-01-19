@@ -363,15 +363,45 @@ class HomeController extends Controller
         $mysqlfi = $msqlfi[2].'-'.$msqlfi[1].'-'.$msqlfi[0];
         $mysqlff = $msqlff[2].'-'.$msqlff[1].'-'.$msqlff[0];
 
+        $rs=[];
+        $rs1=[];
+
         $palabra = $request->palabra;
         if(!is_null($palabra)){
-            $sql = "SELECT w.`titulo`, COUNT(w.id) AS noticias
+            $arr = explode(' ',$palabra);
+            $busqueda = "";
+            //WHERE FROM_BASE64(w.`content`) REGEXP '".$palabra."'
+            if(count($arr)==1){
+                $busqueda = $arr[0];
+            }else{
+                $p = true;
+                for($z=0;$z<count($arr); $z++){
+                    if($p){
+                        $busqueda = $arr[$z];
+                        $p = false;
+                    }else{
+                        $busqueda = $busqueda.'.*'.$arr[$z];
+                    }
+                }
+            }
+
+            //dd($busqueda);
+
+            $sql = "SELECT w.`titulo`, COUNT(w.id) AS noticias, w.`content` as contenido
                     FROM web AS w
-                    WHERE FROM_BASE64(w.`content`) REGEXP '".$palabra."'
+                    WHERE FROM_BASE64(w.`content`) rlike '".$busqueda."'
                     AND DATE(w.`created_at`) BETWEEN '".$mysqlfi."' AND '".$mysqlff."'
                     GROUP BY w.`titulo`;";
 
             $rs = DB::SELECT($sql);
+
+            $sql1 = "SELECT w.`titulo`, w.`created_at` AS f, w.`url` AS url, w.`content` AS contenido
+                    FROM web AS w
+                    WHERE FROM_BASE64(w.`content`) rlike '".$busqueda."'
+                    AND DATE(w.`created_at`) BETWEEN '".$mysqlfi."' AND '".$mysqlff."'
+                    ORDER BY w.`titulo`";
+            $rs1 = DB::SELECT($sql1);
+
         }else{
             $sql = "SELECT w.`titulo`, COUNT(id) AS noticias
                     FROM web AS w
@@ -381,7 +411,11 @@ class HomeController extends Controller
             $rs = DB::SELECT($sql);
         }
 
-        return json_encode($rs);
+        return response() -> json([
+                "code" => 200,
+                'rs' => $rs,
+                'rs1' => $rs1
+                ]); ;
     }
 
     public function configuracion(Request $request){

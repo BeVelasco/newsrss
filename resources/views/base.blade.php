@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="chrome">
     <head>
-        <title>Robot Alejandro Armenta</title>
+        <title>Robot SMA</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
