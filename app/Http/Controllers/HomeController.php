@@ -395,7 +395,7 @@ class HomeController extends Controller
 
             $rs = DB::SELECT($sql);
 
-            $sql1 = "SELECT w.`titulo`, w.`created_at` AS f, w.`url` AS url, w.`content` AS contenido
+            $sql1 = "SELECT w.id, w.`titulo`, w.`created_at` AS f, w.`url` AS url, w.`content` AS contenido
                     FROM web AS w
                     WHERE FROM_BASE64(w.`content`) rlike '".$busqueda."'
                     AND DATE(w.`created_at`) BETWEEN '".$mysqlfi."' AND '".$mysqlff."'
@@ -415,7 +415,7 @@ class HomeController extends Controller
                 "code" => 200,
                 'rs' => $rs,
                 'rs1' => $rs1
-                ]); ;
+                ]);
     }
 
     public function configuracion(Request $request){
@@ -423,5 +423,19 @@ class HomeController extends Controller
         $fuentes = DB::table('fuentes')->paginate(5);
         return view('panel.configuracion',['fuentes' => $fuentes,
                                             'palabras' => $palabras ]);
+    }
+
+    public function getContentHtml(Request $request){
+        $id = $request->id;
+
+        $sql = "SELECT w.`content` AS contenido
+                FROM web AS w
+                WHERE w.id=:id;";
+        $rs = DB::SELECT($sql, ['id' => $id]);
+
+        return response() -> json([
+            "code" => 200,
+            'rs' => $rs
+            ]);
     }
 }

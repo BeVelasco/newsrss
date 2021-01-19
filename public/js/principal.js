@@ -134,7 +134,7 @@ function Palabra(palabra){
   var md2 = new Date(part2[2], part2[1] - 1 , part2[0]);
 
   if(md1 <= md2){
-
+    show();
     $.ajax({
       url: 'indicadoresPorPalabra',
       type: 'POST',
@@ -151,6 +151,7 @@ function Palabra(palabra){
         var fechx = [];
         var turl = [];
         var pre = [];
+        var idt = [];
         let contenido = "";
 
         for (var i = 0; i <= data['rs'].length - 1; i++) {
@@ -166,6 +167,7 @@ function Palabra(palabra){
             let ind = contenido.indexOf(palabra);
             let show = contmin.substring(ind, ind+200);
             pre.push(show);
+            idt.push(data['rs1'][h].id);
             mediosTitulo.push(data['rs1'][h].titulo);
             fechx.push(data['rs1'][h].f);
             turl.push(data['rs1'][h].url);
@@ -189,12 +191,12 @@ function Palabra(palabra){
         if(pre.length > 0){
             $('#show').append('<thead><tr><th>Medio</th><th>Fecha</th><th>Url</th><th>Contenido</th></tr></thead>');
             for(var z=0; z<pre.length; z++){
-                $('#show').append('<tr><td>'+mediosTitulo[z]+'</td><td>'+fechx[z]+'</td><td><a href="'+turl[z]+'">'+turl[z]+'</a></td><td>'+pre[z]+'</td></tr>');
+                $('#show').append('<tr><td style="width:10%">'+mediosTitulo[z]+'</td><td>'+fechx[z]+'</td><td><a href="'+turl[z]+'" target="_blank">'+turl[z]+'</a></td><td>'+pre[z]+' <a href="#" onclick="showdata('+idt[z]+');">Preview</a></td></tr>');
             }
             $('#show').append('</tbody>');
             $('#show').append('</table>');
         }
-
+        hide();
         },
       error: function (error) {
         /*swal('error','Error al general el grafico');*/
@@ -226,4 +228,25 @@ function fechas(){
   alert('Fechas');
 }
 
-function atou(str) { return decodeURIComponent(escape(window.atob(str))); }
+function atou(str) {
+    return decodeURIComponent(escape(window.atob(str)));
+}
+
+function showdata(id){
+    show();
+    $.ajax({
+        url: 'getContentHtml',
+        type: 'POST',
+        data: {'id': id
+              },
+        dataType: 'JSON',
+        success: function (data) {
+            var win = window.open("", "Title", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=780,height=400,top="+(screen.height)+",left="+(screen.width));
+            win.document.body.innerHTML = atob(data['rs'][0]['contenido']);
+            hide();
+        },
+        error: function (error) {
+            /*swal('error','Error al general el grafico');*/
+          }
+        });
+}

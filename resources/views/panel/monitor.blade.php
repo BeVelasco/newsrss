@@ -21,7 +21,7 @@
 
             <div class="container">
 
-                <div class="row"> <!-- ----------------------------------------------------------- -->
+                <div class="row" hidden> <!-- ----------------------------------------------------------- -->
                     <div class="col-md-6 col-sm-6">
                         <div class="card">
                             <div class="card-header">
@@ -29,17 +29,17 @@
                             </div>
                             <div class="card-body" style="max-height: 15vw; overflow-y: scroll; font-size:1vw;">
                                 <table class="table table-striped">
-                                    @php
+                                    {{-- @php
                                         $sql = 'SELECT UPPER(f.idesc) as idesc FROM fuentes as f WHERE f.origen = "I"';
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
-                                    @endphp
+                                    @endphp --}}
                                     <tr>
-                                        <td>{{ $row->idesc }}</td>
+                                        {{-- <td>{{ $row->idesc }}</td> --}}
                                     </tr>
-                                    @php
+                                    {{-- @php
                                     }
-                                    @endphp
+                                    @endphp --}}
                                 </table>
                             </div>
 
@@ -58,7 +58,7 @@
                                         <th>URL</th>
                                     </tr>
                                     </thead>
-                                    @php
+                                    {{-- @php
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
@@ -70,23 +70,23 @@
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
                                         $cont = $cont + 1;
-                                    @endphp
+                                    @endphp --}}
                                         <tr>
-                                            <td>{{ $row->titulo }}</td>
+                                            {{-- <td>{{ $row->titulo }}</td>
                                             <td>{{ $row->created_at }}</td>
-                                            <td align="justify"><a href="{{ $row->url }}" target="_blank">{{ $row->url }}</a></td>
+                                            <td align="justify"><a href="{{ $row->url }}" target="_blank">{{ $row->url }}</a></td> --}}
 
                                         </tr>
-                                    @php
+                                    {{-- @php
                                     }
-                                    @endphp
+                                    @endphp --}}
                                 </table>
                             </div>
                         </div>
 
                     </div>
                     <div class="tx-primary mg-l-15 pd-y-15 bg-transparent ">
-                        <h6>TOTAL NOTICIAS DE MEDIOS LOCALES:  {{ $cont }}</h6>
+                        {{-- <h6>TOTAL NOTICIAS DE MEDIOS LOCALES:  {{ $cont }}</h6> --}}
                     </div><!-- card-footer -->
                 </div> <!-- ROW -->
                 <hr>
@@ -107,7 +107,7 @@
                                         <td>{{ $row->idesc }}</td>
                                     </tr>
                                     @php
-                                    }
+                                        }
                                     @endphp
                                 </table>
                             </div>
@@ -131,7 +131,7 @@
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
-                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 YEAR)
+                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -1 MONTH)
                                                 AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'N')
@@ -147,7 +147,7 @@
 
                                         </tr>
                                     @php
-                                    }
+                                        }
                                     @endphp
                                 </table>
                             </div>
@@ -176,7 +176,7 @@
                                         <td>{{ $row->idesc }}</td>
                                     </tr>
                                     @php
-                                    }
+                                        }
                                     @endphp
                                 </table>
                             </div>
@@ -200,7 +200,7 @@
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
-                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -3 YEAR)
+                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -1 MONTH)
                                                 AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'T')
@@ -216,7 +216,7 @@
 
                                         </tr>
                                     @php
-                                    }
+                                        }
                                     @endphp
                                 </table>
                             </div>
@@ -240,11 +240,11 @@
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
                                     @endphp
-                                    <tr>
-                                        <td>{{ $row->idesc }}</td>
+                                     <tr>
+                                         <td>{{ $row->idesc }}</td>
                                     </tr>
                                     @php
-                                    }
+                                        }
                                     @endphp
                                 </table>
                             </div>
@@ -268,7 +268,7 @@
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
-                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 YEAR)
+                                                WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -1 MONTH)
                                                 AND w.`titulo` IN (SELECT f.idesc
                                                 FROM fuentes AS f
                                                 WHERE f.`origen` = 'F')
@@ -284,14 +284,14 @@
 
                                         </tr>
                                     @php
-                                    }
+                                        }
                                     @endphp
                                 </table>
                             </div>
                         </div>
                     </div>
                     <div class="tx-primary mg-l-15 pd-y-15 bg-transparent ">
-                        <h6>TOTAL NOTICIAS DE FACEBOOK:  {{ $cont }}</h6>
+                        <h6>TOTAL NOTICIAS DE FACEBOOK:  {{-- $cont --}}</h6>
                     </div><!-- card-footer -->
                 </div> <!-- ROW -->
             </div> <!-- Container -->
