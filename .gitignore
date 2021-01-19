@@ -19,3 +19,4 @@ laravel-echo-server.json
 *.lock
 composer.lock
 
+.env
