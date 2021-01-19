@@ -18,17 +18,17 @@
                 </div>
 
                 <div class="slim-header-center">
-                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES -  SAN MIGUEL DE ALLENDE</h4>
+                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES - Senador Alejandro Armenta</h4>
                     <a href="{{ route('monitor') }}">
                         <button type="button" class="btn-primary">Monitor</button></a>
                     <a href="{{ route('home') }}">
                         <button type="button" class="btn-primary">Panel general</button></a>
                     <a href="{{ route('estadisticas') }}">
                         <button type="button" class="btn-primary">Estadisticas</button></a>
-                    <a href="{{ route('semaforizacion') }}">
+                    {{-- <a href="{{ route('semaforizacion') }}">
                         <button type="button" class="btn-primary">Semaforización</button></a>
                     <a href="{{ route('alertas') }}">
-                        <button type="button" class="btn-primary">Alertas</button></a>
+                        <button type="button" class="btn-primary">Alertas</button></a> --}}
                 </div>
 
                 <div class="slim-header-right">

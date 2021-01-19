@@ -147,9 +147,28 @@ function Palabra(palabra){
         var medios = [];
         var cantidad = [];
 
-        for (var i = 0; i <= data.length - 1; i++) {
-          medios.push(data[i].titulo);
-          cantidad.push(data[i].noticias);
+        var mediosTitulo = [];
+        var fechx = [];
+        var turl = [];
+        var pre = [];
+        let contenido = "";
+
+        for (var i = 0; i <= data['rs'].length - 1; i++) {
+            medios.push(data['rs'][i].titulo);
+            cantidad.push(data['rs'][i].noticias);
+        }
+
+        for(var h = 0;h<data['rs1'].length; h++){
+            contenido = atob(data['rs1'][h].contenido);
+            let contmin = contenido;
+            contenido = contenido.toUpperCase();
+            palabra = palabra.toUpperCase();
+            let ind = contenido.indexOf(palabra);
+            let show = contmin.substring(ind, ind+200);
+            pre.push(show);
+            mediosTitulo.push(data['rs1'][h].titulo);
+            fechx.push(data['rs1'][h].f);
+            turl.push(data['rs1'][h].url);
         }
 
         var area1 = new Chartist.Line('#chartArea1', {
@@ -166,7 +185,17 @@ function Palabra(palabra){
           ]
         });
 
-          },
+        $('#show').html("");
+        if(pre.length > 0){
+            $('#show').append('<thead><tr><th>Medio</th><th>Fecha</th><th>Url</th><th>Contenido</th></tr></thead>');
+            for(var z=0; z<pre.length; z++){
+                $('#show').append('<tr><td>'+mediosTitulo[z]+'</td><td>'+fechx[z]+'</td><td><a href="'+turl[z]+'">'+turl[z]+'</a></td><td>'+pre[z]+'</td></tr>');
+            }
+            $('#show').append('</tbody>');
+            $('#show').append('</table>');
+        }
+
+        },
       error: function (error) {
         /*swal('error','Error al general el grafico');*/
       }
@@ -196,3 +225,5 @@ function Enter(e){
 function fechas(){
   alert('Fechas');
 }
+
+function atou(str) { return decodeURIComponent(escape(window.atob(str))); }
