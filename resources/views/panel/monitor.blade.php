@@ -16,7 +16,7 @@
               <ol class="breadcrumb slim-breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
               </ol>
-              <h6 class="slim-pagetitle">Monitoreo - SAN MIGUEL DE ALLENDE</h6>
+              <h6 class="slim-pagetitle">Monitoreo - Senadro Alejandro Armenta</h6>
             </div><!-- slim-pageheader -->
 
             <div class="container">
