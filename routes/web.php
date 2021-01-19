@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('indicadoresGeneral', 'HomeController@indicadoresGeneral');
 	Route::post('indicadoresGeneralFechas', 'HomeController@indicadoresGeneralFechas');
 	Route::post('indicadoresPorPalabra', 'HomeController@indicadoresPorPalabra');
-
+    Route::post('getContentHtml', 'HomeController@getContentHtml');
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');

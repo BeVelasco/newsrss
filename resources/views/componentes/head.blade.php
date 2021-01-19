@@ -14,5 +14,6 @@
 
 <!-- Slim CSS -->
 <link rel="stylesheet" href="{{ asset('css/slim.css') }}">
+{{-- <script src="{{ asset('js/personal.js') }}"></script> --}}
 
 <link rel="icon" href="{{ asset('img/favicon.png') }}" type="image/x-icon">

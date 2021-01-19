@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="chrome">
     <head>
-        <title>Robot SMA</title>
+        <title>Robot AAM</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
@@ -11,6 +11,11 @@
         @yield('css')
     </head>
     <body>
+        <div id="spinner-back"></div>
+        <div id="spinner-front">
+        <img src="{{ asset('img/ajax-loader.gif') }}"/><br>
+            Procesando...
+        </div>
         <div class="slim-header">
             <div class="container">
                 <div class="slim-header-left">

@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.css">
 
   <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/personal.css') }}">
 @endsection
 
 @section('contenido')
@@ -327,5 +328,6 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
 
   <script src="{{ asset('js/principal.js') }}"></script>
+  <script src="{{ asset('js/personal.js') }}"></script>
   @include('sweet::alert')
 @endsection

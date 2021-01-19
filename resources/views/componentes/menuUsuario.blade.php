@@ -6,11 +6,11 @@
 </a>
 <div class="dropdown-menu dropdown-menu-right">
     <class class="nav">
-        <!-- <a href="{{ route('configuracion') }}"
+        <a href="{{ route('configuracion') }}"
             class   = "nav-link"
         >
             <i class = "icon ion-compass"></i>Configuración
-        </a> -->
+        </a>
 
         <a href="{{ route('monitor') }}"
             class   = "nav-link"
@@ -18,7 +18,7 @@
             <i class = "icon ion-podium"></i>Monitor
         </a>
 
-        <a 
+        <a
             href    = "{{ route('logout') }}"
             onclick = "event.preventDefault(); document.getElementById('logout-form').submit();"
             class   = "nav-link"
@@ -31,4 +31,4 @@
         </form>
     </class>
 </div>
-</div> 
+</div>
