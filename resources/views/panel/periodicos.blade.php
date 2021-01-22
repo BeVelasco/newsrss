@@ -21,6 +21,13 @@
             </div><!-- slim-pageheader -->
 
             <div class="container">
+                <div class="row">
+                    <div class="col-12 tx-center">
+                        <a href="{{ route('pdfDiarios') }}">
+                            <button class="btn btn-oblong">PDF</button>
+                        </a>
+                    </div>
+                </div>
                 <div class="row tx-center">
                     <div class="col-md-12 col-sm-12" id="reporte">
 
