@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Alert;
+use App\diarios;
+use Illuminate\Support\Carbon;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -288,6 +291,10 @@ class HomeController extends Controller
                                     ]);
     }
 
+    public function periodicos(){
+        return view('panel.periodicos');
+    }
+
     public function monitor()
     {
         return view('panel.monitor');
@@ -437,5 +444,42 @@ class HomeController extends Controller
             "code" => 200,
             'rs' => $rs
             ]);
+    }
+
+    public function getContentHtmlP(Request $request){
+        $id = $request->id;
+
+        $sql = "SELECT d.`content` AS contenido
+                FROM diarios AS d
+                WHERE d.id=:id;";
+        $rs = DB::SELECT($sql, ['id' => $id]);
+
+        return response() -> json([
+            "code" => 200,
+            'rs' => $rs
+            ]);
+    }
+
+    public function getContentHtmlPeriodicos(Request $request){
+        $sql = "SELECT * FROM diarios AS d
+                WHERE DATE_FORMAT(d.created_at ,'%Y-%m-%d') = CAST(DATE_FORMAT(NOW() ,'%Y-%m-%d') AS DATE)";
+
+        $rs = DB::SELECT($sql);
+
+        return response() -> json([
+            "code" => 200,
+            'rs' => $rs
+            ]);
+    }
+
+    public function pdfDiarios(){
+        $objPeriodicos = diarios::whereDate('created_at', Carbon::today())->get();
+        $data = ['Periodicos' => $objPeriodicos];
+
+        $pdf = PDF::loadView('pdfReporteDiario', $data);
+
+        return $pdf->download('diariosHoy.pdf');
+
+        // return view('pdfReporteDiario', $data);
     }
 }

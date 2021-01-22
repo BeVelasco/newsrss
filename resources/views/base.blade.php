@@ -30,6 +30,9 @@
                         <button type="button" class="btn-primary">Panel general</button></a>
                     <a href="{{ route('estadisticas') }}">
                         <button type="button" class="btn-primary">Estadisticas</button></a>
+
+                    <a href="{{ route('periodicos') }}">
+                        <button type="button" class="btn-primary">Periodicos</button></a>
                     {{-- <a href="{{ route('semaforizacion') }}">
                         <button type="button" class="btn-primary">Semaforización</button></a>
                     <a href="{{ route('alertas') }}">
