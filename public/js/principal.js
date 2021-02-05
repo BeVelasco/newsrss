@@ -189,12 +189,11 @@ function Palabra(palabra){
 
         $('#show').html("");
         if(pre.length > 0){
-            $('#show').append('<thead><tr><th>Medio</th><th>Fecha</th><th>Url</th><th>Contenido</th></tr></thead>');
+            $('#show').append('<thead><tr><th width="10%">Medio</th><th width="10%">Fecha</th><th width="40%">Url</th><th width="40%">Contenido</th></tr></thead>');
             for(var z=0; z<pre.length; z++){
-                $('#show').append('<tr><td style="width:10%">'+mediosTitulo[z]+'</td><td>'+fechx[z]+'</td><td><a href="'+turl[z]+'" target="_blank">'+turl[z]+'</a></td><td>'+pre[z]+' <a href="#" onclick="showdata('+idt[z]+');">Preview</a></td></tr>');
+                $('#show').append('<tr><td>'+mediosTitulo[z]+'</td><td>'+fechx[z]+'</td><td><a href="'+turl[z]+'" target="_blank">'+turl[z].substring(0,40)+'</a></td><td>'+pre[z].substring(0,20)+'... <a href="#" onclick="showdata('+idt[z]+');">Preview</a></td></tr>');
             }
             $('#show').append('</tbody>');
-            $('#show').append('</table>');
         }
         hide();
         },
