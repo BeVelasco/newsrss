@@ -250,7 +250,7 @@
           <button onclick="busca();" class="mg-l-15">Buscar</button>
         </div>
         <div id="chartArea1" class="dash-chartist"></div>
-        <div id="show" class="table"></div>
+        <table id="show" class="table table-responsive" style="height: 300px; overflow-y: scroll;padding:0;"></table>
       </div><!-- card -->
 
       <!-- <div class="card card-body pd-20 mg-t-10 wt-100">
