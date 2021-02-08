@@ -484,7 +484,7 @@ class HomeController extends Controller
 
         $pdf = PDF::loadView('pdfReporteDiario', $data);
 
-        return $pdf->download('diariosHoy.pdf');
+        return $pdf->download('diariosHoy '.Carbon::now().'.pdf');
 
         //return view('pdfReporteDiario', $data);
     }
