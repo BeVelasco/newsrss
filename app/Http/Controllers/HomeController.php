@@ -9,6 +9,7 @@ use App\diarios;
 use Illuminate\Support\Carbon;
 use App\Fuentes;
 use PDF;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -484,7 +485,10 @@ class HomeController extends Controller
 
         $pdf = PDF::loadView('pdfReporteDiario', $data);
 
-        return $pdf->stream('diariosHoy '.Carbon::now().'.pdf');
+        $filename = 'diariosHoy '.Carbon::now().'.pdf';
+        $pdf->save($filename);
+
+        return response()->download(public_path().'/'.$filename);
 
         //return view('pdfReporteDiario', $data);
     }
