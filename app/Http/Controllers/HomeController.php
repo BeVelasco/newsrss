@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Alert;
 use App\diarios;
 use Illuminate\Support\Carbon;
+use App\Fuentes;
 use PDF;
 
 class HomeController extends Controller
@@ -298,6 +299,11 @@ class HomeController extends Controller
     public function monitor()
     {
         return view('panel.monitor');
+    }
+
+    public function getPeriodicos(Request $request){
+        $fuentes = Fuentes::where('tipo', 1)->get();
+        return $fuentes;
     }
 
     public function indicadoresMedios(){

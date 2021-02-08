@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('getContentHtml', 'HomeController@getContentHtml');
     Route::post('getContentHtmlP', 'HomeController@getContentHtmlP');
     Route::post('getContentHtmlPeriodicos', 'HomeController@getContentHtmlPeriodicos');
+    Route::post('getPeriodicos', 'HomeController@getPeriodicos')->name('getPeriodicos');
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');

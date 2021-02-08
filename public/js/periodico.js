@@ -6,7 +6,75 @@ $.ajaxSetup({
 
 $(document).ready(function() {
 	showdataPeriodicos();
+    $('#alvuelo').hide();
+
+    $('#btn8am').click(function( event ){
+        event.preventDefault();
+
+        $('#reporte').show();
+        $('#alvuelo').hide();
+    });
+
+    $('#btnActual').click(function( event ){
+        event.preventDefault();
+
+        Swal.fire({
+            title: 'Busqueda de Primeras Planas Digitales',
+            text: "¡¡Este proceso puede tardar varios minutos!!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, continua'
+        }).then((result) => {
+            if (result.value) {
+                getHtmlNow();
+                setTimeout(function() { }, 60000);
+                hide();
+            }
+        })
+    });
 });
+
+function getHtmlNow(){
+    show();
+    $('#reporte').hide();
+    $('#alvuelo').show();
+
+    $('#alvuelo').html('');
+    // const url = 'https://mrbisne.com/portal';
+    $.ajax({
+        url     : 'getPeriodicos',
+        type    : 'POST',
+        async   :  true,
+        data    : {},
+        dataType: 'JSON',
+        success : function (data) {
+            data.forEach(element => {
+                let url = element.url;
+                getImgDiario(url);
+            });
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+
+}
+
+function getImgDiario(url){
+    // const url = 'https://mrbisne.com/portal';
+    const query = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="+url+"&screenshot=true&key=AIzaSyAMnqKBY0YG8FIvTakSa7J43_dyOIsBQTA";
+    fetch(query)
+    .then(response => response.json())
+    .then(json => {
+        let data = json.lighthouseResult.audits;
+        let fs = data['final-screenshot'];
+        let dt = fs['details'];
+        let img = dt['data'];
+        $('#alvuelo').append('<div class="row"><div class="col-12"><img src="'+img+'"> </div></div>')
+    });
+}
 
 function muestra(id){
 	var x = $("#ver"+id).attr("data-html");
@@ -48,7 +116,6 @@ function showdataPeriodicos(){
             let html="";
             $('#reporte').html();
             data['rs'].forEach(function(periodico, index) {
-                console.log(index);
                 let img = periodico.content;
                 if(img){
                     html+="<div><img src='"+img+"' height='400'></div><hr>";

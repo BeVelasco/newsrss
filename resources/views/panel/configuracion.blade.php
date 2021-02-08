@@ -4,14 +4,16 @@
   <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/Ionicons/css/ionicons.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/chartist/css/chartist.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.css">
 
   <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/personal.css') }}">
 @endsection
 
 @section('contenido')
     <input type="txt" name="cad" id="cad" value="" hidden="">
         <div class="slim-mainpanel">
-            
+
             <div class="slim-pageheader">
               <ol class="breadcrumb slim-breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
@@ -28,7 +30,9 @@
                                 <h6 class="slim-card-title tx-primary">Fuentes</h6>
                             </div>
                             <div class="col-1" >
-                                <a href=""><i class = "icon ion-plus"></i></a>
+                                <a href="#">
+                                    <i class = "icon ion-plus" onclick="showModalAdd( event );"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -41,23 +45,32 @@
                                     <th>URL</th>
                                     <th>Tipo</th>
                                     <th>Origen</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($fuentes as $vfuente)
-                                @php
-                                    if($vfuente->tipo == 0) $ttipo = "RSS";
-                                    else $ttipo = "HTML";
+                                    @php
+                                        if($vfuente->tipo == 0) $ttipo = "RSS";
+                                        else $ttipo = "HTML";
 
-                                    if($vfuente->origen == 'L') $tfuente = "Local";
-                                    else $tfuente = "Nacional";
-                                @endphp
-                                <tr>
-                                    <td>{{ $vfuente->idesc }}</td>
-                                    <td>{{ $vfuente->url }}</td>
-                                    <td>{{ $ttipo }}</td>
-                                    <td>{{ $tfuente }}</td>
-                                </tr>
+                                        if($vfuente->origen == 'L') $tfuente = "Local";
+                                        else $tfuente = "Nacional";
+                                    @endphp
+                                    <tr>
+                                        <td>{{ $vfuente->idesc }}</td>
+                                        <td>{{ $vfuente->url }}</td>
+                                        <td>{{ $ttipo }}</td>
+                                        <td>{{ $tfuente }}</td>
+                                        <td align="center">
+                                            <a href="#">
+                                                <i class = "icon ion-android-remove-circle" onclick="del({{ $vfuente->id }});"></i>
+                                            </a>
+                                            <a href="#">
+                                                <i class = "icon ion-android-create mg-l-10" onclick="edit({{ $vfuente->id }})"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                          </table>
@@ -140,7 +153,7 @@
         </div>
 
         </div> <!-- slim-mainpanel -->
-
+    @include('modals.modalAddFuente')
     <div id="pre"></div>
 @endsection
 
@@ -157,4 +170,7 @@
   <script src="{{ asset('plugins/jquery.cookie/js/jquery.cookie.js') }}"></script>
   <script src="{{ asset('plugins/moment/js/moment.js') }}"></script>
   <script src="{{ asset('plugins/jquery-ui/js/jquery-ui.js') }}"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
+  <script src="{{ asset('js/configuracion.js') }}"></script>
 @endsection
