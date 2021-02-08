@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="{{ asset('plugins/chartist/css/chartist.css') }}">
 
   <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/personal.css') }}">
 @endsection
 
 @section('contenido')
@@ -59,7 +58,7 @@
                                         <th>URL</th>
                                     </tr>
                                     </thead>
-                                    @php
+                                    {{-- @php
                                         $cont = 0;
                                         $sql = "SELECT *
                                                 FROM web AS w
@@ -71,16 +70,16 @@
                                         $rs = DB::SELECT($sql);
                                         foreach($rs as $row){
                                         $cont = $cont + 1;
-                                    @endphp
+                                    @endphp --}}
                                         <tr>
-                                            <td>{{ $row->titulo }}</td>
+                                            {{-- <td>{{ $row->titulo }}</td>
                                             <td>{{ $row->created_at }}</td>
-                                            <td align="justify"><a href="{{ $row->url }}" target="_blank">{{ $row->url }}</a></td>
+                                            <td align="justify"><a href="{{ $row->url }}" target="_blank">{{ $row->url }}</a></td> --}}
 
                                         </tr>
-                                    @php
+                                    {{-- @php
                                     }
-                                    @endphp
+                                    @endphp --}}
                                 </table>
                             </div>
                         </div>
