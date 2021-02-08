@@ -18,7 +18,7 @@
               <ol class="breadcrumb slim-breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
               </ol>
-              <h6 class="slim-pagetitle">Primeras Planas - Senadro Alejandro Armenta</h6>
+              <h6 class="slim-pagetitle">Monitor primeras planas 8:00 AM</h6>
             </div><!-- slim-pageheader -->
 
             <div class="container">
