@@ -13,6 +13,7 @@ $(document).ready(function() {
 
         $('#reporte').show();
         $('#alvuelo').hide();
+        $('#btnpdf').show();
     });
 
     $('#btnActual').click(function( event ){
@@ -34,6 +35,7 @@ $(document).ready(function() {
             }
         })
     });
+
 });
 
 function getHtmlNow(){
@@ -74,6 +76,8 @@ function getImgDiario(url){
         let img = dt['data'];
         $('#alvuelo').append('<div class="row"><div class="col-12"><img src="'+img+'"> </div></div>')
     });
+
+    $('#btnpdf').hide();
 }
 
 function muestra(id){

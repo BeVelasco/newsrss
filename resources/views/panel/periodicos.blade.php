@@ -24,9 +24,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6 tx-left">
-                        {{-- <a href="{{ route('pdfDiarios') }}">
-                            <button class="btn btn-outline-secondary">PDF</button>
-                        </a> --}}
                         <a href="#" id="btn8am">
                             <button class="btn btn-outline-secondary">Hoy 8:00 A.M.</button>
                         </a>
@@ -35,6 +32,9 @@
                         </a>
                     </div>
                     <div class="col-6 tx-center">
+                        <a href="{{ route('pdfDiarios') }}" id="btnpdf">
+                            <button class="btn btn-outline-secondary">PDF</button>
+                        </a>
                     </div>
                 </div>
                 <div class="row tx-center">

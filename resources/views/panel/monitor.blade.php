@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="{{ asset('plugins/chartist/css/chartist.css') }}">
 
   <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/personal.css') }}">
 @endsection
 
 @section('contenido')
