@@ -483,6 +483,16 @@ class HomeController extends Controller
         $objPeriodicos = diarios::whereDate('created_at', Carbon::today())->get();
         $data = ['Periodicos' => $objPeriodicos];
 
+        $contxt = stream_context_create([
+            'ssl' => [
+            'verify_peer' => FALSE,
+            'verify_peer_name' => FALSE,
+            'allow_self_signed'=> TRUE
+            ]
+            ]);
+        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+        $pdf->getDomPDF()->setHttpContext($contxt);
+
         $pdf = PDF::loadView('pdfReporteDiario', $data);
 
         $filename = 'diariosHoy '.Carbon::now().'.pdf';
