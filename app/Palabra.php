@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Fuentes extends Model
+class Palabra extends Model
 {
     public $timestamps = false;
-    protected $table = 'fuentes';
+    protected $table = 'palabra_buscar';
 }

@@ -22,12 +22,12 @@
             </div><!-- slim-pageheader -->
 
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-lg-6">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
                             <div class="col-11">
-                                <h6 class="slim-card-title tx-primary">Fuentes</h6>
+                                <h6 class="slim-card-title tx-primary">Fuentes Medios Digitales</h6>
                             </div>
                             <div class="col-1" >
                                 <a href="#">
@@ -36,115 +36,51 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="height: 300px; overflow-y: scroll;">
                         <div class="table-responsive table-striped">
-                        <table class="table tx-12" >
+                        <table class="table" >
                             <thead>
                                 <tr>
-                                    <th>Descripcion</th>
-                                    <th>URL</th>
-                                    <th>Tipo</th>
-                                    <th>Origen</th>
-                                    <th>Acciones</th>
+                                    <th width="15%">Descripcion</th>
+                                    <th width="40%">URL</th>
+                                    <th width="10%">Tipo</th>
+                                    <th width="10%">Origen</th>
+                                    <th width="10%">Estatus</th>
+                                    <th width="15%" class="text-center">Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach($fuentes as $vfuente)
-                                    @php
-                                        if($vfuente->tipo == 0) $ttipo = "RSS";
-                                        else $ttipo = "HTML";
-
-                                        if($vfuente->origen == 'L') $tfuente = "Local";
-                                        else $tfuente = "Nacional";
-                                    @endphp
-                                    <tr>
-                                        <td>{{ $vfuente->idesc }}</td>
-                                        <td>{{ $vfuente->url }}</td>
-                                        <td>{{ $ttipo }}</td>
-                                        <td>{{ $tfuente }}</td>
-                                        <td align="center">
-                                            <a href="#">
-                                                <i class = "icon ion-android-remove-circle" onclick="del({{ $vfuente->id }});"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class = "icon ion-android-create mg-l-10" onclick="edit({{ $vfuente->id }})"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                            <tbody id="tbfuentes">
                             </tbody>
                          </table>
                         </div>
-                         <span> {{ $fuentes->links() }} </span>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-md-6">
+        <div class="row mg-t-30">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
                             <div class="col-11">
-                                <h6 class="slim-card-title tx-primary">Palabras de busqueda general</h6>
+                                <h6 class="slim-card-title tx-primary">Palabra de busqueda</h6>
                             </div>
                             <div class="col-1" >
-                                <a href=""><i class = "icon ion-plus"></i></a>
+                                {{-- <a href=""><i class = "icon ion-plus"></i></a> --}}
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <div class="table">
-                                <table class="table">
-                                    <thead>
-                                        <td>Palabra</td>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($palabras as $vpalabras)
-                                        @php
-                                            $cadena = str_replace('\s',' ',$vpalabras->palabra);
-                                        @endphp
-                                        <tr>
-                                            <td>{{ $cadena }}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!--card-->
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-11">
-                                <h6 class="slim-card-title tx-primary">Palabras de busqueda Especiales</h6>
-                            </div>
-                            <div class="col-1" >
-                                <a href=""><i class = "icon ion-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <div class="table">
-                                <table class="table">
-                                    <thead>
-                                        <td>Palabra</td>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($palabras as $vpalabras)
-                                        @php
-                                            $cadena = str_replace('\s',' ',$vpalabras->palabra);
-                                        @endphp
-                                        <tr>
-                                            <td>{{ $cadena }}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                    <div class="card-body" style="height: 300px; overflow-y: scroll;">
+                        <div class="table-responsive table-striped">
+                             <table class="table" >
+                                <thead>
+                                    <th width="85%">Palabra</th>
+                                    <th width="15%" class="text-center">Acciones</th>
+                                </thead>
+                                <tbody id="tbpalabra">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div> <!--card-->
@@ -154,6 +90,9 @@
 
         </div> <!-- slim-mainpanel -->
     @include('modals.modalAddFuente')
+    @include('modals.modalModFuente')
+    @include('modals.modalModPalabra')
+
     <div id="pre"></div>
 @endsection
 
