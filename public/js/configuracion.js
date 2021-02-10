@@ -5,10 +5,47 @@ $.ajaxSetup({
 });
 
 $(document).ready(function() {
-    show();
-    llenafuentes();
+    llenausuarios();
     llenapalabras();
-    hide();
+    llenafuentes();
+
+    $('#btnUserMod').click(function(){
+        show();
+        let id = $('#idUsrM').val();
+        let name = $('#txMunombre').val();
+        let email = $('#txMuemail').val();
+        let pass = $('#txMupass').val();
+
+        let estatus = 1
+        if(id==1){estatus = 1;}
+        else {estatus = $('#uMactivo').is(":checked") ? '1' : '0';}
+
+        $.ajax({
+            url     : 'updUser',
+            type    : 'POST',
+            data    : { 'id'        : id,
+                        'name'      : name,
+                        'email'     : email,
+                        'pass'      : pass,
+                        'estatus'   : estatus
+                     },
+            dataType: 'JSON',
+            success : function (data) {
+                Swal.fire({
+                    type: 'success',
+                    title: 'Mensaje de sistema',
+                    text: 'La información se almaceno correctamente'
+                });
+
+                llenausuarios();
+                $('#modModUser').modal('hide');
+                hide();
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
 
     $('#btnPalabraMod').click(function(){
         let id      = $('#idPalabra').val();
@@ -186,6 +223,67 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('#btnUserAdd').click(function(){
+        let nombre      = $('#txunombre').val();
+        let username    = $('#txunombre').val();
+        let email       = $('#txuemail').val();
+        let pass        = $('#txupass').val();
+        let estatus     = $('#uactivo').is(":checked") ? '1' : '0';
+
+        if(!nombre){
+            Swal.fire({
+                type: 'warning',
+                title: 'Faltan datos',
+                text: 'El nombre es necesario para continuar'
+            });
+            idesc.focus();
+        }
+
+        if(!email){
+            Swal.fire({
+                type: 'warning',
+                title: 'Faltan datos',
+                text: 'El Email es necesaria para continuar'
+            });
+            idesc.focus();
+        }
+
+        if(!pass){
+            Swal.fire({
+                type: 'warning',
+                title: 'Faltan datos',
+                text: 'La password es necesaria para continuar'
+            });
+            idesc.focus();
+        }
+
+        $.ajax({
+            url     : 'setUser',
+            type    : 'POST',
+            data    : { 'name'      : nombre,
+                        'username'  : username,
+                        'email'     : email,
+                        'pass'      : pass,
+                        'estatus'   : estatus
+                     },
+            dataType: 'JSON',
+            success : function (data) {
+                Swal.fire({
+                    type: 'success',
+                    title: 'Mensaje de sistema',
+                    text: 'Usuario creado correctamente'
+                });
+
+                $('#modAddUser').modal('hide');
+                llenausuarios();
+                hide();
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
 });
 
 function editF(id){
@@ -233,12 +331,42 @@ function editP(id){
     $('#modPalabra').modal('show');
 }
 
+function editU(id){
+    $.ajax({
+        url     : 'getUserId',
+        type    : 'POST',
+        async   :  true,
+        data    : { 'id' : id },
+        dataType: 'JSON',
+        success : function (data) {
+            $('#idUsrM').val(id);
+            $('#txMunombre').val(data['name']);
+            $('#txMuemail').val(data['email']);
+            $('#txMupass').val("");
+
+            if(data['estatus'] == 1) {$('#uMactivo').prop('checked', true);}
+            else {$('#uMactivo').prop('checked', false);};
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+
+    $('#modModUser').modal('show');
+}
+
 function showModalAdd( event ){
     event.preventDefault();
     $('#addFuente').modal('show');
 }
 
+function showModalAddU( event){
+    event.preventDefault();
+    $('#modAddUser').modal('show');
+}
+
 function llenafuentes(){
+    show();
     $.ajax({
         url     : 'getFuentes',
         type    : 'POST',
@@ -277,6 +405,7 @@ function llenafuentes(){
 
                 $('#tbfuentes').html("");
                 $('#tbfuentes').append(html);
+                hide();
             });
         },
         error: function (error) {
@@ -300,6 +429,30 @@ function  llenapalabras(){
                 $('#tbpalabra').html("");
                 $('#tbpalabra').append(html);
             });
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
+
+function  llenausuarios(){
+    $('#tbuser').html("");
+    $.ajax({
+        url     : 'getUsuarios',
+        type    : 'POST',
+        async   :  true,
+        data    : {},
+        dataType: 'JSON',
+        success : function (data) {
+            let html = "";
+            data.forEach(element => {
+                let estat = 'Activo';
+                if(!element.estatus) estat = 'Inactivo';
+
+                html +=  "<tr><td>"+element.name+"</td><td align='center'>"+estat+"</td><td align='center'><a href='#'><i class = 'icon ion-android-create mg-l-10' onclick='editU("+element.id+")'></i></a> </td></tr>";
+            });
+            $('#tbuser').append(html);
         },
         error: function (error) {
             console.log(error);

@@ -9,8 +9,10 @@ use App\diarios;
 use Illuminate\Support\Carbon;
 use App\Fuentes;
 use App\Palabra;
+use App\User;
 use PDF;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -465,6 +467,28 @@ class HomeController extends Controller
         return $fuente;
     }
 
+    public function setUser(Request $request){
+        $name       = $request->name;
+        $username   = $request->username;
+        $email      = $request->email;
+        $pass       = $request->pass;
+        $estatus    = $request->estatus;
+
+        $objusrn = new User();
+
+        $objusrn->name      = $name;
+        $objusrn->username  = $username;
+        $objusrn->email     = $email;
+        $objusrn->password  = bcrypt($pass);
+        $objusrn->estatus   = $estatus;
+
+        $objusrn->save();
+
+        return response()->json([
+            'success'   => true
+            ], 200);
+    }
+
     public function setFuente(Request $request){
         $idesc      = $request->idesc;
         $url        = $request->url;
@@ -523,6 +547,35 @@ class HomeController extends Controller
         return response()->json([
             'success'   => true
             ], 200);
+    }
+
+    public function updUser(Request $request){
+        $id = $request->id;
+        $name = $request->name;
+        $email = $request->email;
+        $pass = $request->pass;
+        $estatus = $request->estatus;
+
+        $objUser = User::find($id);
+
+        $objUser->name = $name;
+        $objUser->username = $name;
+        $objUser->email = $email;
+        $objUser->estatus = $estatus;
+
+        if($pass){
+            $passN = bcrypt($pass);
+
+            $objUser->password = $passN;
+            $objUser->save();
+        }else{
+            $objUser->save();
+        }
+
+        return response()->json([
+            'success'   => true
+            ], 200);
+
     }
 
     public function getContentHtml(Request $request){
@@ -621,6 +674,19 @@ class HomeController extends Controller
         $rs = DB::select($sqlTipo);
 
         return $rs;
+    }
+
+    public function getUsuarios(){
+        $rs = DB::table('users')->get();
+
+        return $rs;
+    }
+
+    public function getUserId(Request $request){
+        $id = $request->id;
+        $objuser = User::where('id',$id)->get();
+
+        return $objuser[0];
     }
 
 }

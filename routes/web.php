@@ -50,6 +50,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('getMedios', 'HomeController@getMedios')->name('getMedios');
     Route::post('getTipo', 'HomeController@getTipo')->name('getTipo');
     Route::post('getNoticiasMes', 'HomeController@getNoticiasMes')->name('getNoticiasMes');
+
+    Route::post('getUsuarios', 'HomeController@getUsuarios')->name('getUsuarios');
+    Route::post('getUserId', 'HomeController@getUserId')->name('getUserId');
+    Route::post('updUser', 'HomeController@updUser')->name('updUser');
+    Route::post('setUser', 'HomeController@setUser')->name('setUser');
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');
