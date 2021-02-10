@@ -74,7 +74,7 @@ function llenaFT(){
                 if(element.origen == 'L') desc += "Local/";
                 if(element.origen == 'I') desc += "Internacional/";
 
-                if(element['tipo'] == 0) desc += "HTML";
+                if(element['tipo'] == 0) desc += "RSS";
                 if(element['tipo'] == 1) desc += "HTML";
                 if(element['tipo'] == 3) desc += "FACEBOOK";
                 if(element['tipo'] == 2) desc += "TWEETER";
