@@ -67,7 +67,7 @@
                     <div class="col-8">
                         <div class="card ">
                             <div class="card-header">
-                                <h6 class="slim-card-title tx-primary">Resumen noticias 30 días</h6>
+                                <h6 class="slim-card-title tx-primary">Resumen noticias 2 días</h6>
                             </div>
                             <div class="card-body" style="height: 500px; overflow-y: auto; font-size:1vw;">
                                 <table class="table table-striped table-sm">

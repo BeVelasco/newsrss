@@ -6,8 +6,8 @@ $.ajaxSetup({
 
 $(document).ready(function() {
     llenamedios();
-    llenanoticias();
     llenaFT();
+    llenanoticias();
 });
 
 function llenamedios(){
@@ -29,7 +29,6 @@ function llenamedios(){
                 html +=  "<tr><td>"+desc+"</td><td>"+element.num+"</td></tr>";
             });
             $('#tbmedios').append(html);
-            hide();
         },
         error: function (error) {
             console.log(error);
@@ -38,6 +37,7 @@ function llenamedios(){
 }
 
 function llenanoticias(){
+    show();
     $('#tbresumen').html();
     $.ajax({
         url: 'getNoticiasMes',
@@ -83,7 +83,6 @@ function llenaFT(){
                 html +=  "<tr><td>"+element.idesc+"</td><td>"+desc+"</td></tr>";
             });
             $('#tbft').append(html);
-            hide();
         },
         error: function (error) {
             console.log(error);
