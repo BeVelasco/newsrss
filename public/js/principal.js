@@ -12,6 +12,9 @@ $(document).ready(function () {
     dateFormat: "dd/mm/yy",
     autoclose: true
   });
+
+  llenamedios();
+  llenaTipos();
 });
 
 function creaGraficoGeneral(){
@@ -250,3 +253,55 @@ function showdata(id){
         });
 }
 
+function llenamedios(){
+    $('#tbmediosP').html();
+    $.ajax({
+        url: 'getMedios',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+            let html = "";
+            data.forEach(element => {
+                let desc = "";
+                if(element.origen == 'N') desc="Nacional";
+                if(element.origen == 'R') desc="Regional";
+                if(element.origen == 'L') desc="Local";
+                if(element.origen == 'I') desc="Internacional";
+
+                html +=  "<tr><td>"+desc+"</td><td class='tx-center'>"+element.num+"</td></tr>";
+            });
+            $('#tbmediosP').append(html);
+            hide();
+        },
+        error: function (error) {
+            console.log(error);
+          }
+        });
+}
+
+function llenaTipos(){
+    $('#tbtipos').html();
+    $.ajax({
+        url: 'getTipo',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+            let html = "";
+            data.forEach(element => {
+                let desc = "";
+                if(element.tipo == 0) desc = "RSS";
+                if(element.tipo == 1) desc = "HTML";
+                if(element.tipo == 2) desc = "Tweeter";
+                if(element.tipo == 3) desc = "Facebook";
+                html +=  "<tr><td>"+desc+"</td><td class='tx-center'>"+element.num+"</td></tr>";
+            });
+            $('#tbtipos').append(html);
+            hide();
+        },
+        error: function (error) {
+            console.log(error);
+          }
+        });
+}

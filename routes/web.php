@@ -46,6 +46,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('updFuente', 'HomeController@updFuente')->name('updFuente');
     Route::post('updPalabra', 'HomeController@updPalabra')->name('updPalabra');
     Route::post('setFuente', 'HomeController@setFuente')->name('setFuente');
+
+    Route::post('getMedios', 'HomeController@getMedios')->name('getMedios');
+    Route::post('getTipo', 'HomeController@getTipo')->name('getTipo');
+    Route::post('getNoticiasMes', 'HomeController@getNoticiasMes')->name('getNoticiasMes');
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');
