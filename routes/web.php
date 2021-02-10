@@ -39,6 +39,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('getContentHtmlP', 'HomeController@getContentHtmlP');
     Route::post('getContentHtmlPeriodicos', 'HomeController@getContentHtmlPeriodicos');
     Route::post('getPeriodicos', 'HomeController@getPeriodicos')->name('getPeriodicos');
+    Route::post('getFuentes', 'HomeController@getFuentes')->name('getFuentes');
+    Route::post('getPalabras', 'HomeController@getPalabras')->name('getPalabras');
+    Route::post('getFuentesId', 'HomeController@getFuentesId')->name('getFuentesId');
+    Route::post('getPalabraId', 'HomeController@getPalabraId')->name('getPalabraId');
+    Route::post('updFuente', 'HomeController@updFuente')->name('updFuente');
+    Route::post('updPalabra', 'HomeController@updPalabra')->name('updPalabra');
+    Route::post('setFuente', 'HomeController@setFuente')->name('setFuente');
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');

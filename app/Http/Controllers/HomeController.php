@@ -8,6 +8,7 @@ use Alert;
 use App\diarios;
 use Illuminate\Support\Carbon;
 use App\Fuentes;
+use App\Palabra;
 use PDF;
 use Illuminate\Support\Facades\Storage;
 
@@ -433,10 +434,95 @@ class HomeController extends Controller
     }
 
     public function configuracion(Request $request){
-        $palabras = DB::table('palabra_buscar')->paginate(5);
-        $fuentes = DB::table('fuentes')->paginate(5);
-        return view('panel.configuracion',['fuentes' => $fuentes,
-                                            'palabras' => $palabras ]);
+        // $palabras = DB::table('palabra_buscar')->paginate(5);
+        // $fuentes = DB::table('fuentes')->paginate(5);
+        return view('panel.configuracion');
+    }
+
+    public function getFuentes(Request $request){
+        $fuentes = DB::table('fuentes')->get();
+
+        return $fuentes;
+    }
+
+    public function getPalabras(Request $request){
+        $palabras = DB::table('palabra_buscar')->get();
+
+        return $palabras;
+    }
+
+    public function getFuentesId(Request $request){
+        $id = $request->id;
+        $fuente = Fuentes::find($id);
+
+        return $fuente;
+    }
+
+    public function getPalabraId(Request $request){
+        $id = $request->id;
+        $fuente = Palabra::find($id);
+
+        return $fuente;
+    }
+
+    public function setFuente(Request $request){
+        $idesc      = $request->idesc;
+        $url        = $request->url;
+        $tipo       = $request->tipo;
+        $origen     = $request->origen;
+        $estatus    = $request->estatus;
+
+        $obj = new Fuentes();
+
+        $obj->idesc     = $idesc;
+        $obj->url       = $url;
+        $obj->tipo      = $tipo;
+        $obj->origen    = $origen;
+        $obj->estatus   = $estatus;
+
+        $obj->save();
+
+        return response()->json([
+            'success'   => true
+            ], 200);
+    }
+
+    public function updFuente(Request $request){
+        $id         = $request->id;
+        $idesc      = $request->idesc;
+        $url        = $request->url;
+        $tipo       = $request->tipo;
+        $origen     = $request->origen;
+        $estatus    = $request->estatus;
+
+        $objfuente = Fuentes::find($id);
+
+        $objfuente->idesc   = $idesc;
+        $objfuente->url     = $url;
+        $objfuente->tipo    = $tipo;
+        $objfuente->origen  = $origen;
+        $objfuente->estatus = $estatus;
+
+        $objfuente->save();
+
+        return response()->json([
+            'success'   => true
+            ], 200);
+    }
+
+    public function updPalabra(Request $request){
+        $id         = $request->id;
+        $palabra      = $request->palabra;
+
+        $objPalabra = Palabra::find($id);
+
+        $objPalabra->palabra   = $palabra;
+
+        $objPalabra->save();
+
+        return response()->json([
+            'success'   => true
+            ], 200);
     }
 
     public function getContentHtml(Request $request){
