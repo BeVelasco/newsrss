@@ -588,4 +588,40 @@ class HomeController extends Controller
 
         //return view('pdfReporteDiario', $data);
     }
+
+    public function getMedios(){
+        $sqlmedios = "SELECT origen, COUNT(origen) AS num FROM `fuentes` AS f
+                        WHERE f.estatus = 1
+                        GROUP BY f.origen;";
+
+        $rs = DB::SELECT($sqlmedios);
+
+        return $rs;
+    }
+
+    public function getNoticiasMes(){
+        $sqlMes = "SELECT *
+                    FROM web AS w
+                    WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -1 MONTH)
+                    AND w.`titulo` IN (SELECT f.idesc
+                    FROM fuentes AS f
+                    WHERE f.`origen` = 'I')
+                    ORDER BY w.`created_at` DESC;";
+
+        $rs = DB::select($sqlMes);
+
+        return $rs;
+    }
+
+
+    public function getTipo(){
+        $sqlTipo = "SELECT tipo, COUNT(tipo) AS num FROM `fuentes` AS f
+                    WHERE f.`estatus` = 1
+                    GROUP BY f.`tipo`";
+
+        $rs = DB::select($sqlTipo);
+
+        return $rs;
+    }
+
 }

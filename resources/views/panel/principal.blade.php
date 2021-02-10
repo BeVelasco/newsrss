@@ -12,191 +12,55 @@
 
 @section('contenido')
 <div class="container">
-<!--   <div class="slim-pageheader">
-    <ol class="breadcrumb slim-breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Inicio</li>
-    </ol>
-    <h6 class="slim-pagetitle">Inicio</h6>
-  </div> --><!-- slim-pageheader -->
 
-  <div class="row row-xs">
-    <div class="col-md-6 col-lg-3 order-lg-1">
+  <div class="row">
+    <div class="col-3">
 
-    {{-- <div class="card card-body pd-20 mg-t-10">
-        <h6 class="slim-card-title mg-b-20">Conteo de noticias</h6>
-
-        <div class="table-responsive">
-          <table class="table table-striped mg-b-0 tx-13">
-            <tbody>
-              <tr>
-                <td class="pd-l-20">
-                  Noticias de Fuentes RSS
-                </td>
-                <td class="tx-center">
-                  {{ $num_rss[0]->num }}
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pd-l-20">
-                  Noticias de Fuentes RSS Locales
-                </td>
-                <td class="tx-center">
-                  {{ $rss_locales[0]->num }}
-                </td>
-              </tr>
-              <tr>
-                <td class="pd-l-20">
-                  Noticias de Fuentes RSS Nacionales
-                </td>
-                <td class="tx-center">
-                  {{ $rss_nacionales[0]->num }}
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pd-l-20">
-                  Noticias de Fuentes HTML
-                </td>
-                <td class="tx-center">
-                  {{ $num_html[0]->num }}
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pd-l-20">
-                  Noticias de Fuentes HTML Locales
-                </td>
-                <td class="tx-center">
-                  {{ $html_locales[0]->num }}
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pd-l-20">
-                  Noticias de Fuentes HTML NAcionales
-                </td>
-                <td class="tx-center">
-                  {{ $html_nacionales[0]->num }}
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pd-l-20">
-                  Noticias de Fuentes Twitter
-                </td>
-                <td class="tx-center">
-                  {{ $twitter[0]->num }}
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pd-l-20">
-                  Noticias de Fuentes Facebook
-                </td>
-                <td class="tx-center">
-                  {{ $facebook[0]->num }}
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
+      <div class="card mg-t-10">
+        <div class="card-header">
+            <h6 class="slim-card-title tx-primary">Tipos Medios Digitales</h6>
         </div>
-      </div><!-- card --> --}}
 
-      <div class="card card-body pd-20 mg-t-10">
-        <h6 class="slim-card-title mg-b-20">Indicador de noticias Internacionales</h6>
-
-        <div class="table-responsive">
-          <table class="table mg-b-0 tx-13">
+        <div class="card-body" style="height: 300px; overflow-y: auto; font-size:1vw;">
+            <table class="table table-striped">
             <thead>
               <tr class="tx-10">
-                <th class="wd-10p pd-y-5">Fuente</th>
-                <th class="pd-y-5 tx-center"># Noticias</th>
+                <th class="wd-10p pd-y-5">Tipo</th>
+                <th class="pd-y-5 tx-center"># Medios</th>
               </tr>
             </thead>
-            <tbody>
-              @php $count = 0; @endphp
-              @foreach($ConteoTotalInternacional as $vconteot)
-              <tr>
-                <td class="pd-l-20">
-                  {{ $vconteot->titulo }}
-                </td>
-                <td class="tx-center">{{ $vconteot->noticias }}</td>
-              </tr>
-              @php $count = $count + $vconteot->noticias; @endphp
-              @endforeach
-              <tr>
-                <td class="tx-center tx-15 tx-left"><b>TOTAL</b></td>
-                <td class="tx-center"> {{ $count }}</td>
-              </tr>
+
+            <tbody id="tbmediosP">
             </tbody>
+
           </table>
         </div>
       </div><!-- card -->
 
-      <div class="card card-body pd-20 mg-t-10">
-        <h6 class="slim-card-title mg-b-20">Indicador de noticias Nacionales</h6>
-
-        <div class="table-responsive">
-          <table class="table mg-b-0 tx-13">
-            <thead>
-              <tr class="tx-10">
-                <th class="wd-10p pd-y-5">Fuente</th>
-                <th class="pd-y-5 tx-center"># Noticias</th>
-              </tr>
-            </thead>
-            <tbody>
-              @php $count = 0; @endphp
-              @foreach($ConteoTotal as $vconteot)
-              <tr>
-                <td class="pd-l-20">
-                  {{ $vconteot->titulo }}
-                </td>
-                <td class="tx-center">{{ $vconteot->noticias }}</td>
-              </tr>
-              @php $count = $count + $vconteot->noticias; @endphp
-              @endforeach
-              <tr>
-                <td class="tx-center tx-15 tx-left"><b>TOTAL</b></td>
-                <td class="tx-center"> {{ $count }}</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="card mg-t-10">
+        <div class="card-header">
+            <h6 class="slim-card-title tx-primary">Medios Digitales</h6>
         </div>
-      </div><!-- card -->
 
-      <div class="card card-body pd-20 mg-t-10" style="height: 20vw;">
-        <h6 class="slim-card-title mg-b-20">Inidcador de noticias al MES</h6>
-
-        <div class="table-responsive">
-          <table class="table mg-b-0 tx-13">
+        <div class="card-body" style="height: 300px; overflow-y: auto; font-size:1vw;">
+            <table class="table table-striped">
             <thead>
               <tr class="tx-10">
-                <th class="wd-10p pd-y-5">Fuente</th>
-                <th class="pd-y-5 tx-center"># Noticias</th>
+                <th class="wd-10p pd-y-5">Tipo</th>
+                <th class="pd-y-5 tx-center"># Medios</th>
               </tr>
             </thead>
-            <tbody>
-              @foreach($ConteoMes as $vconteo)
-              <tr>
-                <td class="pd-l-20">
-                  {{ $vconteo->titulo }}
-                </td>
-                <td class="tx-center">{{ $vconteo->noticias }}</td>
-              </tr>
-              @endforeach
-              <tr>
 
-              </tr>
+            <tbody id="tbtipos">
             </tbody>
+
           </table>
         </div>
       </div><!-- card -->
 
     </div>
 
-    <div class="col-md- col-lg-9 order-lg-1">
+    <div class="col-9">
       <div class="card card-body pd-20 mg-t-10 wt-100">
         <h6 class="slim-card-title mg-b-20">Noticias registradas</h6>
 
@@ -250,60 +114,11 @@
           <button onclick="busca();" class="mg-l-15">Buscar</button>
         </div>
         <div id="chartArea1" class="dash-chartist"></div>
-        <table id="show" class="table table-responsive" style="height: 300px; overflow-y: scroll;padding:0;"></table>
+        <hr>
+        <table id="show" class="table table-responsive" style="height: 300px; overflow-y: auto; padding:0;">
+        </table>
       </div><!-- card -->
 
-      <!-- <div class="card card-body pd-20 mg-t-10 wt-100">
-        <h6 class="slim-card-title mg-b-20">Gráfico de noticias Mensuales</h6>
-        <div class="row mg-l-5">
-
-          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-            <label>Fecha Incio</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                </div>
-              </div>
-              <input type="text"
-                     id="fi"
-                     name="fi"
-                     class="form-control fc-datepicker"
-                     placeholder="DD/MM/YYYY"
-                     value="{{ $fechas[0]->fi }}"
-              >
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-            <label>Fecha Fin</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                </div>
-              </div>
-              <input type="text"
-                     id="ff"
-                     name="ff"
-                     class="form-control fc-datepicker"
-                     placeholder="DD/MM/YYYY"
-                     value="{{ $fechas[0]->ff }}"
-              >
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-            <div class="input-group">
-              <div class="input-group-prepend">
-              <button onclick="fechas();">Buscar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="chartArea2" class="dash-chartist"></div>
-      </div>card -->
     </div>
   </div>
 
