@@ -604,8 +604,7 @@ class HomeController extends Controller
                     FROM web AS w
                     WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -1 MONTH)
                     AND w.`titulo` IN (SELECT f.idesc
-                    FROM fuentes AS f
-                    WHERE f.`origen` = 'I')
+                    FROM fuentes AS f)
                     ORDER BY w.`created_at` DESC;";
 
         $rs = DB::select($sqlMes);
