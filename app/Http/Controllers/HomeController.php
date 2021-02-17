@@ -639,7 +639,7 @@ class HomeController extends Controller
 
         //return response()->download(public_path().'/'.$filename);
         return $pdf->stream();
-        // return view('pdfReporteDiario', $data);
+        //return view('pdfReporteDiario', $data);
     }
 
     public function getMedios(){
