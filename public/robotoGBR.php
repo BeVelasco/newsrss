@@ -9,7 +9,6 @@ if (!ini_get('date.timezone')) {
 require_once 'Feed.php';
 
 $conn = connect();
-$busqueda = '/\b(senador alejandro|mier|armenta)\b/i';
 $fuentes = getPeriodicos($conn);
 
 
@@ -57,7 +56,7 @@ function htmlconsulta($conn, $url, $fuente){
 			foreach ($match1[0] as $value1) {
 				$data = url_get_contents($value1);
 				//$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
-				if(preg_match('/\b(senador alejandro|mier|armenta)\b/i', $data)){
+				if(preg_match('/\b(Guillermo berruecos Rodríguez|Guillermo berruecos)\b/i', $data)){
 					echo "Para guardar --->".$fuente."\n";
 					almacena($fuente, base64_encode($data), $value1, $conn, 'Web');
 				}
@@ -88,7 +87,7 @@ function rssconsulta($conn, $url, $fuente){
 	echo "******************************\n";
 
 	foreach ($rss->item as $item) {
-		if(preg_match('/\b(senador alejandro|mier|armenta)\b/i', $item->description)) {
+		if(preg_match('/\b(Guillermo berruecos Rodríguez|Guillermo berruecos)\b/i', $item->description)) {
 			echo 'Title: ', $item->title; echo "\n";
 			echo 'Link: ', $item->link; echo "\n";
 			echo 'Timestamp: ', $item->timestamp;echo "\n";
