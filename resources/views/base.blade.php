@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="slim-header-center">
-                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES - Senador Alejandro Armenta</h4>
+                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES - Guillermo berruecos Rodríguez</h4>
                     <a href="{{ route('monitor') }}">
                         <button type="button" class="btn-primary">Monitor</button></a>
                     <a href="{{ route('home') }}">

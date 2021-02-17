@@ -56,7 +56,7 @@ function htmlconsulta($conn, $url, $fuente){
 			foreach ($match1[0] as $value1) {
 				$data = url_get_contents($value1);
 				//$data = mb_convert_encoding($data, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
-				if(preg_match('/\b(Guillermo berruecos Rodríguez|Guillermo berruecos)\b/i', $data)){
+				if(preg_match('/\b(Guillermo berruecos Rodríguez|Guillermos berruecos)\b/i', $data)){
 					echo "Para guardar --->".$fuente."\n";
 					almacena($fuente, base64_encode($data), $value1, $conn, 'Web');
 				}
