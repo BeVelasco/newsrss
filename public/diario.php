@@ -57,23 +57,29 @@ function htmlconsulta($conn, $url, $fuente){
     $data = str_replace('_','/',$resp['lighthouseResult']['audits']['final-screenshot']['details']['data']);
     $data = str_replace('-','+',$data);
 
-    // $img = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data));
+    $img = str_replace('data:image/jpeg;base64,', '', $data);
+    $datai = base64_decode($img);
 
 	echo $fuente." ******************************\n";
-    almacena($fuente, $data, $url, $conn, 'Web');
+    $lastid = almacena($fuente, $data, $url, $conn, 'Web');
+    file_put_contents('img/diarios/img_'.$lastid.'.png', $datai);
     sleep(90);
 }
 
 function almacena($titulo, $content, $url, $conn, $tipo){
-		$sql = "INSERT INTO diarios (titulo,content,url,hash, tipo)
-				VALUES ('".$titulo."','".$content."','".$url."','".hash('md5',$content)."','".$tipo."')";
-		if ($conn->query($sql) === TRUE) {
-		    echo "Datos almacenados\n";
-		} else {
-		    echo 'Error Insertar: '.$conn->error;
-		}
+    $rid = 0;
+    $sql = "INSERT INTO diarios (titulo,content,url,hash, tipo)
+            VALUES ('".$titulo."','".$content."','".$url."','".hash('md5',$content)."','".$tipo."')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Datos almacenados\n";
+        $rid = $conn->insert_id;
+    } else {
+        echo 'Error Insertar: '.$conn->error;
+    }
 
     echo "Registro Exitoso\n";
+    return $rid;
 }
 
 function url_get_contents($url, $useragent='cURL', $headers=false, $follow_redirects=true, $debug=false) {
