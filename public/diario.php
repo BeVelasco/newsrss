@@ -35,7 +35,7 @@ function connect(){
 	$port = "5543";
 	$username = "asys";
 	$password = "1nt3gr4*2019";
-	$database = "robotoArmenta";
+	$database = "robotoGBR";
 
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $database, $port);
