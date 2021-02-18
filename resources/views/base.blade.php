@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="chrome">
     <head>
-        <title>Robot AAM</title>
+        <title>Robot SMA</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="slim-header-center">
-                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES - Senador Alejandro Armenta</h4>
+                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES - San Miguel de Allende</h4>
                     <a href="{{ route('monitor') }}">
                         <button type="button" class="btn-primary">Monitor</button></a>
                     <a href="{{ route('home') }}">
@@ -33,10 +33,10 @@
 
                     <a href="{{ route('periodicos') }}">
                         <button type="button" class="btn-primary">Periodicos</button></a>
-                    {{-- <a href="{{ route('semaforizacion') }}">
+                    <a href="{{ route('semaforizacion') }}">
                         <button type="button" class="btn-primary">Semaforización</button></a>
                     <a href="{{ route('alertas') }}">
-                        <button type="button" class="btn-primary">Alertas</button></a> --}}
+                        <button type="button" class="btn-primary">Alertas</button></a>
                 </div>
 
                 <div class="slim-header-right">

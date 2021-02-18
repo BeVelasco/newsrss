@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Robot Alejandro Armenta</title>
+    <title>Robot San Miguel de Allende</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

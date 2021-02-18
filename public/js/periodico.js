@@ -123,7 +123,8 @@ function showdataPeriodicos(){
                 let img = periodico.content;
                 let id = periodico.id;
                 if(img){
-                    html+="<div><img src='img/diarios/img_"+id+".png' height='400'></div><hr>";
+                    html+="<div><img src='"+img+"' height='400'></div><hr>";
+                    //html+="<div><img src='img/diarios/img_"+id+".png' height='400'></div><hr>";
                 }
             });
             $('#reporte').append(html);
