@@ -638,8 +638,8 @@ class HomeController extends Controller
         // $pdf->save($filename);
 
         //return response()->download(public_path().'/'.$filename);
-        //return $pdf->stream();
-        return view('pdfReporteDiario', $data);
+        return $pdf->stream();
+        //return view('pdfReporteDiario', $data);
     }
 
     public function getMedios(){
