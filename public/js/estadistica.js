@@ -4,9 +4,16 @@ $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('cont
 $(document).ready(function () {
   'use strict'
 
-  creaGraficoMedios();
+  show();
+//   creaGraficoMedios();
   creaGraficoLocales();
+  creaGraficoLocalesSemana();
   creaGraficoNacionales();
+  creaGraficoNacionalesSemanales();
+  creaGraficoFacebook();
+  creaGraficoFacebookSemanales();
+  creaGraficoTweeter();
+  creaGraficoTweeterSemanales();
 
 //   creaGraficoGeneral();
 //   creaGraficoFechas();
@@ -37,29 +44,29 @@ function creaGraficoMedios(){
         data: {},
         dataType: 'JSON',
         success: function (data) {
-          var medios = [];
-          var cantidad = [];
+            var medios = [];
+            var cantidad = [];
 
-          for (var i = 0; i <= data.length - 1; i++) {
-            medios.push(data[i].titulo);
-            cantidad.push(data[i].noticias);
-          }
+            for (var i = 0; i <= data.length - 1; i++) {
+                medios.push(data[i].titulo);
+                cantidad.push(data[i].noticias);
+            }
 
-          var area1 = new Chartist.Line('#chartAreaMedios', {
-            labels: medios,
-            series: [ cantidad ]
-          }, {
-            height: '20vw',
-            fullWidth: true,
-            chartPadding: 30,
-            plugins: [
-              Chartist.plugins.ctPointLabels({
-              textAnchor: 'middle'
-              })
-            ]
-          });
+            var area1 = new Chartist.Line('#chartAreaMedios', {
+                labels: medios,
+                series: [ cantidad ]
+            }, {
+                height: '20vw',
+                fullWidth: true,
+                chartPadding: 30,
+                plugins: [
+                Chartist.plugins.ctPointLabels({
+                textAnchor: 'middle'
+                })
+                ]
+            });
 
-            },
+        },
         error: function (error) {
           swal('error','Error al general el grafico');
         }
@@ -96,11 +103,66 @@ function creaGraficoLocales(){
             cantidad.push(data[i].noticias);
           }
 
-          var area1 = new Chartist.Line('#chartAreaLocales', {
+          var area1 = new Chartist.Bar('#chartAreaLocales', {
             labels: medios,
             series: [ cantidad ]
           }, {
-            height: '20vw',
+            stackBars: true,
+            axisY: {
+              labelInterpolationFnc: function(value) {
+                return (value / 1000) + 'k';
+              }
+            }
+          }).on('draw', function(data) {
+            if(data.type === 'bar') {
+              data.element.attr({
+                style: 'stroke-width: 20px'
+              });
+            }
+          });
+
+        },
+        error: function (error) {
+          swal('error','Error al general el grafico');
+        }
+      });
+    // } else {
+    //   swal('error','Error al general el grafico');
+    // }
+}
+
+function creaGraficoLocalesSemana(){
+    'use strict'
+    // var fi = $("#fi").val();
+    // var ff = $("#ff").val();
+
+    // var part1 =fi.split('/');
+    // var part2 =ff.split('/');
+
+    // var md1 = new Date(part1[2], part1[1] - 1 , part1[0]);
+    // var md2 = new Date(part2[2], part2[1] - 1 , part2[0]);
+
+    // if(md1 <= md2){
+
+      $.ajax({
+        url: 'indicadoresLocalesSemana',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+          var medios = [];
+          var cantidad = [];
+
+          for (var i = 0; i <= data.length - 1; i++) {
+            medios.push(data[i].titulo);
+            cantidad.push(data[i].noticias);
+          }
+
+          var area1 = new Chartist.Line('#chartAreaLocalesSemanal', {
+            labels: medios,
+            series: [ cantidad ]
+          }, {
+            height: '200px',
             fullWidth: true,
             chartPadding: 30,
             plugins: [
@@ -110,7 +172,7 @@ function creaGraficoLocales(){
             ]
           });
 
-            },
+        },
         error: function (error) {
           swal('error','Error al general el grafico');
         }
@@ -151,7 +213,7 @@ function creaGraficoNacionales(){
           labels: medios,
           series: [ cantidad ]
         }, {
-          height: '30vw',
+          height: '200px',
           fullWidth: true,
           chartPadding: 30,
           plugins: [
@@ -161,7 +223,8 @@ function creaGraficoNacionales(){
           ]
         });
 
-          },
+
+        },
       error: function (error) {
         swal('error','Error al general el grafico');
       }
@@ -170,6 +233,225 @@ function creaGraficoNacionales(){
 //     swal('error','Error al general el grafico');
 //   }
 }
+
+function creaGraficoNacionalesSemanales(){
+    'use strict'
+    var fi = $("#fi").val();
+    var ff = $("#ff").val();
+
+  //   var part1 =fi.split('/');
+  //   var part2 =ff.split('/');
+
+  //   var md1 = new Date(part1[2], part1[1] - 1 , part1[0]);
+  //   var md2 = new Date(part2[2], part2[1] - 1 , part2[0]);
+
+  //   if(md1 <= md2){
+
+      $.ajax({
+        url: 'indicadoresNacionalesSemanales',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+          var medios = [];
+          var cantidad = [];
+
+          for (var i = 0; i <= data.length - 1; i++) {
+            medios.push(data[i].titulo);
+            cantidad.push(data[i].noticias);
+          }
+
+          var area1 = new Chartist.Bar('#chartAreaNacionalesSemanal', {
+            labels: medios,
+            series: [ cantidad ]
+          }, {
+            stackBars: true,
+            axisY: {
+              labelInterpolationFnc: function(value) {
+                return (value / 1000) + 'k';
+              }
+            }
+          }).on('draw', function(data) {
+            if(data.type === 'bar') {
+              data.element.attr({
+                style: 'stroke-width: 20px'
+              });
+            }
+          });
+
+        },
+        error: function (error) {
+          swal('error','Error al general el grafico');
+        }
+      });
+  //   } else {
+  //     swal('error','Error al general el grafico');
+  //   }
+  }
+
+  function creaGraficoFacebook(){
+    'use strict'
+    var fi = $("#fi").val();
+    var ff = $("#ff").val();
+      $.ajax({
+        url: 'indicadoresFacebook',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+          var medios = [];
+          var cantidad = [];
+
+          for (var i = 0; i <= data.length - 1; i++) {
+            medios.push(data[i].titulo);
+            cantidad.push(data[i].noticias);
+          }
+
+          var area1 = new Chartist.Bar('#chartAreaFacebook', {
+            labels: medios,
+            series: [ cantidad ]
+          }, {
+            stackBars: true,
+            axisY: {
+              labelInterpolationFnc: function(value) {
+                return (value / 1000) + 'k';
+              }
+            }
+          }).on('draw', function(data) {
+            if(data.type === 'bar') {
+              data.element.attr({
+                style: 'stroke-width: 20px'
+              });
+            }
+          });
+
+        },
+        error: function (error) {
+          swal('error','Error al general el grafico');
+        }
+      });
+  }
+
+  function creaGraficoFacebookSemanales(){
+    'use strict'
+    var fi = $("#fi").val();
+    var ff = $("#ff").val();
+      $.ajax({
+        url: 'indicadoresFacebookSemana',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+          var medios = [];
+          var cantidad = [];
+
+          for (var i = 0; i <= data.length - 1; i++) {
+            medios.push(data[i].titulo);
+            cantidad.push(data[i].noticias);
+          }
+
+          var area1 = new Chartist.Line('#chartAreaFacebookSemanal', {
+            labels: medios,
+            series: [ cantidad ]
+          }, {
+            height: '200px',
+            fullWidth: true,
+            chartPadding: 30,
+            plugins: [
+              Chartist.plugins.ctPointLabels({
+              textAnchor: 'middle'
+              })
+            ]
+          });
+
+        },
+        error: function (error) {
+          swal('error','Error al general el grafico');
+        }
+      });
+  }
+
+  function creaGraficoTweeter(){
+    'use strict'
+    var fi = $("#fi").val();
+    var ff = $("#ff").val();
+      $.ajax({
+        url: 'indicadoresTweeter',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+          var medios = [];
+          var cantidad = [];
+
+          for (var i = 0; i <= data.length - 1; i++) {
+            medios.push(data[i].titulo);
+            cantidad.push(data[i].noticias);
+          }
+
+          var area1 = new Chartist.Line('#chartAreaTweeter', {
+            labels: medios,
+            series: [ cantidad ]
+          }, {
+            height: '200px',
+            fullWidth: true,
+            chartPadding: 30,
+            plugins: [
+              Chartist.plugins.ctPointLabels({
+              textAnchor: 'middle'
+              })
+            ]
+          });
+
+        },
+        error: function (error) {
+          swal('error','Error al general el grafico');
+        }
+      });
+  }
+
+  function creaGraficoTweeterSemanales(){
+    'use strict'
+    var fi = $("#fi").val();
+    var ff = $("#ff").val();
+      $.ajax({
+        url: 'indicadoresTweeterSemanales',
+        type: 'POST',
+        data: {},
+        dataType: 'JSON',
+        success: function (data) {
+          var medios = [];
+          var cantidad = [];
+
+          for (var i = 0; i <= data.length - 1; i++) {
+            medios.push(data[i].titulo);
+            cantidad.push(data[i].noticias);
+          }
+
+          var area1 = new Chartist.Bar('#chartAreaTweeterSemanal', {
+            labels: medios,
+            series: [ cantidad ]
+          }, {
+            stackBars: true,
+            axisY: {
+              labelInterpolationFnc: function(value) {
+                return (value / 1000) + 'k';
+              }
+            }
+            }).on('draw', function(data) {
+                if(data.type === 'bar') {
+                data.element.attr({
+                    style: 'stroke-width: 30px'
+                });
+                }
+            });
+          hide();
+        },
+        error: function (error) {
+          swal('error','Error al general el grafico');
+        }
+      });
+  }
 
 function creaGraficoFechas(){
   'use strict'
@@ -214,7 +496,7 @@ function creaGraficoFechas(){
           ]
         });
 
-          },
+        },
       error: function (error) {
         /*swal('error','Error al general el grafico');*/
       }
@@ -301,4 +583,13 @@ function Enter(e){
 
 function fechas(){
   alert('Fechas');
+}
+
+function show(){
+    document.getElementById("spinner-back").classList.add("show");
+    document.getElementById("spinner-front").classList.add("show");
+}
+function hide(){
+    document.getElementById("spinner-back").classList.remove("show");
+    document.getElementById("spinner-front").classList.remove("show");
 }

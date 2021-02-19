@@ -44,7 +44,7 @@
                       <td class="pd-y-5 tx-center">  <span class="square-8 bg-danger mg-r-5 rounded-circle"></span> Robot</td>
                       <td class="pd-y-5 tx-center">San Miguel de Allende Carteles Droga Narco</td>
                       <td class="pd-y-5 tx-center">Bloomberg</td>
-                      <td class="pd-y-5 tx-center">?</td>
+                      <td class="pd-y-5 tx-center">Boletines de prensa, acciones correctivas </td>
                       <td class="pd-y-5 tx-center">Comunicado de prensa</td>
                       <td class="pd-y-5 tx-center">Empresarios</td>
                     </tr>
@@ -53,7 +53,7 @@
                       <td class="pd-y-5 tx-center"> <span class="square-8 bg-danger mg-r-5 rounded-circle"></span> Robot</td>
                       <td class="pd-y-5 tx-center">San Miguel de Allende Carteles Droga Narco</td>
                       <td class="pd-y-5 tx-center">Washington Post</td>
-                      <td class="pd-y-5 tx-center">?</td>
+                      <td class="pd-y-5 tx-center">Boletines de prensa, acciones correctivas </td>
                       <td class="pd-y-5 tx-center">Diario El Reforma</td>
                       <td class="pd-y-5 tx-center">Turistas</td>
                     </tr>
@@ -83,10 +83,77 @@
                       <td class="pd-y-5 tx-center"> <span class="square-8 bg-danger mg-r-5 rounded-circle"></span>Robot</td>
                       <td class="pd-y-5 tx-center">San Miguel de Allende Carteles Droga Narco</td>
                       <td class="pd-y-5 tx-center">Financiero</td>
-                      <td class="pd-y-5 tx-center">?</td>
+                      <td class="pd-y-5 tx-center">Comunicado, Programas Sociales</td>
                       <td class="pd-y-5 tx-center">Comunicado de prensa</td>
                       <td class="pd-y-5 tx-center">Empresarios</td>
                     </tr>
+
+                   </table>
+                  <br>
+
+                  <table class="table mg-b-0 tx-13">
+                     <tr>
+                      <th ><h3>Local</h3></th>
+                      <th></th>
+                      <th colspan="2"></th>
+                      <th> </th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+
+                    <tr>
+                      <td class="pd-y-5 tx-center  tx-15">Automatización</td>
+                      <td class="pd-y-5 tx-center  tx-15">Palabras claves</td>
+                      <td class="pd-y-5 tx-center  tx-15">Noticia Nacionales</td>
+                      <td class="pd-y-5 tx-center  tx-15">Comunicación Social de Ayuntamiento</td>
+                      <td class="pd-y-5 tx-center  tx-15">Gobierno</td>
+                      <td class="pd-y-5 tx-center  tx-15">RRSS</td>
+                    </tr>
+
+                    <tr>
+                      <td class="pd-y-5 tx-center"> <span class="square-8 bg-danger mg-r-5 rounded-circle"></span>Robot</td>
+                      <td class="pd-y-5 tx-center">Fuera el Presidente municipal</td>
+                      <td class="pd-y-5 tx-center">Facebook</td>
+                      <td class="pd-y-5 tx-center">Campaña de Posicionamiento</td>
+                      <td class="pd-y-5 tx-center">Acompañamiento a campaña de posicionamiento </td>
+                      <td class="pd-y-5 tx-center">Todos Somos San Miguel</td>
+                    </tr>
+
+                    <tr>
+                        <td class="pd-y-5 tx-center"> <span class="square-8 bg-danger mg-r-5 rounded-circle"></span>Robot</td>
+                        <td class="pd-y-5 tx-center">No a las obras</td>
+                        <td class="pd-y-5 tx-center">Facebook</td>
+                        <td class="pd-y-5 tx-center">Campaña por una mejor movilidad</td>
+                        <td class="pd-y-5 tx-center">Comunicados de prensa</td>
+                        <td class="pd-y-5 tx-center">San Miguel de Allende</td>
+                      </tr>
+
+                      <tr>
+                        <td class="pd-y-5 tx-center"> <span class="square-8 bg-danger mg-r-5 rounded-circle"></span>Robot</td>
+                        <td class="pd-y-5 tx-center">No a las obras</td>
+                        <td class="pd-y-5 tx-center">Facebook</td>
+                        <td class="pd-y-5 tx-center">Campaña por una mejor movilidad</td>
+                        <td class="pd-y-5 tx-center">Comunicado de prensa</td>
+                        <td class="pd-y-5 tx-center">Todos por San Miguel de Allende</td>
+                      </tr>
+
+                      <tr>
+                        <td class="pd-y-5 tx-center"> <span class="square-8 bg-danger mg-r-5 rounded-circle"></span>Robot</td>
+                        <td class="pd-y-5 tx-center">Violencia contra las mujeres</td>
+                        <td class="pd-y-5 tx-center">Facebook</td>
+                        <td class="pd-y-5 tx-center">Campaña DIF Municipal</td>
+                        <td class="pd-y-5 tx-center">Reunión con mujeres</td>
+                        <td class="pd-y-5 tx-center">Todos Somos San Miguel</td>
+                      </tr>
+
+                      <tr>
+                        <td class="pd-y-5 tx-center"> <span class="square-8 bg-danger mg-r-5 rounded-circle"></span>Robot</td>
+                        <td class="pd-y-5 tx-center">Narco Municipio</td>
+                        <td class="pd-y-5 tx-center">Facebook</td>
+                        <td class="pd-y-5 tx-center">Campaña "NO"</td>
+                        <td class="pd-y-5 tx-center">Reunión con empresarios</td>
+                        <td class="pd-y-5 tx-center">Todos Somos San Miguel - San Miguel de Allende</td>
+                      </tr>
 
                    </table>
                  </div>

@@ -30,7 +30,13 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::post('indicadoresMedios', 'HomeController@indicadoresMedios');
     Route::post('indicadoresLocales', 'HomeController@indicadoresLocales');
+    Route::post('indicadoresLocalesSemana', 'HomeController@indicadoresLocalesSemana');
     Route::post('indicadoresNacionales', 'HomeController@indicadoresNacionales');
+    Route::post('indicadoresNacionalesSemanales', 'HomeController@indicadoresNacionalesSemanales');
+    Route::post('indicadoresFacebook', 'HomeController@indicadoresFacebook');
+    Route::post('indicadoresFacebookSemana', 'HomeController@indicadoresFacebookSemana');
+    Route::post('indicadoresTweeter', 'HomeController@indicadoresTweeter');
+    Route::post('indicadoresTweeterSemanales', 'HomeController@indicadoresTweeterSemanales');
 
     Route::post('indicadoresGeneral', 'HomeController@indicadoresGeneral');
 	Route::post('indicadoresGeneralFechas', 'HomeController@indicadoresGeneralFechas');

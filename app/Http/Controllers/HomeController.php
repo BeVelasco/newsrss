@@ -247,6 +247,22 @@ class HomeController extends Controller
                 ;
         $ConteoTotalNacionales = DB::SELECT($sql);
 
+        $sql = "SELECT concat('(',f.id,') ',w.`titulo`) as titulo, COUNT(w.id) AS noticias
+                FROM web AS w
+                LEFT JOIN `fuentes` AS f ON f.idesc = w.titulo
+                WHERE f.`origen` = 'F'
+                GROUP BY w.`titulo`;"
+                ;
+        $ConteoTotalFacebook = DB::SELECT($sql);
+
+        $sql = "SELECT concat('(',f.id,') ',w.`titulo`) as titulo, COUNT(w.id) AS noticias
+                FROM web AS w
+                LEFT JOIN `fuentes` AS f ON f.idesc = w.titulo
+                WHERE f.`origen` = 'T'
+                GROUP BY w.`titulo`;"
+                ;
+        $ConteoTotalTweeter = DB::SELECT($sql);
+
         $sql = "select count(*) as num
                 from web as w
                 left join fuentes as f on f.idesc = w.titulo
@@ -293,6 +309,8 @@ class HomeController extends Controller
                                     'twitter'               => $twitter,
                                     'facebook'              => $facebook,
                                     'facebook_grupos'       => $facebook_grupos,
+                                    'ConteoTotalFacebook'   => $ConteoTotalFacebook,
+                                    'ConteoTotalTweeter'    => $ConteoTotalTweeter
                                     ]);
     }
 
@@ -335,11 +353,75 @@ class HomeController extends Controller
         return json_encode($rs);
     }
 
+    public function indicadoresLocalesSemana(){
+        $rs = DB::SELECT("SELECT f.id AS titulo, COUNT(w.id) AS noticias
+                            FROM web AS w
+                            LEFT JOIN fuentes AS f ON w.`titulo` = f.`idesc`
+                            WHERE f.`origen` = 'L'
+                            AND  YEARWEEK(w.`created_at`, 1) = YEARWEEK(CURDATE(), 1)
+                            GROUP BY w.`titulo`;");
+
+        return json_encode($rs);
+    }
+
     public function indicadoresNacionales(){
         $rs = DB::SELECT("SELECT f.id AS titulo, COUNT(w.id) AS noticias
                             FROM web AS w
                             LEFT JOIN fuentes AS f ON w.`titulo` = f.`idesc`
                             WHERE f.`origen` = 'N'
+                            GROUP BY w.`titulo`;");
+
+        return json_encode($rs);
+    }
+
+    public function indicadoresNacionalesSemanales(){
+        $rs = DB::SELECT("SELECT f.id AS titulo, COUNT(w.id) AS noticias
+                            FROM web AS w
+                            LEFT JOIN fuentes AS f ON w.`titulo` = f.`idesc`
+                            WHERE f.`origen` = 'N'
+                            AND  YEARWEEK(w.`created_at`, 1) = YEARWEEK(CURDATE(), 1)
+                            GROUP BY w.`titulo`;");
+
+        return json_encode($rs);
+    }
+
+    public function indicadoresFacebook(){
+        $rs = DB::SELECT("SELECT f.id AS titulo, COUNT(w.id) AS noticias
+                            FROM web AS w
+                            LEFT JOIN fuentes AS f ON w.`titulo` = f.`idesc`
+                            WHERE f.`origen` = 'F'
+                            GROUP BY w.`titulo`;");
+
+        return json_encode($rs);
+    }
+
+    public function indicadoresFacebookSemana(){
+        $rs = DB::SELECT("SELECT f.id AS titulo, COUNT(w.id) AS noticias
+                            FROM web AS w
+                            LEFT JOIN fuentes AS f ON w.`titulo` = f.`idesc`
+                            WHERE f.`origen` = 'F'
+                            AND  YEARWEEK(w.`created_at`, 1) = YEARWEEK(CURDATE(), 1)
+                            GROUP BY w.`titulo`;");
+
+        return json_encode($rs);
+    }
+
+    public function indicadoresTweeter(){
+        $rs = DB::SELECT("SELECT f.id AS titulo, COUNT(w.id) AS noticias
+                            FROM web AS w
+                            LEFT JOIN fuentes AS f ON w.`titulo` = f.`idesc`
+                            WHERE f.`origen` = 'T'
+                            GROUP BY w.`titulo`;");
+
+        return json_encode($rs);
+    }
+
+    public function indicadoresTweeterSemanales(){
+        $rs = DB::SELECT("SELECT f.id AS titulo, COUNT(w.id) AS noticias
+                            FROM web AS w
+                            LEFT JOIN fuentes AS f ON w.`titulo` = f.`idesc`
+                            WHERE f.`origen` = 'T'
+                            AND  YEARWEEK(w.`created_at`, 1) = YEARWEEK(CURDATE(), 1)
                             GROUP BY w.`titulo`;");
 
         return json_encode($rs);

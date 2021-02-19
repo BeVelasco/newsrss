@@ -35,7 +35,7 @@
                             <th class="pd-y-5 tx-center" >Incurrencias</th>
                             <th colspan="3" class="pd-y-5 tx-center" >Impacto</th>
                             <th colspan="3" class="pd-y-5 tx-center" >Cobertura</th>
-                            <th class="pd-y-5 tx-center" >Reacción en redes sociales</th>
+                            <th colspan="2" class="pd-y-5 tx-center" >Reacción en redes sociales</th>
                             <th class="pd-y-5 tx-center" >Medición en días</th>
                           </tr>
                           <tr class="tx-10">
@@ -46,6 +46,8 @@
                             <th class="pd-y-5 tx-center" >Local</th>
                             <th class="pd-y-5 tx-center" >Nacional</th>
                             <th class="pd-y-10 tx-center" >Internacional</th>
+                            <th class="pd-y-5 tx-center" >Actual</th>
+                            <th class="pd-y-5 tx-center" >Resultado</th>
                             <th class="pd-y-5 tx-center" ></th>
                             <th class="pd-y-5 tx-center" ></th>
                           </tr>
@@ -55,32 +57,34 @@
                             <td class="tx-center">
                               <span>Obra pública</span>
                             </td>
-                            <td class="tx-center">?</td>
+                            <td class="tx-center">Estrategias de Movilidad</td>
                             <td class="tx-center">231</td>
                             <td class="tx-center">217</td>
                             <td class="tx-center">14</td>
                             <td class="tx-center">0</td>
-                            <td class="tx-center">9</td>
-                            <td class="tx-center">3</td>
+                            <td class="tx-center">27</td>
+                            <td class="tx-center">15</td>
                             <td class="tx-center">0</td>
 
 
                             <td class="tx-center">alegría, enojo, molestia</td>
+                            <td class="tx-center">aceptación, gusto, enojo</td>
                             <td class="tx-center">70</td>
                           </tr>
                           <tr>
                             <td class="tx-center">
                               <span>Presidente</span>
                             </td>
-                            <td class="tx-center">?</td>
+                            <td class="tx-center">Posicionamiento</td>
                             <td class="tx-center">231</td>
                             <td class="tx-center">223</td>
                             <td class="tx-center">8</td>
                             <td class="tx-center">0</td>
-                            <td class="tx-center">9</td>
-                            <td class="tx-center">2</td>
+                            <td class="tx-center">26</td>
+                            <td class="tx-center">18</td>
                             <td class="tx-center">0</td>
 
+                            <td class="tx-center">aceptación, rechazo</td>
                             <td class="tx-center">aceptación, rechazo</td>
                             <td class="tx-center">70</td>
 
@@ -89,66 +93,70 @@
                             <td class="tx-center">
                               <span>Inseguridad</span>
                             </td>
-                            <td class="tx-center">?</td>
+                            <td class="tx-center">Estrategias de Acompañamiento Ciudadano</td>
                             <td class="tx-center">172</td>
                             <td class="tx-center">142</td>
                             <td class="tx-center">30</td>
                             <td class="tx-center">0</td>
-                            <td class="tx-center">9</td>
-                            <td class="tx-center">6</td>
+                            <td class="tx-center">25</td>
+                            <td class="tx-center">30</td>
                             <td class="tx-center">0</td>
 
                             <td class="tx-center">indignación, temor, enojo</td>
-                            <td class="tx-center">60</td>
+                            <td class="tx-center">gusto, enojo</td>
+                            <td class="tx-center">70</td>
 
                           </tr>
                           <tr>
                             <td class="tx-center">
                               <span>Violencia</span>
                             </td>
-                            <td class="tx-center">?</td>
+                            <td class="tx-center">Estrategias de formación ciudadana</td>
                             <td class="tx-center">103</td>
                             <td class="tx-center">84</td>
                             <td class="tx-center">19</td>
                             <td class="tx-center">0</td>
-                            <td class="tx-center">9</td>
+                            <td class="tx-center">18</td>
                             <td class="tx-center">7</td>
                             <td class="tx-center">0</td>
 
                             <td class="tx-center">miedo, temor, enojo</td>
-                            <td class="tx-center">60</td>
+                            <td class="tx-center">miedo, gusto</td>
+                            <td class="tx-center">70</td>
                           </tr>
                           <tr>
                             <td class="tx-center">
                               <span>Narco</span>
                             </td>
-                            <td class="tx-center">?</td>
+                            <td class="tx-center">Estrategias de Sensibilización y contrareplica</td>
                             <td class="tx-center">76</td>
                             <td class="tx-center">65</td>
                             <td class="tx-center">11</td>
                             <td class="tx-center">2</td>
-                            <td class="tx-center">6</td>
-                            <td class="tx-center">4</td>
-                            <td class="tx-center">2</td>
+                            <td class="tx-center">22</td>
+                            <td class="tx-center">14</td>
+                            <td class="tx-center">1</td>
 
                             <td class="tx-center">temor, tristeza, miedo</td>
-                            <td class="tx-center">30</td>
+                            <td class="tx-center">gusto, enojo</td>
+                            <td class="tx-center">70</td>
                           </tr>
                           <tr>
                             <td class="tx-center">
                               <span>Otros</span>
                             </td>
-                            <td class="tx-center">?</td>
+                            <td class="tx-center">Programas de asistencia y apoyo social</td>
                             <td class="tx-center">127</td>
                             <td class="tx-center">114</td>
                             <td class="tx-center">13</td>
                             <td class="tx-center">0</td>
-                            <td class="tx-center">9</td>
-                            <td class="tx-center">7</td>
+                            <td class="tx-center">58</td>
+                            <td class="tx-center">26</td>
                             <td class="tx-center">0</td>
 
-                            <td class="tx-center">-</td>
-                            <td class="tx-center">60</td>
+                            <td class="tx-center">N/A</td>
+                            <td class="tx-center">N/A</td>
+                            <td class="tx-center">70</td>
                           </tr>
 
                         </tbody>

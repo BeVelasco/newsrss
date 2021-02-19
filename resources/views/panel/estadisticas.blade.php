@@ -8,6 +8,33 @@
 
   <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/personal.css') }}">
+  <style>
+        /* Use this selector to override the line style on a given series */
+        .ct-series-a .ct-line {
+        /* Set the colour of this series line */
+        stroke: lightseagreen;
+        /* Control the thikness of your lines */
+        stroke-width: 1px;
+        /* Create a dashed line with a pattern */
+        /* stroke-dasharray: 10px 20px; */
+        }
+
+        /* This selector overrides the points style on line charts. Points on line charts are actually just very short strokes. This allows you to customize even the point size in CSS */
+        .ct-series-a .ct-point {
+        /* Colour of your points */
+        stroke: blue;
+        /* Size of your points */
+        stroke-width: 5px;
+        /* Make your points appear as squares */
+        stroke-linecap: circle;
+        }
+        .ct-grid {
+        background: black;
+        background-color: black;
+        stroke:black;
+        fill:black;
+        }
+  </style>
 @endsection
 
 @section('contenido')
@@ -22,7 +49,7 @@
   <div class="row row-xs">
     <div class="col-md-6 col-sm-6 col-lg-3 order-lg-1">
 
-    <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
+    <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;" hidden>
         <h6 class="slim-card-title mg-b-20">Estadísticas</h6>
 
         <div class="table-responsive table-responsive-sm">
@@ -138,6 +165,68 @@
               </table>
             </div>
       </div><!-- card -->
+
+      <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
+        <div class="table-responsive table-responsive-sm">
+            <table class="table table-striped mg-b-0 tx-13">
+            <tbody>
+                <tr>
+                    <td class="pd-l-20 tx-bold">
+                        POR FACEBOOK
+                    </td>
+                    <td class="tx-center tx-bold">
+                        TOTAL
+                    </td>
+                </tr>
+                @php $count = 0; @endphp
+                @foreach($ConteoTotalFacebook as $vconteofb)
+                <tr>
+                    <td class="pd-l-20">
+                    {{ $vconteofb->titulo }}
+                    </td>
+                    <td class="tx-center">{{ $vconteofb->noticias }}</td>
+                </tr>
+                @php $count = $count + $vconteofb->noticias; @endphp
+                @endforeach
+                <tr>
+                    <td class="tx-center tx-15 tx-left"><b>TOTAL</b></td>
+                    <td class="tx-center"> {{ $count }}</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+  </div><!-- card -->
+
+  <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
+    <div class="table-responsive table-responsive-sm">
+        <table class="table table-striped mg-b-0 tx-13">
+        <tbody>
+            <tr>
+                <td class="pd-l-20 tx-bold">
+                    POR TWEETER
+                </td>
+                <td class="tx-center tx-bold">
+                    TOTAL
+                </td>
+            </tr>
+            @php $count = 0; @endphp
+            @foreach($ConteoTotalTweeter as $vconteotw)
+            <tr>
+                <td class="pd-l-20">
+                {{ $vconteotw->titulo }}
+                </td>
+                <td class="tx-center">{{ $vconteotw->noticias }}</td>
+            </tr>
+            @php $count = $count + $vconteotw->noticias; @endphp
+            @endforeach
+            <tr>
+                <td class="tx-center tx-15 tx-left"><b>TOTAL</b></td>
+                <td class="tx-center"> {{ $count }}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+</div><!-- card -->
     </div>
 
     <div class="col-md-6 col-lg-9 order-lg-1">
@@ -157,7 +246,7 @@
       </div><!-- card -->
         {{-- ********************** Estan ocultos por motivos sentimentales ********************* --}}
 
-        <div class="card card-body pd-20 mg-t-10 wt-100">
+        <div class="card card-body pd-20 mg-t-10 wt-100" style="height: 300px;">
             <h6 class="slim-card-title mg-b-20">Noticias Medios Locales</h6>
             <div class="row">
                 <div class="col-6">
@@ -171,7 +260,7 @@
             </div>
         </div><!-- card -->
 
-            <div class="card card-body pd-20 mg-t-10 wt-100">
+            <div class="card card-body pd-20 mg-t-10 wt-100" style="height: 300px;">
                 <h6 class="slim-card-title mg-b-20">Noticias Medios Nacionales</h6>
                 <div class="row">
                     <div class="col-6">
@@ -181,6 +270,34 @@
                     <div class="col-6">
                         <span>Semanal</span>
                         <div id="chartAreaNacionalesSemanal" class="dash-chartist"></div>
+                    </div>
+                </div>
+            </div><!-- card -->
+
+            <div class="card card-body pd-20 mg-t-10 wt-100" style="height: 300px;">
+                <h6 class="slim-card-title mg-b-20">Noticias Facebook</h6>
+                <div class="row">
+                    <div class="col-6">
+                        <span>Mensual</span>
+                        <div id="chartAreaFacebook" class="dash-chartist"></div>
+                    </div>
+                    <div class="col-6">
+                        <span>Semanal</span>
+                        <div id="chartAreaFacebookSemanal" class="dash-chartist"></div>
+                    </div>
+                </div>
+            </div><!-- card -->
+
+            <div class="card card-body pd-20 mg-t-10 wt-100" style="height: 300px;">
+                <h6 class="slim-card-title mg-b-20">Noticias Tweeter</h6>
+                <div class="row">
+                    <div class="col-6">
+                        <span>Mensual</span>
+                        <div id="chartAreaTweeter" class="dash-chartist"></div>
+                    </div>
+                    <div class="col-6">
+                        <span>Semanal</span>
+                        <div id="chartAreaTweeterSemanal" class="dash-chartist"></div>
                     </div>
                 </div>
             </div><!-- card -->
