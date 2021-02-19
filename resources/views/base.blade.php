@@ -17,26 +17,26 @@
             Procesando...
         </div>
         <div class="slim-header">
-            <div class="container">
+            <div class="container" style="background-image: url('{{ asset('img/banner_monitor.png') }}'); background-size: cover;">
                 <div class="slim-header-left">
-                    @include('componentes.logoIzquierda')
+                    {{-- @include('componentes.logoIzquierda') --}}
                 </div>
 
                 <div class="slim-header-center">
-                    <h4 style="font-size:1vw;">CENTRO DE MONITOREO DE MEDIOS Y REDES SOCIALES - San Miguel de Allende</h4>
+                    <br><br><br>
                     <a href="{{ route('monitor') }}">
-                        <button type="button" class="btn-primary">Monitor</button></a>
-                    <a href="{{ route('home') }}">
-                        <button type="button" class="btn-primary">Panel general</button></a>
+                        <button type="button" style="width: 150px;" class="btn-head btn-oblong">Monitor</button></a>
+                    {{-- <a href="{{ route('home') }}">
+                        <button type="button" class="btn-head">Panel general</button></a> --}}
                     <a href="{{ route('estadisticas') }}">
-                        <button type="button" class="btn-primary">Estadisticas</button></a>
+                        <button type="button" style="width: 150px;" class="btn-head btn-oblong">Estadísticas</button></a>
 
                     <a href="{{ route('periodicos') }}">
-                        <button type="button" class="btn-primary">Periodicos</button></a>
+                        <button type="button" style="width: 150px;" class="btn-head btn-oblong">Periódicos</button></a>
                     <a href="{{ route('semaforizacion') }}">
-                        <button type="button" class="btn-primary">Semaforización</button></a>
+                        <button type="button" style="width: 150px;" class="btn-head btn-oblong">Semaforización</button></a>
                     <a href="{{ route('alertas') }}">
-                        <button type="button" class="btn-primary">Alertas</button></a>
+                        <button type="button" style="width: 150px;" class="btn-head btn-oblong">Alertas</button></a>
                 </div>
 
                 <div class="slim-header-right">

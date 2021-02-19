@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.css">
 
   <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/personal.css') }}">
 @endsection
 
 @section('contenido')
@@ -31,7 +32,7 @@
                     </tr>
 
                     <tr>
-                      <td class="pd-y-5 tx-center  tx-15">Automatización</td>  
+                      <td class="pd-y-5 tx-center  tx-15">Automatización</td>
                       <td class="pd-y-5 tx-center  tx-15">Palabras claves</td>
                       <td class="pd-y-5 tx-center  tx-15">Noticia Internacional</td>
                       <td class="pd-y-5 tx-center  tx-15">Comunicación Social de Ayuntamiento</td>
@@ -70,7 +71,7 @@
                     </tr>
 
                     <tr>
-                      <td class="pd-y-5 tx-center  tx-15">Automatización</td>  
+                      <td class="pd-y-5 tx-center  tx-15">Automatización</td>
                       <td class="pd-y-5 tx-center  tx-15">Palabras claves</td>
                       <td class="pd-y-5 tx-center  tx-15">Noticia Nacionales</td>
                       <td class="pd-y-5 tx-center  tx-15">Comunicación Social de Ayuntamiento</td>
@@ -91,8 +92,8 @@
                  </div>
                 </div>
               </div><!-- row -->
-            
-  
+
+    <div id="pre"></div>
 
 </div> <!-- container -->
 @endsection
@@ -100,23 +101,24 @@
 
 
 @section('js')
-  <script src="{{ asset('plugins/popper.js/js/popper.js') }}"></script>
-  <script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
-  <script src="{{ asset('plugins/jquery.cookie/js/jquery.cookie.js') }}"></script>
-  <script src="{{ asset('plugins/chartist/js/chartist.js') }}"></script>
-  <script src="{{ asset('plugins/chartist/js/chartist-plugin-pointlabels.js') }}"></script>
-  <script src="{{ asset('plugins/parsleyjs/js/parsley.js') }}"></script>
-  <script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
-  <script src="{{ asset('js/ResizeSensor.js') }}"></script>
+    <script src="{{ asset('plugins/popper.js/js/popper.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('plugins/jquery.cookie/js/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('plugins/chartist/js/chartist.js') }}"></script>
+    <script src="{{ asset('plugins/chartist/js/chartist-plugin-pointlabels.js') }}"></script>
+    <script src="{{ asset('plugins/parsleyjs/js/parsley.js') }}"></script>
+    <script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/ResizeSensor.js') }}"></script>
 
-  <script src="{{ asset('plugins/jquery.cookie/js/jquery.cookie.js') }}"></script>
-  <script src="{{ asset('plugins/moment/js/moment.js') }}"></script>
-  <script src="{{ asset('plugins/jquery-ui/js/jquery-ui.js') }}"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
+    <script src="{{ asset('plugins/jquery.cookie/js/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('plugins/moment/js/moment.js') }}"></script>
+    <script src="{{ asset('plugins/jquery-ui/js/jquery-ui.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
 
-  <script src="{{ asset('plugins/Chartf.js') }}"></script>
-  <script src="{{ asset('plugins/chart.chartjs.js') }}"></script>
+    <script src="{{ asset('plugins/Chartf.js') }}"></script>
+    <script src="{{ asset('plugins/chart.chartjs.js') }}"></script>
     <!--<script src="public/plugins/chartjs-plugin-piechart-outlabels.js"></script>-->
     <script src="{{ asset('plugins/chartjs-plugin-labels.js') }}"></script>
+    <script src="{{ asset('js/alertas.js') }}"></script>
   @include('sweet::alert')
 @endsection

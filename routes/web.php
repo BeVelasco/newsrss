@@ -55,6 +55,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('getUserId', 'HomeController@getUserId')->name('getUserId');
     Route::post('updUser', 'HomeController@updUser')->name('updUser');
     Route::post('setUser', 'HomeController@setUser')->name('setUser');
+
+    Route::get('graficos', 'HomeController@graficos')->name('graficos');
 });
 
 Route::get('tipo/{type}', 'SweetController@notification');

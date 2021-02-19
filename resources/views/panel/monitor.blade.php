@@ -62,6 +62,24 @@
                             </div>
                         </div> <!-- Card -->
 
+                        <div class="card mg-t-10">
+                            <div class="card-header">
+                                <h6 class="slim-card-title tx-primary">Redes Sociales</h6>
+                            </div>
+                            <div class="card-body" style="height: 200px; overflow-y: auto; font-size:1vw;">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Medios</th>
+                                            <th>Cantidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbredes">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- Card -->
                     </div>
 
                     <div class="col-8">
@@ -69,7 +87,7 @@
                             <div class="card-header">
                                 <h6 class="slim-card-title tx-primary">Resumen noticias 2 días</h6>
                             </div>
-                            <div class="card-body" style="height: 500px; overflow-y: auto; font-size:1vw;">
+                            <div class="card-body" style="height: 600px; overflow-y: auto; font-size:1vw;">
                                 <table class="table table-striped table-sm">
                                     <thead>
                                     <tr> <!-- Fila -->

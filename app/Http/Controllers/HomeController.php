@@ -689,4 +689,8 @@ class HomeController extends Controller
         return $objuser[0];
     }
 
+    public function graficos(Request $request){
+        return view('panel.grafico');
+    }
+
 }

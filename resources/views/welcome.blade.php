@@ -10,10 +10,10 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
-        
+
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/news.js') }}"></script>
-        
+
     </head>
     <body>
         <input type="txt" name="cad" id="cad" value="" hidden="">

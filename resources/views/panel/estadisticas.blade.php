@@ -22,7 +22,7 @@
   <div class="row row-xs">
     <div class="col-md-6 col-sm-6 col-lg-3 order-lg-1">
 
-    <div class="card card-body pd-20 mg-t-10">
+    <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
         <h6 class="slim-card-title mg-b-20">Estadísticas</h6>
 
         <div class="table-responsive table-responsive-sm">
@@ -77,7 +77,7 @@
         </div>
         </div><!-- card -->
 
-        <div class="card card-body pd-20 mg-t-10">
+        <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
             <div class="table-responsive table-responsive-sm">
                 <table class="table table-striped mg-b-0 tx-13">
                 <tbody>
@@ -108,7 +108,7 @@
             </div>
       </div><!-- card -->
 
-      <div class="card card-body pd-20 mg-t-10">
+      <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
             <div class="table-responsive table-responsive-sm">
                 <table class="table table-striped mg-b-0 tx-13">
                 <tbody>
@@ -141,172 +141,53 @@
     </div>
 
     <div class="col-md-6 col-lg-9 order-lg-1">
-      <div class="card card-body pd-20 mg-t-10 wt-150">
+        {{-- ********************** Estan ocultos por motivos sentimentales ********************* --}}
+      <div class="card card-body pd-20 mg-t-10 wt-100" hidden>
         <h6 class="slim-card-title mg-b-20">Medios monitoreados</h6>
-
-
-        {{-- <div class="row mg-l-5">
-          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-            <label>Fecha Incio</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                </div>
-              </div>
-              <input type="text"
-                     id="fi"
-                     name="fi"
-                     class="form-control fc-datepicker"
-                     placeholder="DD/MM/YYYY"
-                     value="{{ $fechas[0]->fi }}"
-              >
+        <div class="row">
+            <div class="col-6">
+                <span>Mensual</span>
+                <div id="chartAreaMedios" class="dash-chartist"></div>
             </div>
-          </div><!-- wd-200 -->
-
-          <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-            <label>Fecha Fin</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                </div>
-              </div>
-              <input type="text"
-                     id="ff"
-                     name="ff"
-                     class="form-control fc-datepicker"
-                     placeholder="DD/MM/YYYY"
-                     value="{{ $fechas[0]->ff }}"
-              >
+            <div class="col-6">
+                <span>Semanal</span>
+                <div id="chartAreaMediosSemana" class="dash-chartist"></div>
             </div>
-          </div><!-- wd-200 -->
-
-        </div> --}}
-
-        {{-- <div class="row mg-l-5 mg-l-15">
-          <input type="text"
-                 id="palabra"
-                 name="palabra"
-                 placeholder="Ingresar palabra a buscar"
-                 onkeypress="return Enter(event)"
-          >
-          <button onclick="busca();" class="mg-l-15">Buscar</button>
-        </div> --}}
-        <div id="chartAreaMedios" class="dash-chartist"></div>
+        </div>
       </div><!-- card -->
+        {{-- ********************** Estan ocultos por motivos sentimentales ********************* --}}
 
         <div class="card card-body pd-20 mg-t-10 wt-100">
-            <h6 class="slim-card-title mg-b-20">Noticias Medios Nacionales</h6>
-
-
-            {{-- <div class="row mg-l-5">
-            <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-                <label>Fecha Incio</label>
-                <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                    <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                    </div>
+            <h6 class="slim-card-title mg-b-20">Noticias Medios Locales</h6>
+            <div class="row">
+                <div class="col-6">
+                    <span>Mensual</span>
+                    <div id="chartAreaLocales" class="dash-chartist"></div>
                 </div>
-                <input type="text"
-                        id="fi"
-                        name="fi"
-                        class="form-control fc-datepicker"
-                        placeholder="DD/MM/YYYY"
-                        value="{{ $fechas[0]->fi }}"
-                >
+                <div class="col-6">
+                    <span>Semanal</span>
+                    <div id="chartAreaLocalesSemanal" class="dash-chartist"></div>
                 </div>
-            </div><!-- wd-200 -->
-
-            <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-                <label>Fecha Fin</label>
-                <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                    <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                    </div>
-                </div>
-                <input type="text"
-                        id="ff"
-                        name="ff"
-                        class="form-control fc-datepicker"
-                        placeholder="DD/MM/YYYY"
-                        value="{{ $fechas[0]->ff }}"
-                >
-                </div>
-            </div><!-- wd-200 -->
-
             </div>
-
-            <div class="row mg-l-5 mg-l-15">
-            <input type="text"
-                    id="palabra"
-                    name="palabra"
-                    placeholder="Ingresar palabra a buscar"
-                    onkeypress="return Enter(event)"
-            >
-            <button onclick="busca();" class="mg-l-15">Buscar</button>
-            </div> --}}
-            <div id="chartAreaLocales" class="dash-chartist"></div>
         </div><!-- card -->
 
             <div class="card card-body pd-20 mg-t-10 wt-100">
-                <h6 class="slim-card-title mg-b-20">Noticias Medios Locales</h6>
-
-                {{-- <div class="row mg-l-5">
-                <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-                    <label>Fecha Incio</label>
-                    <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                        <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                        </div>
+                <h6 class="slim-card-title mg-b-20">Noticias Medios Nacionales</h6>
+                <div class="row">
+                    <div class="col-6">
+                        <span>Mensual</span>
+                        <div id="chartAreaNacionales" class="dash-chartist"></div>
                     </div>
-                    <input type="text"
-                            id="fi"
-                            name="fi"
-                            class="form-control fc-datepicker"
-                            placeholder="DD/MM/YYYY"
-                            value="{{ $fechas[0]->fi }}"
-                    >
+                    <div class="col-6">
+                        <span>Semanal</span>
+                        <div id="chartAreaNacionalesSemanal" class="dash-chartist"></div>
                     </div>
-                </div><!-- wd-200 -->
-
-                <div class="col-md-4 col-sm-4 wd-200 mg-b-30">
-                    <label>Fecha Fin</label>
-                    <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                        <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                        </div>
-                    </div>
-                    <input type="text"
-                            id="ff"
-                            name="ff"
-                            class="form-control fc-datepicker"
-                            placeholder="DD/MM/YYYY"
-                            value="{{ $fechas[0]->ff }}"
-                    >
-                    </div>
-                </div><!-- wd-200 -->
-
-                </div> --}}
-
-                {{-- <div class="row mg-l-5 mg-l-15">
-                <input type="text"
-                        id="palabra"
-                        name="palabra"
-                        placeholder="Ingresar palabra a buscar"
-                        onkeypress="return Enter(event)"
-                >
-                <button onclick="busca();" class="mg-l-15">Buscar</button>
-                </div> --}}
-                <div id="chartAreaNacionales" class="dash-chartist"></div>
+                </div>
             </div><!-- card -->
         </div>
   </div>
 
+  <div id="pre"></div>
 </div> <!-- container -->
 @endsection
 

@@ -167,7 +167,7 @@ body {
   line-height: 1.5;
   color: #868ba1;
   text-align: left;
-  background-color: #f0f2f7; }
+  background-color: #F0F2F7; }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -552,6 +552,7 @@ pre {
 
 .container {
   width: 100%;
+  height: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -1818,6 +1819,29 @@ textarea.custom-file-input.parsley-error:focus ~ .custom-file-label {
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none; }
+
+  .btn-head {
+    color: #fff;
+    background-color: #1196ad;
+    border-color: #1196ad; }
+    .btn-head:hover {
+      color: #fff;
+      background-color: #1570c7;
+      border-color: #146abb; }
+    .btn-head:focus, .btn-head.focus {
+      box-shadow: 0 0 0 0.2rem rgba(27, 132, 231, 0.5); }
+    .btn-head.disabled, .btn-head:disabled {
+      color: #fff;
+      background-color: #1b84e7;
+      border-color: #1b84e7; }
+    .btn-head:not(:disabled):not(.disabled):active, .btn-head:not(:disabled):not(.disabled).active,
+    .show > .btn-head.dropdown-toggle {
+      color: #fff;
+      background-color: #146abb;
+      border-color: #1363b0; }
+      .btn-head:not(:disabled):not(.disabled):active:focus, .btn-head:not(:disabled):not(.disabled).active:focus,
+      .show > .btn-head.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(27, 132, 231, 0.5); }
 
 .btn-primary {
   color: #fff;
@@ -11832,11 +11856,10 @@ textarea.parsley-success:focus {
 /* -------------------------------------------- */
 .slim-header {
   width: 100%;
-  height: 75px;
+  height: 150px;
   display: flex;
   align-items: center;
-  background-color: #fff;
-  border-bottom: 1px solid #dee2e6; }
+  background-color: #fff;}
   .slim-header .container,
   .slim-header .container-fluid {
     display: flex;
@@ -12073,7 +12096,7 @@ textarea.parsley-success:focus {
 .logged-user {
   display: flex;
   align-items: center;
-  color: #495057;
+  color: white;
   margin-left: 15px; }
   .logged-user img {
     width: 45px;
@@ -35022,7 +35045,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
   color: #000; }
 
 .tx-primary {
-  color: #1b84e7; }
+  color: #1196ad; }
 
 .tx-success {
   color: #23BF08; }

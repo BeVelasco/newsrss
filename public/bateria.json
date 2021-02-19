@@ -1,0 +1,1107 @@
+{
+    "MAT": {
+        "TRI": {
+            "Triangles and Vectors": {
+                "Vectors": {
+                    "Directed Line Segments, Equal Vectors, and Absolute Value": 100,
+                    "Vector Addition": 46,
+                    "Using the Law of Sines": 33,
+                    "Vector Subtraction": 15
+                },
+                "General Solutions of Triangles": {
+                    "Using the Law of Cosines": 56,
+                    "Summary of Triangle Techniques": 53
+                },
+                "Applications & Models": {},
+                "The Law of Cosines": {
+                    "Trigonometry in Terms of Algebra": 26,
+                    "Case #2:  Finding any Angle of a Triangle": 68,
+                    "Case #1:  Finding the Side of an Oblique Triangle": 6,
+                    "Derive the Law of Cosines": 22
+                },
+                "Area of a Triangle": {
+                    "Find the Area Using Three Sides:  Heron’s Formula": 41,
+                    "Identify Accurate Drawings of General Triangles": 39,
+                    "Heron’s Formula:": 22
+                },
+                "The Ambiguous Case": {
+                    "Solving Triangles": 75,
+                    "Using the Law of Sines": 42,
+                    "Possible Triangles with SSA": 17
+                },
+                "The Law of Sines": {
+                    "ASA (Angle-Side-Angle)": 25,
+                    "AAS (Angle-Angle-Side)": 70,
+                    "Finding a Part of the Triangle, Given the Area": 91,
+                    "Deriving the Law of Sines": 38
+                }
+            },
+            "Inverse Trigonometric Functions - 2nd edition": {
+                "Basic Inverse Trigonometric Functions": {
+                    "Applications & Technology": 52,
+                    "Exact Values for Inverse Sine, Cosine, and Tangent": 59,
+                    "Defining the Inverse of the Trigonometric Ratios": 57
+                },
+                "Graphing Inverse Trigonometric Functions": {
+                    "Finding Inverses Algebraically": 88,
+                    "Finding the Inverse by Mapping": 75
+                },
+                "Products, Sums, Linear Combinations, and Applications": {
+                    "Triple-Angle Formulas and Beyond": 90,
+                    "Product to Sum Formulas for Sine and Cosine": 21,
+                    "Solving Equations with Product and Sum Formulas": 96,
+                    "Solving Trigonometric Equations Using Half Angle Formulas": 79,
+                    "Sum to Product Formulas for Sine and Cosine": 53,
+                    "Linear Combinations": 84
+                },
+                "Inverse Trigonometric Properties": {
+                    "Finding the Inverse of the Trigonometric Functions": 29,
+                    "Composing Trig Functions and their Inverses": 19,
+                    "Composing Trigonometric Functions": 77,
+                    "Composing Inverse Reciprocal Trig Functions": 49,
+                    "Inverse Reciprocal Functions": 75
+                }
+            },
+            "Right Triangles and an Introduction to Trigonometry": {
+                "The Pythagorean Theorem": {
+                    "The Pythagorean Theorem": 34,
+                    "Pythagorean Triples": 29,
+                    "Converse of the Pythagorean Theorem": 14
+                },
+                "Special Right Triangles": {
+                    "The Distance Formula": 97,
+                    "Special Right Triangle #1: Isosceles Right Triangle": 9,
+                    "Special Right Triangle #2: 30-60-90 Triangle": 60
+                },
+                "Basic Trigonometric Functions": {
+                    "Using Special Right Triangle Ratios": 8,
+                    "The Sine, Cosine, and Tangent Functions": 19
+                },
+                "Solving Right Triangles": {
+                    "Finding the Area of a Triangle": 69,
+                    "Solving Right Triangles": 69,
+                    "Inverse Trigonometric Functions": 30,
+                    "Secant, Cosecant, and Cotangent Functions": 80,
+                    "Right Triangles and Bearings": 45,
+                    "Angles of Elevation and Depression": 59
+                },
+                "Measuring Rotation": {
+                    "Other Applications of Right Triangles": 50,
+                    "Angles of Rotation in Standard Position": 66
+                },
+                "Trigonometric Functions of Any Angle": {
+                    "The Unit Circle": 55,
+                    "Trigonometric Functions of Angles Greater than 360 Degrees": 31,
+                    "Reference Angles and Angles in the Unit Circle": 38,
+                    "Trigonometric Functions of Negative Angles": 68
+                },
+                "Applying Trig Functions to Angles of Rotation": {
+                    "Trigonometric Functions of Angles in Standard Position": 99,
+                    "Coterminal Angles": 61
+                }
+            },
+            "Graphing Trigonometric Functions - 2nd edition": {
+                "Translating Sine and Cosine Functions": {
+                    "Secant": 75,
+                    "Vertical Translations": 92
+                },
+                "Applications of Radian Measure": {
+                    "Rotations": 65,
+                    "Check the Mode": 69,
+                    "Length of a Chord": 40,
+                    "Length of Arc": 56,
+                    "Area of a Sector": 23
+                },
+                "Circular Functions of Real Numbers": {
+                    "Cotangent": 41,
+                    "The Three Reciprocal Functions": 34,
+                    "Angular Velocity": 83,
+                    "The Cosine Graph": 58,
+                    "Cosecant": 13,
+                    "The Sine Graph": 95,
+                    "The Tangent Graph": 11
+                },
+                "Relating Trigonometric Functions": {
+                    "Cofunction Identities and Reflection": 10,
+                    "Using a Calculator to Find Values": 48,
+                    "Quotient Identities": 28,
+                    "Domain, Range, and Signs of Trig Functions": 62,
+                    "Reciprocal identities": 29
+                },
+                "General Sinusoidal Graphs": {
+                    "Drawing Sketches/Identifying Transformations from the Equation": 33,
+                    "The Generalized Equations": 67,
+                    "Combining Amplitude and Period": 72
+                },
+                "Amplitude, Period and Frequency": {
+                    "Horizontal Translations or Phase Shifts": 97,
+                    "Period and Frequency": 26,
+                    "Amplitude": 72
+                },
+                "Radian Measure": {
+                    "Converting Any Degree to Radians": 7,
+                    "Critial Angles in Radians": 98,
+                    "Understanding Radian Measure": 100,
+                    "Pythagorean Identities": 38,
+                    "The Six Trig Functions and Radians": 65
+                }
+            },
+            "Trigonometric Identities and Equations - 2nd edition": {
+                "Graphing Tangent, Cotangent, Secant, and Cosecant": {
+                    "Writing the Equation from a Sketch": 48,
+                    "Tangent and Cotangent": 44,
+                    "Secant and Cosecant": 12
+                },
+                "Proving Identities": {
+                    "Cofunction Identities": 95,
+                    "Working with Trigonometric Identities": 12
+                },
+                "Half-Angle Identities": {
+                    "Solving Equations with Double Angle Identities": 40,
+                    "Deriving the Half Angle Formulas": 100
+                },
+                "Fundamental Identities": {
+                    "Graphing Calculator Note": 66,
+                    "Pythagorean Identity": 50,
+                    "Quotient Identity": 63,
+                    "Even and Odd Identities": 22,
+                    "Reciprocal Identities": 65
+                },
+                "Solving Trigonometric Equations": {
+                    "Technology Note": 42,
+                    "Simplifying Trigonometric Expressions": 5,
+                    "Solving Trigonometric Equations Using Factoring": 6,
+                    "Solving Trigonometric Equations": 21
+                },
+                "Sum and Difference Identities": {
+                    "Using the Sum and Difference Identities of cosine": 21,
+                    "Using the Sum and Difference Identities to Verify Other Identities": 91,
+                    "Sum and Difference Identities: Tangent": 79,
+                    "Sum and Difference Identities: sine": 98,
+                    "Solving Trigonometric Equations Using the Quadratic Formula": 77,
+                    "Sum and Difference Formulas: cosine": 17
+                },
+                "Double Angle Identities": {
+                    "Solving Equations with the Sum and Difference Formulas": 84,
+                    "Applying the Double Angle Identities": 9,
+                    "Deriving the Double Angle Identities": 43
+                }
+            }
+        },
+        "ALG": {
+            "Real Numbers": {
+                "Integers and Rational Numbers": {
+                    "Order Rational Numbers": 60,
+                    "Classifying Rational Numbers": 94,
+                    "Graph and Compare Integers": 63,
+                    "Find the Opposites of Numbers": 58,
+                    "Plan and Compare Alternative Approaches to Solving Problems": 78,
+                    "Graph and Order Rational Numbers": 55
+                },
+                "Adding and Subtracting Rational Numbers": {
+                    "Identify and Apply Properties of Addition": 77,
+                    "Adding and Subtracting Rational Numbers": 66,
+                    "Add and Subtract Using a Number Line": 48,
+                    "Find Absolute Values": 3
+                },
+                "Problem-Solving Strategies: Make a Table and Look for a Pattern": {
+                    "Read and Understand Given Problem Situations": 64,
+                    "Develop and Use the Strategy: Make a Table": 86,
+                    "Develop and Use the Strategy: Look for a Pattern": 9,
+                    "Compare Alternative Approaches to Solving the Problem": 76
+                },
+                "Multiplying and Dividing Rational Numbers": {
+                    "Multiplying Numbers by Negative One": 37,
+                    "Identity Elements": 94,
+                    "Multiply Rational Numbers": 70,
+                    "Find Multiplicative Inverses": 73,
+                    "Evaluate Change Using a Variable Expression": 33,
+                    "Identify and Apply Properties of Multiplication": 91
+                },
+                "The Distributive Property": {
+                    "Divide Rational Numbers": 62,
+                    "Apply the Distributive Property": 34
+                },
+                "Square Roots and Real Numbers": {
+                    "Find Square Roots": 79,
+                    "Approximate Square Roots": 9,
+                    "Identify Irrational Numbers": 49,
+                    "Identify Expressions That Involve the Distributive Property": 41
+                }
+            },
+            "Algebra and Geometry Connections": {
+                "Graphs of Square Root Functions": {
+                    "Perform Exponential and Quadratic Regressions with a Graphing Calculator": 48
+                },
+                "Radical Expressions": {
+                    "Even and Odd Roots": 35,
+                    "Multiply Radical Expressions": 67,
+                    "Use the Product and Quotient Properties of Radicals": 73,
+                    "Graph and Compare Square Root Functions": 84,
+                    "Add and Subtract Radical Expressions": 79
+                },
+                "Linear, Exponential and Quadratic Models": {
+                    "Interpret the Discriminant of a Quadratic Equation": 11,
+                    "Identify Functions Using Differences or Ratios": 25,
+                    "Write Equations for Functions": 26
+                },
+                "Radical Equations": {
+                    "Solve Radical Equations with Radicals on Both Sides": 15,
+                    "Rationalize the Denominator": 12,
+                    "Solve a Radical Equation": 50
+                },
+                "The Pythagorean Theorem and Its Converse": {
+                    "Use the Pythagorean Theorem and Its Converse": 3,
+                    "Identify Extraneous Solutions to Radical Equations": 25
+                }
+            },
+            "Quadratic Equations and Quadratic Functions": {
+                "Quadratic Equations by Graphing": {
+                    "Identify the Number of Solutions of a Quadratic Equation": 75,
+                    "Analyze Graphs of Real-World Quadratic Functions.": 38,
+                    "Solve Quadratic Equations by Graphing": 6
+                },
+                "Graphs of Quadratic Functions": {
+                    "Graph Quadratic Functions": 11,
+                    "Graph Quadratic Functions in Intercept Form": 98,
+                    "Resources": 69,
+                    "Compare Graphs of Quadratic Functions": 44
+                },
+                "Quadratic Equations by Square Roots": {
+                    "Solve Quadratic Equations Involving Perfect Squares": 78,
+                    "Analyze Quadratic Functions Using a Graphing Calculator": 30
+                },
+                "The Discriminant": {
+                    "Identify and Choose Methods for Solving Quadratic Equations.": 29,
+                    "Find the Discriminant of a Quadratic Equation": 71
+                },
+                "Solving Quadratic Equations by the Quadratic Formula": {
+                    "Solve Quadratic Equations Using the Quadratic Formula": 41,
+                    "Finding the Vertex of a Parabola with the Quadratic Formula": 77,
+                    "Graph Quadratic Functions in Vertex Form": 51
+                },
+                "Factoring Polynomials Completely": {
+                    "Factor Quadratic Trinomials Where a ≠ 1": 28,
+                    "Solve Quadratic Polynomial Equations by Factoring": 77,
+                    "Factor by Grouping": 10,
+                    "Factor out a Common Binomial": 28
+                },
+                "Solving Quadratic Equations by Completing the Square": {
+                    "Complete the Square of a Quadratic Expression": 56,
+                    "Solve Quadratic Equations by Completing the Square": 25,
+                    "Approximate Solutions of Quadratic Equations": 15
+                }
+            },
+            "Writing Linear Equations": {
+                "Fitting a Line to Data": {
+                    "Write an Equation For a Line of Best Fit": 84,
+                    "Make a Scatter Plot": 60,
+                    "Fit a Line to Data": 50,
+                    "Investigate Families of Lines": 1
+                },
+                "Forms of Linear Equations": {
+                    "Linear Equations in Standard Form": 40,
+                    "Converting to Standard Form": 9,
+                    "Arithmetic Progressions": 72,
+                    "Write an Equation Given Two Points": 62,
+                    "Write an Equation Given the Slope and a Point": 56,
+                    "Graph an Equation in Point-Slope Form": 18
+                },
+                "Problem-Solving Strategies - Graphs": {},
+                "Equations of Parallel and Perpendicular Lines": {
+                    "Write Equations of Parallel and Perpendicular Lines": 78,
+                    "Determine When Lines are Parallel or Perpendicular": 54,
+                    "Graphing Equations in Standard Form": 16
+                }
+            },
+            "Equations of Lines": {
+                "Two-Step Equations": {
+                    "Solve a Two-Step Equation": 31,
+                    "Solving Equations Using Multiplication and Division": 24
+                },
+                "Problem-Solving Strategies: Guess and Check, Work Backward": {
+                    "Classify Real Numbers": 94,
+                    "Develop and Use the Strategy “Guess and Check”": 84,
+                    "Develop and Use the Strategy “Work Backward”": 30
+                },
+                "Ratios and Proportions": {
+                    "Write a ratio": 77,
+                    "Write and Solve a Proportion": 53,
+                    "Solve Proportions Using Cross Products": 50,
+                    "Solve an Equation with Grouping Symbols": 11
+                },
+                "Equations with Variables on Both Sides": {
+                    "Solve an Equation with Variables on Both Sides": 46,
+                    "Speed of Sound": 44
+                },
+                "Multi-Step Equations": {
+                    "Distance, Speed and Time": 67,
+                    "Solving Multi-Step Equations Using the Distributive Property": 6,
+                    "Solving Multi-Step Equations by Combining Like Terms": 60,
+                    "Ohm’s Law": 24,
+                    "Solve a Two-Step Equation by Combining Like Terms": 43
+                },
+                "One-Step Equations": {
+                    "Plan and Compare Alternative Approaches to Solving Problems": 52,
+                    "Solving Equations Using Addition and Subtraction": 7
+                }
+            },
+            "Polynomials": {
+                "Factoring Special Products": {
+                    "Factor Perfect Square Trinomials": 19,
+                    "Factor when a = - 1": 64,
+                    "Factor the Difference of Two Squares": 94
+                },
+                "Addition and Subtraction of Polynomials": {
+                    "Adding and Subtracting Polynomials": 32,
+                    "Degrees of Polynomials and Standard Form": 37,
+                    "Simplifying Polynomials": 85,
+                    "Problem-Solving Strategies": 67
+                },
+                "Factoring Quadratic Expressions": {
+                    "Factor when a = 1, b is Negative and c is Positive": 37,
+                    "Factor when a = 1 and c is Negative": 78,
+                    "Write Quadratic Expressions in Standard Form": 33,
+                    "Factor when a = 1, b is Positive, and c is Positive": 47,
+                    "Solve Simple Polynomial Equations by Factoring": 95
+                },
+                "Special Products of Polynomials": {
+                    "Multiplying Two Polynomials": 81,
+                    "Find the Square of a Binomial": 25
+                },
+                "Polynomial Equations in Factored Form": {
+                    "Find the Product of Binomials Using Sum and Difference Patterns": 88,
+                    "Use the Zero-Product Property": 42,
+                    "Find the Greatest Common Monomial Factor": 96
+                },
+                "Multiplication of Polynomials": {
+                    "Problem Solving Using Addition or Subtraction of Polynomials": 6,
+                    "Multiplying a Polynomial by a Monomial": 68
+                },
+                "Applications of Exponential Functions": {
+                    "Compare Graphs of Exponential Functions": 76
+                }
+            },
+            "Exponential Functions": {
+                "Scientific Notation": {
+                    "Evaluating Expressions in Scientific Notation": 17,
+                    "Writing Numbers in Scientific Notation": 37,
+                    "Evaluate Exponential Expressions": 53
+                },
+                "Exponent Properties Involving Quotients": {
+                    "Use the Power of a Product Property": 99,
+                    "Use the Quotient of Powers Property": 86
+                },
+                "Exponential Functions": {
+                    "Identify a Geometric Sequence": 44,
+                    "Exponential Functions": 83
+                },
+                "Zero, Negative, and Fractional Exponents": {
+                    "Simplify Expressions with Exponents of Zero": 16,
+                    "Simplify Expressions With Negative Exponents": 66,
+                    "The Power of a Quotient Property": 69,
+                    "Simplify Expressions With Fractional Exponents": 23
+                },
+                "Exponent Properties Involving Products": {
+                    "Graph a System of More Than Two Linear Inequalities": 69,
+                    "Use the Product of Powers Property": 19
+                },
+                "Geometric Sequences": {
+                    "Evaluate Expressions in Scientific Notation Using a Graphing Calculator": 47
+                },
+                "Systems of Linear Inequalities": {
+                    "Graph a System of Two Linear Inequalities": 36,
+                    "Applications": 28
+                }
+            },
+            "Solving Systems of Equations and Inequalities": {
+                "Linear Inequalities in Two Variables": {
+                    "Further Resources": 22,
+                    "Graph Linear Inequalities in One Variable in the Coordinate Plane": 73
+                },
+                "Solving Linear Systems by Substitution": {
+                    "Solving Linear Systems Using Substitution of Variable Expressions": 72,
+                    "Solving a System of Equations Using a Graphing Calculator": 56
+                },
+                "Solving Linear Systems by Elimination": {
+                    "Mixture Problems": 30,
+                    "Solving Linear Systems Using Addition of Equations": 6,
+                    "Solving a Linear System by Multiplying One Equation": 91,
+                    "Solving Linear Systems Using Multiplication": 82,
+                    "Solving Linear Systems Using Subtraction of Equations": 27,
+                    "Solving a Linear System by Multiplying Both Equations": 30
+                },
+                "Linear Systems by Graphing": {
+                    "Determine Whether an Ordered Pair is a Solution to a System of Equations": 96,
+                    "Graph Linear Inequalities in Two Variables": 51,
+                    "Determine the Solution to a Linear System by Graphing": 25
+                },
+                "Special Types of Linear Systems": {
+                    "Comparing Methods for Solving Linear Systems": 85,
+                    "Determining the Type of System Algebraically": 45
+                }
+            },
+            "Graphs of Equations and Functions": {
+                "Direct Variation Models": {
+                    "Graph Direct Variation Equations": 74,
+                    "Changing the Slope or Intercept of a Line": 11,
+                    "Identify Direct Variation": 59
+                },
+                "The Coordinate Plane": {
+                    "Graph a Function Given a Table": 33,
+                    "The Coordinate Plane": 100,
+                    "Find Percent of Change": 26,
+                    "Plot Points in a Coordinate Plane": 75,
+                    "Identify Coordinates of Points": 97
+                },
+                "Slope and Rate of Change": {
+                    "Find the Slope of a Line": 48,
+                    "Find a Rate of Change": 50,
+                    "Finding Intercepts for Standard Form Equations Using the Cover-Up Method": 68,
+                    "Find the Slopes of Horizontal and Vertical lines": 19
+                },
+                "Percent Problems": {
+                    "Finding and Converting Percentages": 5,
+                    "Use the Percent Equation": 86,
+                    "Scale and Indirect Measurement": 42
+                },
+                "Graphs of Linear Equations": {
+                    "Graphs and Equations of Horizontal and Vertical Lines": 78,
+                    "Graph a Function Given a Rule": 93,
+                    "Graph a Linear Equation": 22
+                },
+                "Graphing Using Intercepts": {
+                    "Finding Intercepts by Substitution": 97,
+                    "Analyze Graphs of Linear Functions": 38
+                },
+                "Linear Function Graphs": {
+                    "Ohm's Law": 32,
+                    "Functions": 50,
+                    "Use Function Notation": 67,
+                    "Graph a Linear Function": 20
+                },
+                "Graphs Using Slope-Intercept Form": {
+                    "Interpret a Graph to Compare Rates of Change": 97,
+                    "Graph an Equation in Slope-Intercept Form": 100
+                }
+            },
+            "Linear Inequalities": {
+                "Solving Inequalities": {
+                    "Linear Extrapolation": 58,
+                    "Write and Graph Inequalities in One Variable on a Number Line": 58,
+                    "Solving Inequalities Using Multiplication and Division": 86,
+                    "Solving Inequalities Using Addition and Subtraction": 22
+                },
+                "Absolute Value Equations and Inequalities": {
+                    "Solve Absolute Value Inequalities": 67,
+                    "Solve an Absolute Value Equation": 88,
+                    "Rewrite and Solve Absolute Value Inequalities as Compound Inequalities": 74,
+                    "Analyze Solutions to Absolute Value Equations": 87,
+                    "Absolute Value Inequalities": 87,
+                    "Solve Compound Inequalities Using a Graphing Calculator (TI-83/84 family)": 85,
+                    "Graph Absolute Value Functions": 2
+                },
+                "Compound Inequalities": {
+                    "Solve a Compound Inequality With “and” or “or”": 37,
+                    "Identify the Number of Solutions of an Inequality": 1,
+                    "Write and Graph Compound Inequalities on a Number Line": 87
+                },
+                "Predicting with Linear Models": {
+                    "Perform Linear Regression With a Graphing Calculator": 80,
+                    "Linear Interpolation": 48
+                },
+                "Using Inequalities": {
+                    "Solving Multi-Step Inequalities": 32,
+                    "Expressing Solutions of an Inequality": 51
+                }
+            },
+            "Equations and Functions": {
+                "Problem-Solving Plan": {
+                    "Solve the Problem and Check the Results": 41,
+                    "Determine Whether a Relation is a Function": 91,
+                    "Read and Understand a Given Problem Situation": 51,
+                    "Make a Plan to Solve the Problem": 23
+                },
+                "Equations and Inequalities": {
+                    "Solve Problems Using Equations": 30,
+                    "Write Equations and Inequalities": 29,
+                    "Check Solutions to Equations": 29
+                },
+                "Functions as Graphs": {
+                    "Graph a Function From a Rule or Table": 27,
+                    "Write a Function Rule from a Graph": 25,
+                    "Represent a Real-World Situation with a Function": 50
+                },
+                "Patterns and Equations": {
+                    "Evaluate Algebraic Expressions with a TI-83/84 Family Graphing Calculator": 37,
+                    "Write an Equation": 25,
+                    "Use a Verbal Model to Write an Equation": 10
+                },
+                "Variable Expressions": {
+                    "Evaluate Algebraic Expressions": 63
+                },
+                "Order of Operations": {
+                    "Order of Operations": 21,
+                    "Evaluate Algebraic Expressions with Exponents": 95,
+                    "Evaluate Algebraic Expressions with Fraction Bars": 54,
+                    "Evaluate Algebraic Expressions with Grouping Symbols": 74
+                },
+                "Functions as Rules and Tables": {
+                    "Write a Function Rule": 70,
+                    "Identify the Domain and Range of a Function": 74,
+                    "Check Solutions to Inequalities": 87,
+                    "Make a Table For a Function": 88
+                }
+            }
+        },
+        "CAL": {
+            "Derivatives": {
+                "Derivatives of Trigonometric Functions": {},
+                "Tangent Lines and Rates of Change": {
+                    "The Tangent Line": 21
+                },
+                "The Chain Rule": {},
+                "The Derivative": {
+                    "Notation": 14,
+                    "Average Rates of Change": 92
+                },
+                "Techniques of Differentiation": {
+                    "Existence and Differentiability of a Function": 8
+                },
+                "Implicit Differentiation": {},
+                "Infinite Limits": {}
+            },
+            "Integration Techniques": {
+                "Integration by Substitution": {
+                    "Trigonometric Integrands": 31,
+                    "The Integration Formulas of the Inverse Trigonometric Functions": 50
+                },
+                "Trigonometric Integrals": {
+                    "General Description of the Method": 55,
+                    "Integrating Powers of Sines and Cosines": 5
+                },
+                "L’Hospital’s Rule": {},
+                "Integration By Parts": {
+                    "Using Substitution on Definite Integrals": 57,
+                    "Tabular Integration by Parts": 32,
+                    "Repeated Use of Integration by Parts": 43
+                },
+                "Improper Integrals": {
+                    "Integrating Powers of Secants and Tangents": 65,
+                    "Integrands with Infinite Discontinuities": 8,
+                    "Integration Over Infinite Limits": 27,
+                    "Homework": 63
+                },
+                "Trigonometric Substitutions": {},
+                "Integration by Partial Fractions": {
+                    "Solving for an Unknown Integral": 83
+                }
+            },
+            "Integration": {
+                "Integration by Substitution": {},
+                "The Initial Value Problem": {},
+                "The Area Problem": {},
+                "Approximation Errors": {},
+                "Indefinite Integrals Calculus": {
+                    "Newton’s Method": 95
+                },
+                "Definite Integrals": {},
+                "Evaluating Definite Integrals": {},
+                "The Fundamental Theorem of Calculus": {}
+            },
+            "Applications of Definite Integrals": {
+                "Area Between Two Curves": {},
+                "Numerical Integration": {},
+                "The Length of a Plane Curve": {},
+                "Volumes": {
+                    "Multimedia Link": 15,
+                    "The Volume Formula": 21,
+                    "Volumes of Solids of Revolution": 33
+                },
+                "Area of a Surface of Revolution": {}
+            },
+            "Applications of Derivatives": {
+                "Extrema and the Mean Value Theorem": {},
+                "Linearization and Newton’s Method": {
+                    "The Derivative of a Constant": 74,
+                    "Linearization: The Tangent Line Approximation": 7
+                },
+                "Limits at Infinity": {},
+                "The Second Derivative Test": {},
+                "Optimization": {},
+                "Analyzing the Graph of a Function": {},
+                "Related Rates": {},
+                "The First Derivative Test": {}
+            },
+            "Transcendental Functions": {
+                "Derivatives and Integrals Involving Inverse Trigonometric Functions": {
+                    "Applications of Growth and Decay": 1,
+                    "The Derivative Formulas of the Inverse Trigonometric Functions": 7
+                },
+                "Applications from Physics, Engineering, and Statistics": {
+                    "Fluid Statics: Pressure": 95,
+                    "Work": 85,
+                    "Volume By Cylindrical Shells": 57
+                },
+                "Exponential Growth and Decay": {
+                    "Integrals Involving Exponential Functions": 11
+                },
+                "Differentiation and Integration of Logarithmic and Exponential Functions": {
+                    "The Derivative of a Logarithmic Function": 60,
+                    "Derivatives of Exponential Functions": 12,
+                    "Continuity and Differentiability of Inverse Functions": 47,
+                    "Integrals Involving Natural Logarithmic Function": 83
+                },
+                "Exponential and Logarithmic Functions": {},
+                "Inverse Functions": {
+                    "Normal Probabilities": 2
+                }
+            },
+            "Functions, Limits, and Continuity": {
+                "Continuity": {},
+                "The Calculus": {},
+                "Evaluating Limits": {},
+                "Finding Limits": {},
+                "Relations and Functions": {},
+                "Equations and Graphs": {},
+                "Models and Data": {}
+            }
+        },
+        "GEO": {
+            "Circles": {
+                "Angles of Chords, Secants, and Tangents": {},
+                "Properties of Chords": {
+                    "Arc Addition Postulate": 73,
+                    "Congruent Chords & Congruent Arcs": 19
+                },
+                "Extension:  Laws of Sines and Cosines": {
+                    "Law of Sines": 73,
+                    "Real-Life Situations": 28
+                },
+                "Properties of Arcs": {
+                    "Central Angles & Arcs": 5,
+                    "Tangent Segments": 52
+                },
+                "Segments of Chords, Secants, and Tangents": {
+                    "Inscribed Quadrilaterals": 86,
+                    "Segments from Secants": 76,
+                    "Segments from Chords": 36
+                },
+                "Parts of Circles & Tangent Lines": {
+                    "Coplanar Circles": 63,
+                    "Tangents and Radii": 25,
+                    "Law of Cosines": 60,
+                    "Tangent Lines": 26
+                },
+                "Inscribed Angles": {
+                    "Equidistant Congruent Chords": 8,
+                    "Inscribed Angles": 14
+                }
+            },
+            "Similarity": {
+                "Trapezoids and Kites": {
+                    "Midsegment of a Trapezoid": 62,
+                    "Trapezoids": 85,
+                    "Kites": 79,
+                    "Parallelograms in the Coordinate Plane": 78,
+                    "Isosceles Trapezoids": 4
+                },
+                "Similar Polygons": {
+                    "Similar Polygons": 85,
+                    "Properties of Proportions": 36
+                },
+                "Similarity by AA": {
+                    "Angles in Similar Triangles": 79,
+                    "Scale Factors": 24
+                },
+                "Similarity by SSS and SAS": {
+                    "SSS for Similar Triangles": 51,
+                    "Indirect Measurement": 10
+                },
+                "Similarity Transformations": {
+                    "Dilations": 87,
+                    "Proportions with Angle Bisectors": 66
+                },
+                "Proportionality Relationships": {
+                    "Triangle Proportionality": 15,
+                    "Parallel Lines and Transversals": 90,
+                    "SAS for Similar Triangles": 39
+                },
+                "Ratios and Proportions": {
+                    "Using Ratios": 40,
+                    "Kites and Trapezoids in the Coordinate Plane": 88,
+                    "Proportions": 55
+                }
+            },
+            "Polygons and Quadrilaterals": {
+                "Angles in Polygons": {
+                    "Interior Angles in Convex Polygons": 64,
+                    "Indirect Proofs in Geometry": 53
+                },
+                "Extension:  Indirect Proof": {
+                    "Triangle Inequality Theorem": 52,
+                    "Indirect Proofs in Algebra": 67
+                },
+                "Properties of Parallelograms": {
+                    "What is a Parallelogram?": 98,
+                    "Exterior Angles in Convex Polygons": 79
+                },
+                "Rectangles, Rhombuses and Squares": {
+                    "Showing a Quadrilateral is a Parallelogram in the Coordinate Plane": 84,
+                    "Defining Special Parallelograms": 41,
+                    "Diagonals in Special Parallelograms": 3
+                },
+                "Proving Quadrilaterals are Parallelograms": {
+                    "Determining if a Quadrilateral is a Parallelogram": 32,
+                    "Diagonals in a Parallelogram": 3
+                }
+            },
+            "Surface Area and Volume": {
+                "Surface Area of Pyramids and Cones": {
+                    "Surface Area of a Right Cylinder": 5,
+                    "Surface Area of a Regular Pyramid": 30,
+                    "Parts of a Pyramid": 85
+                },
+                "Exploring Solids": {
+                    "Euler’s Theorem": 8,
+                    "Cross-Sections": 17,
+                    "Area of a Regular Polygon": 17,
+                    "Polyhedrons": 29,
+                    "Regular Polyhedra": 55
+                },
+                "Volume of Prisms and Cylinders": {
+                    "Cavalieri’s Principle": 74,
+                    "Volume of a Rectangular Prism": 45,
+                    "Volume of any Prism": 63,
+                    "Surface Area of a Cone": 78
+                },
+                "Area and Perimeter of Regular Polygons": {
+                    "Segments of a Circle": 80,
+                    "Perimeter of a Regular Polygon": 10
+                },
+                "Volume of Pyramids and Cones": {
+                    "Volume of a Cylinder": 58,
+                    "Volume of a Pyramid": 77
+                },
+                "Surface Area of Prisms and Cylinders": {
+                    "Cylinders": 60,
+                    "Parts of a Prism": 61,
+                    "Nets": 55,
+                    "Surface Area of a Prism": 17
+                },
+                "Surface Area and Volume of Spheres": {
+                    "Defining a Sphere": 18,
+                    "Volume of a Cone": 75,
+                    "Surface Area of a Sphere": 7
+                }
+            },
+            "Parallel and Perpendicular Lines": {
+                "Proving Lines Parallel": {
+                    "Converse of Alternate Exterior Angles & Consecutive Interior Angles": 75,
+                    "Same Side Interior Angles Theorem": 63,
+                    "Corresponding Angles Converse": 47,
+                    "Alternate Interior Angles Converse": 73
+                },
+                "Lines and Angles": {
+                    "Vertical Angles Theorem": 30,
+                    "Perpendicular Line Postulate": 69,
+                    "Defining Parallel and Skew": 100,
+                    "Parallel Line Postulate": 80
+                },
+                "Properties of Perpendicular Lines": {
+                    "Parallel Lines Property": 37,
+                    "Perpendicular Transversals": 74,
+                    "Congruent Linear Pairs": 62
+                },
+                "Properties of Parallel Lines": {
+                    "Angles and Transversals": 49,
+                    "Alternate Exterior Angles Theorem": 45,
+                    "Corresponding Angles Postulate": 20,
+                    "Alternate Interior Angles Theorem": 24
+                },
+                "Proofs about Angle Pairs and Segments": {
+                    "Naming Angles": 34,
+                    "Proof of the Same Angles Supplements Theorem": 41,
+                    "Two-Column Proof": 48,
+                    "Proof of the Right Angle Theorem": 66
+                },
+                "Parallel and Perpendicular Lines in the Coordinate Plane": {
+                    "Slope in the Coordinate Plane": 67,
+                    "Slopes of Parallel Lines": 91,
+                    "Adjacent Complementary Angles": 40,
+                    "Slopes of Perpendicular Lines": 75
+                }
+            },
+            "Right Triangle Trigonometry": {
+                "The Pythagorean Theorem": {
+                    "The Pythagorean Theorem": 65,
+                    "Pythagorean Triples": 22,
+                    "Area of an Isosceles Triangle": 56,
+                    "The Cantor Set": 53,
+                    "Another Proof of the Pythagorean Theorem": 9,
+                    "Using the Pythagorean Theorem": 42
+                },
+                "Inverse Trigonometric Ratios": {
+                    "Inverse Trigonometric Ratios": 20,
+                    "Solving Triangles": 63,
+                    "Angles of Depression and Elevation": 91
+                },
+                "Special Right Triangles": {
+                    "Isosceles Right Triangles": 35,
+                    "The Geometric Mean": 10
+                },
+                "Using Similar Right Triangles": {
+                    "Inscribed Similar Triangles": 88,
+                    "Identifying Acute and Obtuse Triangles": 91
+                },
+                "Tangent, Sine and Cosine": {
+                    "Finding the Sides of a Triangle using Trig Ratios": 91,
+                    "Sine, Cosine, and Tangent Ratios": 30,
+                    "What is Trigonometry?": 8,
+                    "Sine, Cosine, and Tangent with a Calculator": 35,
+                    "30-60-90 Triangles": 100
+                },
+                "Converse of the Pythagorean Theorem": {
+                    "The Distance Formula": 64,
+                    "Converse of the Pythagorean Theorem": 56
+                },
+                "Extension:  Self-Similarity": {
+                    "Dilations in the Coordinate Plane": 7,
+                    "Fractals": 10,
+                    "Sierpinski Triangle": 32
+                }
+            },
+            "Reasoning and Proof": {
+                "Conditional Statements": {
+                    "If-Then Statements": 89,
+                    "Conjectures and Counterexamples": 92,
+                    "Converse, Inverse, and Contrapositive of a Conditional Statement": 95
+                },
+                "Algebraic and Congruence Properties": {
+                    "Properties of Equality": 38,
+                    "Using Properties of Equality with Equations": 20,
+                    "Truth Tables": 28,
+                    "Properties of Congruence": 78
+                },
+                "Deductive Reasoning": {
+                    "Deductive Reasoning": 28,
+                    "Law of Syllogism": 54,
+                    "Law of Contrapositive": 73,
+                    "Biconditional Statements": 93,
+                    "Law of Detachment": 54,
+                    "Inductive vs. Deductive Reasoning": 55
+                },
+                "Classifying Polygons": {
+                    "Vertical Angles": 70,
+                    "Convex and Concave Polygons": 8,
+                    "Classifying by Angles": 35,
+                    "Classifying by Sides": 48,
+                    "Polygons": 6,
+                    "Triangles": 11
+                },
+                "Inductive Reasoning": {
+                    "Visual Patterns": 58,
+                    "Classifying Polygons": 7,
+                    "Number Patterns": 96
+                }
+            },
+            "Triangles and Congruence": {
+                "The Distance Formula": {
+                    "The Distance Formula": 66,
+                    "Shortest Distance between a Point and a Line": 83,
+                    "Graphing Parallel and Perpendicular Lines": 22,
+                    "Shortest Distance between Two Parallel Lines": 59
+                },
+                "Triangle Sums": {
+                    "Exterior Angles": 45,
+                    "Perpendicular Bisectors in the Coordinate Plane": 59,
+                    "Triangle Sum Theorem": 100
+                },
+                "Triangle Congruence Using ASA, AAS, and HL": {
+                    "AAS Congruence": 41,
+                    "ASA Congruence": 95,
+                    "Hypotenuse-Leg Congruence Theorem": 17,
+                    "SSS in the Coordinate Plane": 96,
+                    "AAA and SSA Relationships": 19
+                },
+                "Triangle Congruence using SSS and SAS": {
+                    "SAS Triangle Congruence Postulate": 29,
+                    "SSS Postulate of Triangle Congruence": 90,
+                    "Congruence Properties": 97
+                },
+                "Congruent Figures": {
+                    "Exterior Angles Theorem": 57,
+                    "Creating Congruence Statements": 62,
+                    "The Third Angle Theorem": 7,
+                    "Congruent Triangles": 47
+                }
+            },
+            "Basics of Geometry": {
+                "Angle Pairs": {
+                    "Linear Pairs": 1,
+                    "Complementary Angles": 40,
+                    "Angle Bisectors": 55,
+                    "Supplementary Angles": 62
+                },
+                "Points, Lines, and Planes": {
+                    "Beyond the Basics": 6,
+                    "Building Blocks": 75
+                },
+                "Midpoints and Bisectors": {
+                    "Midpoint Formula": 23,
+                    "Congruence": 59,
+                    "Congruent Angles": 95,
+                    "Midpoints": 75,
+                    "Angle Addition Postulate": 74,
+                    "Segment Bisectors": 56
+                },
+                "Angles and Measurement": {
+                    "Classifying Angles": 69,
+                    "Marking Angles and Segments in a Diagram": 48,
+                    "Drawing an Angle": 36,
+                    "Distances on a Grid": 69,
+                    "Two Rays = One Angle": 94,
+                    "Protractor Postulate": 65
+                },
+                "Segments and Distance": {
+                    "Ruler Postulate": 67,
+                    "Segment Addition Postulate": 16,
+                    "Further Beyond": 73,
+                    "Measuring Distances": 15
+                }
+            },
+            "Relationships with Triangles": {
+                "Isosceles and Equilateral Triangles": {
+                    "Isosceles Triangle Properties": 29,
+                    "Triangle Congruence Recap": 17
+                },
+                "Midsegments of a Triangle": {
+                    "Defining Midsegment": 87,
+                    "Equilateral Triangles": 17
+                },
+                "Angle Bisectors in Triangles": {
+                    "Perpendicular Bisectors and Triangles": 52,
+                    "Angle Bisectors": 70
+                },
+                "Inequalities in Triangles": {
+                    "Comparing Angles and Sides": 82,
+                    "Altitudes": 60
+                },
+                "Medians and Altitudes in Triangles": {
+                    "Point of Concurrency for Medians": 78,
+                    "Medians": 97,
+                    "Angle Bisectors in a Triangle": 97
+                },
+                "Perpendicular Bisectors in Triangles": {
+                    "The Midsegment Theorem": 91,
+                    "Perpendicular Bisectors": 100
+                }
+            },
+            "Perimeter and Area": {
+                "Triangles and Parallelograms": {
+                    "Area Postulates": 94,
+                    "Area of a Parallelogram": 31,
+                    "Finding the Equation of a Circle": 44,
+                    "Areas and Perimeters of Squares and Rectangles": 44
+                },
+                "Circumference and Arc Length": {
+                    "Areas of Similar Polygons": 27,
+                    "Circumference of a Circle": 18
+                },
+                "Areas of Similar Polygons": {
+                    "Area of a Rhombus and Kite": 53
+                },
+                "Areas of Circles and Sectors": {
+                    "Area of a Circle": 50,
+                    "Arc Length": 10,
+                    "Area of a Sector": 4
+                },
+                "Extension:  Writing and Graphing the Equations of Circles": {
+                    "Segments from Secants and Tangents": 81,
+                    "Graphing a Circle in the Coordinate Plane": 6
+                },
+                "Trapezoids, Rhombi, and Kites": {
+                    "Area of a Trapezoid": 10,
+                    "Area of a Triangle": 59
+                }
+            }
+        },
+        "APS": {
+            "Non-Parametric Statistics": {
+                "The Two-Way ANOVA Test": {},
+                "The Rank Sum Test and Rank Correlation": {}
+            },
+            "Visualizations of Data": {
+                "Common Graphs and Data Plots": {
+                    "Shape, Center, Spread": 58,
+                    "Categorical Variables: Bar Graphs and Pie Graphs": 13,
+                    "Displaying Univariate Data": 12
+                },
+                "Histograms and Frequency Distributions": {
+                    "Cumulative Frequency Histograms and Ogive Plots": 61,
+                    "Histograms": 74,
+                    "Relative Frequency Histogram": 8,
+                    "Frequency Tables": 51,
+                    "Frequency Polygons": 7
+                }
+            },
+            "Planning and Conducting an Experiment or Study": {
+                "Surveys and Sampling": {
+                    "The Characteristics of a Normal Distribution": 28,
+                    "Census vs. Sample": 73
+                },
+                "Applications of the Normal Distribution": {}
+            },
+            "Regression and Correlation": {
+                "Scatterplots and Linear Correlation": {},
+                "Testing a Hypothesis for Dependent and Independent Samples": {},
+                "Inferences about Regression": {},
+                "Least-Squares Regression": {}
+            },
+            "Sampling Distributions and Estimations": {
+                "The z-Score and the Central Limit Theorem": {},
+                "Sampling Distribution": {},
+                "Experimental Design": {
+                    "Reducing Bias": 78,
+                    "Part One: Multiple Choice": 7
+                }
+            },
+            "Chi-Square": {
+                "Multiple Regression": {},
+                "The Goodness-of-Fit Test": {},
+                "Test of Independence": {}
+            },
+            "Normal Distribution": {
+                "Geometric Probability Distribution": {},
+                "The Standard Normal Probability Distribution": {
+                    "Part Two: Open-Ended Questions": 9
+                },
+                "The Density Curve of the Normal Distribution": {}
+            },
+            "Analysis of Variance and F-Distribution": {
+                "The One-Way ANOVA Test": {},
+                "Testing One Variance": {},
+                "The F-Distribution and Testing Two Variances": {}
+            },
+            "Hypothesis Testing": {
+                "Hypothesis Testing and the P-Value": {},
+                "Testing a Mean Hypothesis": {},
+                "Student’s t-Distribution": {},
+                "Testing a Proportion Hypothesis": {},
+                "Confidence Intervals": {}
+            },
+            "Discrete Probability Distribution": {
+                "Two Types of Random Variables": {},
+                "Mean and Standard Deviation of Discrete Random Variables": {},
+                "Sums and Differences of Independent Random Variables": {},
+                "Probability Distribution for a Discrete Random Variable": {},
+                "Box-and-Whisker Plots": {
+                    "Part One: Questions": 22,
+                    "Displaying Bivariate Data": 40
+                },
+                "The Poisson Probability Distribution": {},
+                "The Binomial Probability Distribution": {}
+            }
+        }
+    }
+}
