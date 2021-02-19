@@ -12,12 +12,12 @@
 
 @section('contenido')
 <div class="container">
-<!--   <div class="slim-pageheader">
+   <div class="slim-pageheader">
     <ol class="breadcrumb slim-breadcrumb">
       <li class="breadcrumb-item active" aria-current="page">Inicio</li>
     </ol>
     <h6 class="slim-pagetitle">Inicio</h6>
-  </div> --><!-- slim-pageheader -->
+  </div> <!-- slim-pageheader -->
 
   <div class="row row-xs">
     <div class="col-md-6 col-lg-3 order-lg-1">
