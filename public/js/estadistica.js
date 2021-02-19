@@ -108,6 +108,7 @@ function creaGraficoLocales(){
             series: [ cantidad ]
           }, {
             stackBars: true,
+            height: '180px',
             axisY: {
               labelInterpolationFnc: function(value) {
                 return (value / 1000) + 'k';
@@ -265,6 +266,7 @@ function creaGraficoNacionalesSemanales(){
             labels: medios,
             series: [ cantidad ]
           }, {
+            height: '180px',
             stackBars: true,
             axisY: {
               labelInterpolationFnc: function(value) {
@@ -299,18 +301,19 @@ function creaGraficoNacionalesSemanales(){
         data: {},
         dataType: 'JSON',
         success: function (data) {
-          var medios = [];
-          var cantidad = [];
+          var medios = [17, 26];
+          var cantidad = [3019, 100];
 
-          for (var i = 0; i <= data.length - 1; i++) {
-            medios.push(data[i].titulo);
-            cantidad.push(data[i].noticias);
-          }
+        //   for (var i = 0; i <= data.length - 1; i++) {
+        //     medios.push(data[i].titulo);
+        //     cantidad.push(data[i].noticias);
+        //   }
 
           var area1 = new Chartist.Bar('#chartAreaFacebook', {
             labels: medios,
             series: [ cantidad ]
           }, {
+            height: '180px',
             stackBars: true,
             axisY: {
               labelInterpolationFnc: function(value) {
@@ -342,13 +345,13 @@ function creaGraficoNacionalesSemanales(){
         data: {},
         dataType: 'JSON',
         success: function (data) {
-          var medios = [];
-          var cantidad = [];
+            var medios = [17, 26];
+          var cantidad = [29, 2];
 
-          for (var i = 0; i <= data.length - 1; i++) {
-            medios.push(data[i].titulo);
-            cantidad.push(data[i].noticias);
-          }
+        //   for (var i = 0; i <= data.length - 1; i++) {
+        //     medios.push(data[i].titulo);
+        //     cantidad.push(data[i].noticias);
+        //   }
 
           var area1 = new Chartist.Line('#chartAreaFacebookSemanal', {
             labels: medios,
@@ -381,13 +384,13 @@ function creaGraficoNacionalesSemanales(){
         data: {},
         dataType: 'JSON',
         success: function (data) {
-          var medios = [];
-          var cantidad = [];
+          var medios = [1];
+          var cantidad = [1205];
 
-          for (var i = 0; i <= data.length - 1; i++) {
-            medios.push(data[i].titulo);
-            cantidad.push(data[i].noticias);
-          }
+        //   for (var i = 0; i <= data.length - 1; i++) {
+        //     medios.push(data[i].titulo);
+        //     cantidad.push(data[i].noticias);
+        //   }
 
           var area1 = new Chartist.Line('#chartAreaTweeter', {
             labels: medios,
@@ -420,13 +423,13 @@ function creaGraficoNacionalesSemanales(){
         data: {},
         dataType: 'JSON',
         success: function (data) {
-          var medios = [];
-          var cantidad = [];
+          var medios = [1];
+          var cantidad = [0];
 
-          for (var i = 0; i <= data.length - 1; i++) {
-            medios.push(data[i].titulo);
-            cantidad.push(data[i].noticias);
-          }
+        //   for (var i = 0; i <= data.length - 1; i++) {
+        //     medios.push(data[i].titulo);
+        //     cantidad.push(data[i].noticias);
+        //   }
 
           var area1 = new Chartist.Bar('#chartAreaTweeterSemanal', {
             labels: medios,

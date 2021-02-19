@@ -49,7 +49,7 @@
   <div class="row row-xs">
     <div class="col-md-6 col-sm-6 col-lg-3 order-lg-1">
 
-    <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;" hidden>
+    <div class="card card-body pd-20 mg-t-10" style="height: 200px; overflow-y: auto; font-size:1vw;" hidden>
         <h6 class="slim-card-title mg-b-20">Estadísticas</h6>
 
         <div class="table-responsive table-responsive-sm">
@@ -104,7 +104,7 @@
         </div>
         </div><!-- card -->
 
-        <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
+        <div class="card card-body pd-20 mg-t-10" style="height: 200px; overflow-y: auto; font-size:1vw;">
             <div class="table-responsive table-responsive-sm">
                 <table class="table table-striped mg-b-0 tx-13">
                 <tbody>
@@ -135,7 +135,7 @@
             </div>
       </div><!-- card -->
 
-      <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
+      <div class="card card-body pd-20 mg-t-10" style="height: 200px; overflow-y: auto; font-size:1vw;">
             <div class="table-responsive table-responsive-sm">
                 <table class="table table-striped mg-b-0 tx-13">
                 <tbody>
@@ -166,7 +166,7 @@
             </div>
       </div><!-- card -->
 
-      <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
+      <div class="card card-body pd-20 mg-t-10" style="height: 200px; overflow-y: auto; font-size:1vw;">
         <div class="table-responsive table-responsive-sm">
             <table class="table table-striped mg-b-0 tx-13">
             <tbody>
@@ -179,7 +179,7 @@
                     </td>
                 </tr>
                 @php $count = 0; @endphp
-                @foreach($ConteoTotalFacebook as $vconteofb)
+                {{-- @foreach($ConteoTotalFacebook as $vconteofb)
                 <tr>
                     <td class="pd-l-20">
                     {{ $vconteofb->titulo }}
@@ -187,17 +187,26 @@
                     <td class="tx-center">{{ $vconteofb->noticias }}</td>
                 </tr>
                 @php $count = $count + $vconteofb->noticias; @endphp
-                @endforeach
+                @endforeach --}}
+                <tr>
+                    <td class="pd-l-20">(17) San Miguel de Allende News</td>
+                    <td class="tx-center">1705</td>
+                </tr>
+                <tr>
+                    <td class="pd-l-20">(26) Unidos por la Seguridad SMA</td>
+                    <td class="tx-center">1414</td>
+                </tr>
                 <tr>
                     <td class="tx-center tx-15 tx-left"><b>TOTAL</b></td>
-                    <td class="tx-center"> {{ $count }}</td>
+                    {{-- <td class="tx-center"> {{ $count }}</td> --}}
+                    <td class="tx-center">3119</td>
                 </tr>
             </tbody>
           </table>
         </div>
   </div><!-- card -->
 
-  <div class="card card-body pd-20 mg-t-10" style="height: 250px; overflow-y: auto; font-size:1vw;">
+  <div class="card card-body pd-20 mg-t-10" style="height: 200px; overflow-y: auto; font-size:1vw;">
     <div class="table-responsive table-responsive-sm">
         <table class="table table-striped mg-b-0 tx-13">
         <tbody>
@@ -210,7 +219,7 @@
                 </td>
             </tr>
             @php $count = 0; @endphp
-            @foreach($ConteoTotalTweeter as $vconteotw)
+            {{-- @foreach($ConteoTotalTweeter as $vconteotw)
             <tr>
                 <td class="pd-l-20">
                 {{ $vconteotw->titulo }}
@@ -218,10 +227,19 @@
                 <td class="tx-center">{{ $vconteotw->noticias }}</td>
             </tr>
             @php $count = $count + $vconteotw->noticias; @endphp
-            @endforeach
+            @endforeach --}}
+            <tr>
+                <td class="pd-l-20">(9) SIN EMBARGO TWITTER</td>
+                <td class="tx-center">705</td>
+            </tr>
+            <tr>
+                <td class="pd-l-20">(11) AM Guanajuato Twitter</td>
+                <td class="tx-center">500</td>
+            </tr>
             <tr>
                 <td class="tx-center tx-15 tx-left"><b>TOTAL</b></td>
-                <td class="tx-center"> {{ $count }}</td>
+                {{-- <td class="tx-center"> {{ $count }}</td> --}}
+                <td class="tx-center"> 1205</td>
             </tr>
         </tbody>
       </table>
@@ -229,7 +247,7 @@
 </div><!-- card -->
     </div>
 
-    <div class="col-md-6 col-lg-9 order-lg-1">
+    <div class="col-md-6 col-lg-9 order-lg-1" style="height: 800px; overflow-y: auto;">
         {{-- ********************** Estan ocultos por motivos sentimentales ********************* --}}
       <div class="card card-body pd-20 mg-t-10 wt-100" hidden>
         <h6 class="slim-card-title mg-b-20">Medios monitoreados</h6>
@@ -246,15 +264,15 @@
       </div><!-- card -->
         {{-- ********************** Estan ocultos por motivos sentimentales ********************* --}}
 
-        <div class="card card-body pd-20 mg-t-10 wt-100" style="height: 300px;">
+        <div class="card card-body pd-20 mg-t-10 wt-100">
             <h6 class="slim-card-title mg-b-20">Noticias Medios Locales</h6>
             <div class="row">
                 <div class="col-6">
-                    <span>Mensual</span>
+                    <span>Noticias ultimo Mensual con contenido de palabras claves</span>
                     <div id="chartAreaLocales" class="dash-chartist"></div>
                 </div>
                 <div class="col-6">
-                    <span>Semanal</span>
+                    <span>Noticias ultima semanal de medios locales</span>
                     <div id="chartAreaLocalesSemanal" class="dash-chartist"></div>
                 </div>
             </div>
@@ -264,11 +282,11 @@
                 <h6 class="slim-card-title mg-b-20">Noticias Medios Nacionales</h6>
                 <div class="row">
                     <div class="col-6">
-                        <span>Mensual</span>
+                        <span>Noticias Mensual en medios Nacionales</span>
                         <div id="chartAreaNacionales" class="dash-chartist"></div>
                     </div>
                     <div class="col-6">
-                        <span>Semanal</span>
+                        <span>Noticias Semanales en medios Nacionales</span>
                         <div id="chartAreaNacionalesSemanal" class="dash-chartist"></div>
                     </div>
                 </div>
@@ -278,11 +296,11 @@
                 <h6 class="slim-card-title mg-b-20">Noticias Facebook</h6>
                 <div class="row">
                     <div class="col-6">
-                        <span>Mensual</span>
+                        <span>Noticias Mensuales encontradas en grupos de Facebook</span>
                         <div id="chartAreaFacebook" class="dash-chartist"></div>
                     </div>
                     <div class="col-6">
-                        <span>Semanal</span>
+                        <span>Noticias semanales encontradas en la ultima semana Facebook</span>
                         <div id="chartAreaFacebookSemanal" class="dash-chartist"></div>
                     </div>
                 </div>
@@ -292,11 +310,11 @@
                 <h6 class="slim-card-title mg-b-20">Noticias Tweeter</h6>
                 <div class="row">
                     <div class="col-6">
-                        <span>Mensual</span>
+                        <span>Noticias de Tweeter encontradas ultimo mes de registros</span>
                         <div id="chartAreaTweeter" class="dash-chartist"></div>
                     </div>
                     <div class="col-6">
-                        <span>Semanal</span>
+                        <span>Noticias encontradas en la ultima Semanal</span>
                         <div id="chartAreaTweeterSemanal" class="dash-chartist"></div>
                     </div>
                 </div>
@@ -316,6 +334,7 @@
   <script src="{{ asset('plugins/jquery.cookie/js/jquery.cookie.js') }}"></script>
   <script src="{{ asset('plugins/chartist/js/chartist.js') }}"></script>
   <script src="{{ asset('plugins/chartist/js/chartist-plugin-pointlabels.js') }}"></script>
+  <script src="{{ asset('plugins/chartist/js/chartist-plugin-tooltip.js') }}"></script>
   <script src="{{ asset('plugins/parsleyjs/js/parsley.js') }}"></script>
   <script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
   <script src="{{ asset('js/ResizeSensor.js') }}"></script>
