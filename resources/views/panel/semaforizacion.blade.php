@@ -163,7 +163,7 @@
                       </table>
                     </div>
 
-                    <div class="card">
+                    <div class="card" hidden>
                         <div class="card-body">
                             <h3>Nota:</h3>
                             Los datos encontrados  del Presidente municipal  Luis Alberto Villarreal García y la obra pública
