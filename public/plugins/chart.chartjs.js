@@ -19,6 +19,9 @@ window.chartColors = {
             172,
             103,
             76,
+            158,
+            136,
+            189,
             127,
           ],
           backgroundColor: [
@@ -26,6 +29,9 @@ window.chartColors = {
             window.chartColors.orange,
             window.chartColors.yellow,
             window.chartColors.green,
+            "#FF6384",
+            "#36A2EB",
+            "#FFCE56",
             window.chartColors.blue,
           ],
           label: 'Dataset 1'
@@ -36,6 +42,9 @@ window.chartColors = {
           'Inseguridad',
           'Violencia',
           'Narco',
+          'Ambulantaje',
+          'Inseguridad',
+          'Feminicidios',
           'Otros',
         ]
       },
@@ -65,7 +74,7 @@ window.chartColors = {
             stretch: 100, // The length between chart arc and Label
             text: "%l (%p)",
             textAlign: "center"
-                   
+
         }
      }*/
 
@@ -76,6 +85,6 @@ window.chartColors = {
       window.myPie = new Chart(ctx, config);
     };
 
-    
+
     var colorNames = Object.keys(window.chartColors);
-    
+
