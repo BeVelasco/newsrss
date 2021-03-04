@@ -189,11 +189,11 @@
                 @php $count = $count + $vconteofb->noticias; @endphp
                 @endforeach --}}
                 <tr>
-                    <td class="pd-l-20">(17) San Miguel de Allende News</td>
+                    <td class="pd-l-20">(17) Noticias Puebla</td>
                     <td class="tx-center">1705</td>
                 </tr>
                 <tr>
-                    <td class="pd-l-20">(26) Unidos por la Seguridad SMA</td>
+                    <td class="pd-l-20">(26) Puebla Segura</td>
                     <td class="tx-center">1414</td>
                 </tr>
                 <tr>
@@ -212,7 +212,7 @@
         <tbody>
             <tr>
                 <td class="pd-l-20 tx-bold">
-                    POR TWEETER
+                    POR Twitter
                 </td>
                 <td class="tx-center tx-bold">
                     TOTAL
@@ -229,11 +229,11 @@
             @php $count = $count + $vconteotw->noticias; @endphp
             @endforeach --}}
             <tr>
-                <td class="pd-l-20">(9) SIN EMBARGO TWITTER</td>
+                <td class="pd-l-20">(9) Puebla Noticias Twitter</td>
                 <td class="tx-center">705</td>
             </tr>
             <tr>
-                <td class="pd-l-20">(11) AM Guanajuato Twitter</td>
+                <td class="pd-l-20">(11) Puebla Central Twitter</td>
                 <td class="tx-center">500</td>
             </tr>
             <tr>

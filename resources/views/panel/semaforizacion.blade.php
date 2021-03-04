@@ -174,7 +174,7 @@
                             obras públicas que se han realizado así como los eventos  culturales y artísticos del
                             municipales<br><br>
 
-                            El ayuntamiento de San Miguel de Allende no fija una postura oficial  por medio de
+                            El ayuntamiento de Puebla no fija una postura oficial  por medio de
                              boletines de prensa en eventos o situaciones relacionadas con los temas de inseguridad.<br>
                         </div>
                     </div>

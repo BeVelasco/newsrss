@@ -25,7 +25,7 @@
                     Robot de busqueda de información de noticias en servicios RSS y HTML de periódicos digitales
                     </p></div>
                 <div class="col-md-4">
-                    <!--<input size="30" type="txt" name="txt" id="txt" value="SAN MIGUEL DE ALLENDE" readonly="">
+                    <!--<input size="30" type="txt" name="txt" id="txt" value="Puebla" readonly="">
 
                     <button type="button" class="btn btn-primary" id="buscar" name="buscar">Buscar</button>-->
                 </div>
