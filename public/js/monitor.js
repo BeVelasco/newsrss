@@ -64,7 +64,9 @@ function llenanoticias(){
         success: function (data) {
             let html = "";
             data.forEach(element => {
-                html +=  "<tr><td>"+element.titulo+"</td><td>"+element.created_at+"</td><td><a href='"+element.url+"' target='_blank'>"+element.url+"</a></td></tr>";
+                // html +=  "<tr><td>"+element.titulo+"</td><td>"+element.created_at+"</td><td><a href='"+element.url+"' target='_blank'>"+element.url+"</a></td></tr>";
+                html +=  "<tr><td>"+element.nombreMedio+"</td><td>"+element.created_at+"</td><td><a href='"+element.urlArticulo+"' target='_blank'><img src='"+element.notaImagen+"'><span class='mg-l-15'>"+element.titulo+"</span></a></td>";
+                // html +=  "<tr><td>"+element.nombreMedio+"</td><td>"+element.created_at+"</td><td><a href='"+element.urlArticulo+"' target='_blank'>"+element.urlArticulo+"</a></td><td><a onclick='getImg("+element.id+");'>preview</a></td>";
             });
             $('#tbresumen').append(html);
             hide();

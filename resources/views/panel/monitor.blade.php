@@ -93,7 +93,7 @@
                                     <tr> <!-- Fila -->
                                         <th>Periódico</th>
                                         <th>Fecha</th>
-                                        <th>URL</th>
+                                        <th>Noticia</th>
                                     </tr>
                                     </thead>
                                     <tbody id="tbresumen">

@@ -735,18 +735,29 @@ class HomeController extends Controller
     }
 
     public function getNoticiasMes(){
-        $sqlMes = "SELECT *
-                    FROM web AS w
-                    WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 DAY)
-                    AND w.`titulo` IN (SELECT f.idesc
-                    FROM fuentes AS f)
-                    ORDER BY w.`created_at` DESC;";
+        // $sqlMes = "SELECT *
+        //             FROM web AS w
+        //             WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 DAY)
+        //             AND w.`titulo` IN (SELECT f.idesc
+        //             FROM fuentes AS f)
+        //             ORDER BY w.`created_at` DESC;";
 
+        $sqlMes ="SELECT * FROM `medioComunicacionTrArticuloPrevio` AS mtap
+                  LEFT JOIN `medioComunicacionCtMedioComunicacion` AS mccmc ON mtap.`id_medioComunicacionCtMedioComunicacion` = `mccmc`.`id`";
         $rs = DB::select($sqlMes);
 
         return $rs;
     }
 
+    public function getImg(Request $request){
+        $id = $request->id;
+        $sqlImg ="SELECT * FROM `medioComunicacionTrArticuloPrevio` AS mtap
+                 WHERE mtap.id = :id";
+
+        $rs = DB::select($sqlImg,['id' => $id]);
+
+        return $rs;
+    }
 
     public function getTipo(){
         $sqlTipo = "SELECT tipo, COUNT(tipo) AS num FROM `fuentes` AS f

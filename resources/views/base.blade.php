@@ -34,7 +34,7 @@
                     <a href="{{ route('periodicos') }}">
                         <button type="button" style="width: 150px;" class="btn-head btn-oblong">Periódicos</button></a>
                     <a href="{{ route('semaforizacion') }}">
-                        <button type="button" style="width: 150px;" class="btn-head btn-oblong">Semaforización</button></a>
+                        <button type="button" style="width: 150px;" class="btn-head btn-oblong">Tendencias</button></a>
                     <a href="{{ route('alertas') }}">
                         <button type="button" style="width: 150px;" class="btn-head btn-oblong">Alertas</button></a>
                 </div>
