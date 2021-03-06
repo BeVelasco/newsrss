@@ -64,13 +64,34 @@ function llenanoticias(){
         success: function (data) {
             let html = "";
             data.forEach(element => {
-                html +=  "<tr><td>"+element.titulo+"</td><td>"+element.created_at+"</td><td><a href='"+element.url+"' target='_blank'>"+element.url+"</a></td></tr>";
+                let contenido  =  atob(element.content);
+                let pad = "window.open('"+element.url+"','Preview','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=350,height=250')";
+                html +=  '<tr><td>'+element.titulo+'</td><td>'+element.created_at+'</td><td><a href="#" target="_blank">'+element.url+'</a></td><td><button onclick="'+pad+'";>Preview</button></td></tr>';
             });
             $('#tbresumen').append(html);
             hide();
         },
         error: function (error) {
             console.log(error);
+          }
+        });
+}
+
+function showdata(id){
+    show();
+    $.ajax({
+        url: 'getContentHtml',
+        type: 'POST',
+        data: {'id': id
+              },
+        dataType: 'JSON',
+        success: function (data) {
+            var win = window.open("", "Title", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=780,height=400,top="+(screen.height)+",left="+(screen.width));
+            win.document.body.innerHTML = atob(data['rs'][0]['contenido']);
+            hide();
+        },
+        error: function (error) {
+            /*swal('error','Error al general el grafico');*/
           }
         });
 }

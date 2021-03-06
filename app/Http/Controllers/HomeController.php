@@ -737,7 +737,7 @@ class HomeController extends Controller
     public function getNoticiasMes(){
         $sqlMes = "SELECT *
                     FROM web AS w
-                    WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 DAY)
+                    WHERE w.`created_at` >= DATE_ADD(CURDATE(), INTERVAL -2 month)
                     AND w.`titulo` IN (SELECT f.idesc
                     FROM fuentes AS f)
                     ORDER BY w.`created_at` DESC;";

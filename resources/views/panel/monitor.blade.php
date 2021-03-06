@@ -94,6 +94,7 @@
                                         <th>Periódico</th>
                                         <th>Fecha</th>
                                         <th>URL</th>
+                                        <th>Preview</th>
                                     </tr>
                                     </thead>
                                     <tbody id="tbresumen">
